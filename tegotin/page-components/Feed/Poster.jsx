@@ -68,18 +68,18 @@ const Poster = () => {
       <div className={styles.root}>
         <h3 className={styles.heading}>Ramanê xwe ji civak ê re parve bikin..</h3>
         {loading ? (
-          <LoadingDots>Loading</LoadingDots>
+          <LoadingDots>Amade dibe..</LoadingDots>
         ) : data?.user ? (
           <PosterInner user={data.user} />
         ) : (
           <Text color="secondary">
-            Please{' '}
+            Kerema xwe re{' '}
             <Link href="/login" passHref>
               <TextLink color="link" variant="highlight">
-                tevlê be
+                tevlê bin
               </TextLink>
             </Link>{' '}
-            to post
+            ku parvekirina bikin
           </Text>
         )}
       </div>
