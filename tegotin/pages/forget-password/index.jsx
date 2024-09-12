@@ -5,7 +5,7 @@ const ForgetPasswordPage = () => {
   return (
     <>
       <Head>
-        <title>Forget password</title>
+        <title>Password Jibîrkir</title>
       </Head>
       <ForgetPasswordIndex />
     </>

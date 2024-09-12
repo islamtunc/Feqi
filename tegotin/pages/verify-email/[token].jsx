@@ -7,7 +7,7 @@ export default function EmailVerifyPage({ valid }) {
   return (
     <>
       <Head>
-        <title>Email verification</title>
+        <title>Rastdarîya Email ê</title>
       </Head>
       <VerifyEmail valid={valid} />
     </>

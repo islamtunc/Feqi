@@ -5,7 +5,7 @@ const FeedPage = () => {
   return (
     <>
       <Head>
-        <title>Feed</title>
+        <title>Têgotin</title>
       </Head>
       <Feed />
     </>
