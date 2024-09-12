@@ -24,7 +24,7 @@ const CommentList = ({ post }) => {
       ))}
       <Container justifyContent="center">
         {isReachingEnd ? (
-          <Text color="secondary">No more comments are found</Text>
+          <Text color="secondary">Xeynî van şîrove nehatin dîtin </Text>
         ) : (
           <Button
             variant="ghost"
@@ -32,7 +32,7 @@ const CommentList = ({ post }) => {
             loading={isLoadingMore}
             onClick={() => setSize(size + 1)}
           >
-            Load more
+            Zêde
           </Button>
         )}
       </Container>
