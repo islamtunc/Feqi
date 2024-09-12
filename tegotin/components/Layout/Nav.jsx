@@ -114,7 +114,7 @@ const Nav = () => {
                 <UserMenu user={user} mutate={mutate} />
               </>
             ) : (
-              <>
+              <> 
                 <Link passHref href="/login">
                   <ButtonLink
                     size="small"

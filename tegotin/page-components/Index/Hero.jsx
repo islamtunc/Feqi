@@ -21,7 +21,7 @@ const Hero = () => {
           <Spacer axis="horizontal" size={1} />
           <Container>
             <ButtonLink
-              href="https://www.yekazadsoftwarecenter.vercel.app"
+              href="https://yekazadsoftwarecenter.vercel.app"
               type="secondary"
               className={styles.button}
             >
