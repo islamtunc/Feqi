@@ -32,7 +32,7 @@ const Hero = () => {
         <p className={styles.subtitle}>
         </p>
 
-        Cihekî hûn bi berfirehî ramanê xwe parvebikin. Medya yek civakî jibo Agirî yê,slav li Şex Ehmed ê Xanî
+        Cihekî hûn bi berfirehî ramanê xwe parvebikin. Medya yek civakî jibo Agirî yê,slav li Şex Ehmed ê Xanî..
       </div>
     </Wrapper>
   );
