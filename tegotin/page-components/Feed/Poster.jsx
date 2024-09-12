@@ -49,7 +49,7 @@ const PosterInner = ({ user }) => {
           ref={contentRef}
           className={styles.input}
           placeholder={`Çi difikirî, ${user.name}?`}
-          ariaLabel={`What's on your mind, ${user.name}?`}
+          ariaLabel={`Hişê we de çi heye, ${user.name}?`}
         />
         <Button type="success" loading={isLoading}>
           Parvebike
@@ -66,7 +66,7 @@ const Poster = () => {
   return (
     <Wrapper>
       <div className={styles.root}>
-        <h3 className={styles.heading}>Share your thoughts</h3>
+        <h3 className={styles.heading}>Ramanê xwe ji civak ê re parve bikin..</h3>
         {loading ? (
           <LoadingDots>Loading</LoadingDots>
         ) : data?.user ? (
@@ -76,7 +76,7 @@ const Poster = () => {
             Please{' '}
             <Link href="/login" passHref>
               <TextLink color="link" variant="highlight">
-                sign in
+                tevlê be
               </TextLink>
             </Link>{' '}
             to post
