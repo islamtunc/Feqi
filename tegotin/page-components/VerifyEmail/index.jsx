@@ -13,13 +13,13 @@ export const VerifyEmail = ({ valid }) => {
           color={valid ? 'success-light' : 'secondary'}
         >
           {valid
-            ? 'Thank you for verifying your email address. You may close this page.'
-            : 'It looks like you may have clicked on an invalid link. Please close this window and try again.'}
+            ? 'Spas maile we rastdar bû .'
+            : 'Eva linka vala ye.Nû ve bikin.'}
         </Text>
         <Spacer size={4} axis="vertical" />
         <Link href="/" passHref>
           <ButtonLink variant="ghost" type="success" size="large">
-            Go back home
+            Here Malperê
           </ButtonLink>
         </Link>
       </Container>
