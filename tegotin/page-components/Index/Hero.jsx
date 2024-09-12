@@ -9,7 +9,7 @@ const Hero = () => {
       <div>
         <h1 className={styles.title}>
           <span className={styles.nextjs}>Nizanim</span>
-          <span className={styles.mongodb}>wisa</span>
+          <span className={styles.mongodb}>lê wisa</span>
           <span>TêGotin...</span>
         </h1>
         <Container justifyContent="center" className={styles.buttons}>
