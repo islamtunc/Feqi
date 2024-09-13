@@ -15,12 +15,12 @@ const Layout = ({ children }) => {
         />
         <meta
           name="description"
-          content="Ferhenga Agirî yê,Cihekî hûn ramanê xwe parve bikin.."
+          content="Cihekî hûn ramanê xwe parve bikin.."
         />
         <meta property="og:title" content="TêGotin" />
         <meta
           property="og:description"
-          content="Ferhenga Agirî yê,Cihekî hûn ramanê xwe parve bikin.."
+          content="Cihekî hûn ramanê xwe parve bikin.."
         />
         <meta
           property="og:image"
