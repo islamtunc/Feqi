@@ -107,14 +107,14 @@ const SignUp = () => {
             size="large"
             loading={isLoading}
           >
-            Bibe Encam
+            Bibe Endam
           </Button>
         </form>
       </div>
       <div className={styles.footer}>
         <Link href="/login" passHref>
           <TextLink color="link" variant="highlight">
-            Jixwe Hûn Encam in? Têketin
+            Jixwe Hûn Endam in? Têketin
           </TextLink>
         </Link>
       </div>
