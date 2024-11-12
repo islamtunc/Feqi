@@ -73,13 +73,13 @@ const Poster = () => {
           <PosterInner user={data.user} />
         ) : (
           <Text color="secondary">
-            Kerema xwe re{' '}
+            Jibo binivîsin {' '}
             <Link href="/login" passHref>
               <TextLink color="link" variant="highlight">
-                tevlê bin
+              tevlê   
               </TextLink>
             </Link>{' '}
-            ku parvekirina bikin
+           bibin
           </Text>
         )}
       </div>
