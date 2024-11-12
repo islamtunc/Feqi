@@ -128,7 +128,7 @@ const Nav = () => {
                 <Spacer axis="horizontal" size={0.25} />
                 <Link passHref href="/sign-up">
                   <Button size="small" type="success">
-                    Bibe Encam
+                    Bibe Endam
                   </Button>
                 </Link>
               </>
