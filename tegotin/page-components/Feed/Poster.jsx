@@ -66,7 +66,7 @@ const Poster = () => {
   return (
     <Wrapper>
       <div className={styles.root}>
-        <h3 className={styles.heading}>Ramanê xwe ji civak ê re parve bikin..</h3>
+        <h3 className={styles.heading}>Ramanê xwe ji civak ê re parve bikin..Tenê bi kurdî kerema xwe re lewra ev bername tenê jibo parastina zimanê kurdî hatîye amadekirin û dûrî neteweperwerîyê ye.📗 Dembaş 🌲</h3>
         {loading ? (
           <LoadingDots>Amade dibe..</LoadingDots>
         ) : data?.user ? (
