@@ -94,7 +94,7 @@ const Login = () => {
         <Link href="/sign-up" passHref>
           <TextLink color="link" variant="highlight">
 
-         Encam nînî? Bibe Encam 
+         Endam nînî? Bibe Endam 
           </TextLink>
         </Link>
       </div>
