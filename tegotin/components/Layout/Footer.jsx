@@ -18,7 +18,7 @@ const Footer = () => {
             Yekazad Software Center
           </TextLink>
           
-          <span>  </span>ê
+          <span> Ji kerema xwe re tenê bi kurdî û dûrî neteweperwerîyê ye binivîsin... </span>ê
         </Text>
         <Spacer size={1} axis="vertical" />
         <ThemeSwitcher />
