@@ -35,6 +35,7 @@ const Hero = () => {
         Cihekî hûn bi berfirehî ramanê xwe parvebikin. <br><br/>Slav li Şex Ehmed ê Xanî :
 <br><br/>
 "Nînin li me fikrû zikrek
+<br><br/>
  Nakin bi zebanî hemd û şukrek"
       </div>
     </Wrapper>
