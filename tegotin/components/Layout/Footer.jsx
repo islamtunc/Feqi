@@ -17,8 +17,8 @@ const Footer = () => {
           <TextLink href="https://yekazadsoftwarecenter.vercel.app/" color="link">
             Yekazad Software Center
           </TextLink>
-          
-          <span> Ji kerema xwe re tenê bi kurdî û dûrî neteweperwerîyê ye binivîsin... </span>ê
+          ê
+          <span> </span>Ji kerema xwe re tenê bi kurdî û dûrî neteweperwerîyê ye binivîsin...
         </Text>
         <Spacer size={1} axis="vertical" />
         <ThemeSwitcher />
