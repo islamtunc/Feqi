@@ -66,7 +66,7 @@ const Poster = () => {
   return (
     <Wrapper>
       <div className={styles.root}>
-        <h3 className={styles.heading}>Ramanê xwe ji civak ê re parve bikin.. .📗 Dembaş 🌲</h3>
+        <h3 className={styles.heading}>Yüce Kuran ışığında sünnet-i senniyeyi idame etme maksadımızı ilim talebi ve tebliğ suretinde telif etmek üzere yazalım ...📗 Dembaş 🌲</h3>
         {loading ? (
           <LoadingDots>Amade dibe..</LoadingDots>
         ) : data?.user ? (
@@ -79,7 +79,7 @@ const Poster = () => {
               tevlê   
               </TextLink>
             </Link>{' '}
-           bibin
+           bibin. 
           </Text>
         )}
       </div>

@@ -13,11 +13,11 @@
 }
 
 .nextjs {
-  background: linear-gradient(90deg, #7928ca, #ff0080);
+  background: linear-gradient(90deg, #a7ca28, #ff0080);
 }
 
 .mongodb {
-  background: linear-gradient(90deg, rgb(110, 96, 245), rgb(131, 219, 167));
+  background: linear-gradient(90deg, rgb(96, 245, 176), rgb(131, 219, 167));
 }
 
 .nextjs,

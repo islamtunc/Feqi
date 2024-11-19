@@ -106,7 +106,7 @@ const Nav = () => {
           justifyContent="space-between"
         >
           <Link href="/">
-            <a className={styles.logo}>TêGotin</a>
+            <a className={styles.logo}>Firdevs</a>
           </Link>
           <Container>
             {user ? (
@@ -122,13 +122,13 @@ const Nav = () => {
                     variant="ghost"
                     color="link"
                   >
-                    Têketin           
+                    Giriş           
                      </ButtonLink>
                 </Link>
                 <Spacer axis="horizontal" size={0.25} />
                 <Link passHref href="/sign-up">
                   <Button size="small" type="success">
-                    Bibe Endam
+                    Üye Ol
                   </Button>
                 </Link>
               </>

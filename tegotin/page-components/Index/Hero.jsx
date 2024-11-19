@@ -8,14 +8,14 @@ const Hero = () => {
     <Wrapper>
       <div>
         <h1 className={styles.title}>
-          <span className={styles.nextjs}>Tê</span>
-          <span className={styles.mongodb}>Go</span>
-          <span>tin</span>
+          <span className={styles.nextjs}>FİR</span>
+          <span className={styles.mongodb}>DEVS</span>
+          <span>Kapısı</span>
         </h1>
         <Container justifyContent="center" className={styles.buttons}>
           <Container>
             <Link passHref href="/feed">
-              <ButtonLink className={styles.button}>Bixwîne</ButtonLink>
+              <ButtonLink className={styles.button}>Okumaya Başlayın</ButtonLink>
             </Link>
           </Container>
           <Spacer axis="horizontal" size={1} />
@@ -25,7 +25,7 @@ const Hero = () => {
               type="secondary"
               className={styles.button}
             >
-              Têkilî
+              İletişim
             </ButtonLink>
           </Container>
         </Container>
