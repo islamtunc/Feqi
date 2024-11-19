@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Firdevs Kapısı</title>
+        <title>Firdevs Kapısına Emekleyerek</title>
         <meta
           key="viewport"
           name="viewport"
