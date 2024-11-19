@@ -42,7 +42,7 @@ const Hero = () => {
 
  Nakin bi zebanî hemd û şukrek"
       </div>
-    </Wrapper>
+    </Wrapper>   
   );
 };
 
