@@ -11,11 +11,11 @@ const Hero = () => {
   return (
     <Wrapper>
       <div>
-        <a className={styles.title}>
-          <span className={styles.nextjs}>Firdevs</span>
-          <span className={styles.mongodb}>Kapısına</span>
-          <span>.....</span>
-        </a>
+        <h1 className={styles.title}>
+          <span className={styles.nextjs}>MÜ</span>
+          <span className={styles.mongodb}>CA</span>
+          <span>HİD</span>
+        </h1>
         <Container justifyContent="center" className={styles.buttons}>
           <Container>
             <Link passHref href="/feed">
