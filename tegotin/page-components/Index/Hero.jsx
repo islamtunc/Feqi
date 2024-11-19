@@ -36,7 +36,7 @@ const Hero = () => {
         <p className={styles.subtitle}>
         </p>
 
-        Cihekî hûn bi berfirehî ramanê xwe parvebikin. <br><br/>Slav li Şex Ehmed ê Xanî :
+        Cihekî hûn bi berfirehî ramanê xwe parvebikin. Slav li Şex Ehmed ê Xanî :
 
 "Nînin li me fikrû zikrek
 
