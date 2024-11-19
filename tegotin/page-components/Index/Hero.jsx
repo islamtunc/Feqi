@@ -12,8 +12,8 @@ const Hero = () => {
     <Wrapper>
       <div>
         <P className={styles.title}>
-          <span className={styles.nextjs}>Firdevs</span>
-          <span className={styles.mongodb}>Kapısına</span>
+          <span className={styles.nextjs}>TA</span>
+          <span className={styles.mongodb}></span>
           <span>.....</span>
         </P>
         <Container justifyContent="center" className={styles.buttons}>
