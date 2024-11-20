@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
         <meta property="og:title" content="TêGotin" />
         <meta
           property="og:description"
-          content="Cihekî hûn ramanê xwe parve bikin.."
+          content="ilim talebi ve tebliğ..."
         />
         <meta
           property="og:image"
