@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
           name="description"
           content="Cihekî hûn ramanê xwe parve bikin.."
         />
-        <meta property="og:title" content="TêGotin" />
+        <meta property="og:title" content="Mücahid" />
         <meta
           property="og:description"
           content="ilim talebi ve tebliğ..."
