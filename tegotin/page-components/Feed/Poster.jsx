@@ -48,11 +48,11 @@ const PosterInner = ({ user }) => {
         <Input
           ref={contentRef}
           className={styles.input}
-          placeholder={`Çi difikirî, ${user.name}?`}
-          ariaLabel={`Hişê we de çi heye, ${user.name}?`}
+          placeholder={`Beyanda bulunun , ${user.name}?`}
+          ariaLabel={`isabet maksat olsa niyet esas alınmıştır, ${user.name}?`}
         />
         <Button type="success" loading={isLoading}>
-          Parvebike
+          Yayınla
         </Button>
       </Container>
     </form>
