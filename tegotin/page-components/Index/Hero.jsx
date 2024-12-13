@@ -6,31 +6,32 @@ import { ButtonLink } from '@/components/Button';
 import { Container, Spacer, Wrapper } from '@/components/Layout';
 import Link from 'next/link';
 import styles from './Hero.module.css';
+import { Mmger } from '@/components/mmtab';
+
+
 
 const Hero = () => {
   return (
     <Wrapper>
       <div>
         <h1 className={styles.title}>
-          <span className={styles.nextjs}>MÜ</span>
-          <span className={styles.mongodb}>CA</span>
-          <span>HİD</span>
+          <span className={styles.nextjs}>Fer</span>
+          <span className={styles.mongodb}>henga</span>
+          <span>Mela</span>
         </h1>
+
+        <div style={{justifySelf:"center"}}> <Mmger /></div>
+       
+       <br></br><br></br>
         <Container justifyContent="center" className={styles.buttons}>
           <Container>
             <Link passHref href="/feed">
-              <ButtonLink className={styles.button}>Okumaya Başlayın</ButtonLink>
+              <ButtonLink className={styles.button}>Bixwîne</ButtonLink>
             </Link>
           </Container>
           <Spacer axis="horizontal" size={1} />
           <Container>
-            <ButtonLink
-              href="https://yekazadsoftwarecenter.vercel.app"
-              type="secondary"
-              className={styles.button}
-            >
-              İletişim
-            </ButtonLink>
+        
           </Container>
         </Container>
         <p className={styles.subtitle}>
