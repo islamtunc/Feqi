@@ -125,7 +125,7 @@ const Nav = () => {
                     Têketin           
                      </ButtonLink>
                 </Link>
-                <Spacer axis="horizontal" size={0.25} />
+                <Spacer axis="horizontal" size={3.05} />
              
               </>
             )}
