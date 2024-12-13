@@ -20,7 +20,7 @@ function Mmpirtuk() {
               <NavDropdown.Item href="#action/3.2">
                 
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3"></NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
                 
@@ -63,7 +63,7 @@ function Mmpirtuk() {
             </NavDropdown>
             
             <Nav.Link href="#home"></Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link href="#link">Derbare</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
