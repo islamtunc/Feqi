@@ -24,6 +24,7 @@ export default function Navbar() {
 
 
         <SearchField />
+        <UserButton className="sm:ms-auto" />
 
       </div>
     </header>
