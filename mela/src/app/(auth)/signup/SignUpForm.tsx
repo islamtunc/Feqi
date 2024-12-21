@@ -50,7 +50,7 @@ export default function SignUpForm() {
           name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Kullanıcı Adı</FormLabel>
+              <FormLabel>Nav</FormLabel>
               <FormControl>
                 <Input placeholder="Username" {...field} />
               </FormControl>
@@ -76,7 +76,7 @@ export default function SignUpForm() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Şifre</FormLabel>
+              <FormLabel>Password</FormLabel>
               <FormControl>
                 <PasswordInput placeholder="Password" {...field} />
               </FormControl>
@@ -86,7 +86,7 @@ export default function SignUpForm() {
         />
         <LoadingButton loading={isPending} type="submit" className="w-full">
           
-        Üye Ol
+        Bibe Endam
         </LoadingButton>
       </form>
     </Form>
