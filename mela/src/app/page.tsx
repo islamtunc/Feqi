@@ -13,7 +13,6 @@ function page() {
 
 
 
-        <Mmhome/>
     </div>
   )
 }
