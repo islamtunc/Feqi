@@ -1,0 +1,63 @@
+// Bismillahirahmanirahim
+//Elhamdulillahirahmanirahim
+//es-selatu vesselamu ala rasulina Muhammedin ve ala alihi , ve sahbihi ecmain
+
+import { Toaster } from "@/components/ui/toaster";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
+import localFont from "next/font/local";
+import { extractRouterConfig } from "uploadthing/server";
+import { fileRouter } from "./api/uploadthing/core";
+import "./globals.css";
+import ReactQueryProvider from "./ReactQueryProvider";
+import SessionProvider from "./(main)/SessionProvider";
+import { validateRequest } from "@/auth";
+import { redirect } from "next/navigation";
+import MenuBar from "./(main)/MenuBar";
+
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+});
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+});
+
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Müşterisi Burada",
+    default: "Müşterisi Burada",
+  },
+  description: "İnşaat ve ... ",
+};
+
+export default async function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+
+  
+  return (
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <NextSSRPlugin routerConfig={extractRouterConfig(fileRouter)} />
+        <ReactQueryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+           
+            {children}
+
+          </ThemeProvider>
+        </ReactQueryProvider>
+        <Toaster />
+      </body>
+    </html>
+  );
+}
