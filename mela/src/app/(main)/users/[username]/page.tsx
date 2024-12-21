@@ -104,7 +104,6 @@ async function UserProfile({ user, loggedInUserId }: UserProfileProps) {
         className="mx-auto size-full max-h-60 max-w-60 rounded-full"
       />
 
-<Button>Mesaj gönder</Button>
 
       <div className="flex flex-wrap gap-3 sm:flex-nowrap">
         <div className="me-auto space-y-3">
@@ -148,7 +147,6 @@ async function UserProfile({ user, loggedInUserId }: UserProfileProps) {
       )}
 
 
-    <MmHome/>
     </div>
   );
 }
