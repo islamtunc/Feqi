@@ -27,8 +27,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Müşterisi Burada",
-    default: "Müşterisi Burada",
+    template: "%s | Ferhenga Mela",
+    default: "Ferhenga Mela",
   },
   description: "İnşaat ve ... ",
 };
