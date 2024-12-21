@@ -3,7 +3,6 @@
 
 
 import React from 'react'
-import Mmhome from './malper/mm'
 
 function page() {
   return (
@@ -13,6 +12,7 @@ function page() {
 
 
 
+<h1>Mela</h1>
     </div>
   )
 }
