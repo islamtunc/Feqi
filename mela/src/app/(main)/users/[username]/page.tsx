@@ -17,9 +17,7 @@ import { notFound } from "next/navigation";
 import { cache } from "react";
 import EditProfileButton from "./EditProfileButton";
 import UserPosts from "./UserPosts";
-import Mmhome from "@/app/malper/mm";
-import MmHome from "../mm_";
-import { Button } from "@/components/ui/button";
+
 
 interface PageProps {
   params: { username: string };
