@@ -1,5 +1,8 @@
 // Bismillahirahmanirahim
-
+// ELHAMDULILLAHI RABBIL ALAMIN
+// Esselatu vesselamu ala Resulillah 
+// Suphanallah wa bihamdi, subhanallahil azim
+// Allah u Ekber La ilahe illallah
 "use server";
 
 import { lucia, validateRequest } from "@/auth";
@@ -23,5 +26,5 @@ export async function logout() {
     sessionCookie.attributes,
   );
 
-  return redirect("/login");
+  return redirect("/malper");
 }
