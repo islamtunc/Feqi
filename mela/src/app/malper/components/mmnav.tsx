@@ -48,7 +48,10 @@ function Mmmnavbar() {
 }
 
 export default Mmmnavbar;
-
+//Subhanallah Subhanallah Subhanallahi Azim ve Bihamdihi
 // Elhamdulillah Elhamdulillah Elhamdulillah
 // Elhamdulillahirabbilalemin
 // La ilahe illAllah Muhammden abduhu ve resuluhu
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillahirabbilalemin

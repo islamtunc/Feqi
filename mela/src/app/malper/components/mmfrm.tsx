@@ -71,7 +71,7 @@ const ContactForm: React.FC = () => {
           fontSize: "2rem",
         }}
       >
-        Contact Us
+        Tevlê Bibin
       </h2>
       <Form.Group className="mb-3" controlId="formName">
         <Form.Label style={{ color: "#495057", fontWeight: 500 }}>Name</Form.Label>
@@ -139,14 +139,24 @@ const ContactForm: React.FC = () => {
           variant="success"
           type="submit"
         >
-          Send
+          Bişînin
         </Button>
       </div>
       <p className="text-center mt-4" style={{ color: "#6c757d", fontSize: "1rem" }}>
-        To contact us, please fill out the form above. We will get back to you as soon as possible.
+       spas ji bo gava  we ye birûmet. Em ê di demek kurt de bersiva we bidin.
       </p>
     </Form>
   );
 };
 
 export default ContactForm;
+
+// Suphanallah Subhanallah Subhanallahi Azim ve Bihamdihi
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillahirabbulalemin//Subhanallah Subhanallah Subhanallahi Azim ve Bihamdihi
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillahirabbilalemin
+// La ilahe illAllah Muhammeden abduhu ve resuluhu
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillahirabbilalemin
