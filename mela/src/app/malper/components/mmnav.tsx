@@ -20,23 +20,26 @@ function Mmmnavbar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             
-            <Nav.Link href="/malper">Malper</Nav.Link>
+            <Nav.Link href="/malper/agahi">Qur'an a Pîroz</Nav.Link>
 
-            <NavDropdown title="Perwerdehîya Îslamî" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/perwerdeh/kelam">Kelam</NavDropdown.Item>
-              <NavDropdown.Item href="/perwerdeh/fikih">Fıkıh</NavDropdown.Item>
-              <NavDropdown.Item href="/perwerdeh/aqide">Aqîde</NavDropdown.Item>
+            <NavDropdown title="Zanistên Îslamî" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/malper/kelam">Kelam</NavDropdown.Item>
+              <NavDropdown.Item href="malper/fiqih">Fıkıh</NavDropdown.Item>
+              <NavDropdown.Item href="/malper/aqide">Aqîde</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/perwerdeh/tarix">Tarîxê Îslamî</NavDropdown.Item>
+              <NavDropdown.Item href="/malper/dirok">Dîroka Îslamî</NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown title="Hadîs û Du‘a" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/perwerdeh/hadis">Hadîsên Navîn</NavDropdown.Item>
-              <NavDropdown.Item href="/perwerdeh/dua">Du‘a</NavDropdown.Item>
+              <NavDropdown.Item href="/malper/hedis">Hadîsên Navîn</NavDropdown.Item>
+              <NavDropdown.Item href="/malper/dua">Du‘a</NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown title="Zekayê Sûnî (AI)" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/malper/mmavahi/mmmai">Asistanê AI Îslamî Feqî</NavDropdown.Item>
+            <NavDropdown title="Pirtûkxane" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/malper/xane">Alim û pirtukên wan</NavDropdown.Item>
+           
+                         <NavDropdown.Item href="/malper/xane/feqijs">Asistanê AI Îslamî Feqî</NavDropdown.Item>
+
             </NavDropdown>
 
             <Nav.Link href="/malper/mmmmm">Derbarê Me</Nav.Link>
