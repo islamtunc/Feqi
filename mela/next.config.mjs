@@ -1,7 +1,24 @@
+// Bismillahirrahmanirahim
 // Bismillahirahmanirahim
+// Elhamdulillahirabbilalemin
+// Es-selatu ve Es-selamu ala Resulina Muhammedin ve ala alihi ve sahbihi ecmain
+// Allah u Ekber, Allah u Ekber, Allah u Ekber, La ilahe illallah
+// Süphanallah, Elhamdulillah, Allahu Ekber
+
+
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  
+  
+  
+  reactStrictMode: true,
+	
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
   experimental: {
     staleTimes: {
       dynamic: 30,
@@ -9,13 +26,7 @@ const nextConfig = {
   },
   serverExternalPackages: ["@node-rs/argon2"],
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "utfs.io",
-        pathname: `/a/${process.env.NEXT_PUBLIC_UPLOADTHING_APP_ID}/*`,
-      },
-    ],
+    domains: ['utfs.io'],
   },
   rewrites: () => {
     return [
@@ -25,15 +36,6 @@ const nextConfig = {
       },
     ];
   },
-
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
-  }
-
-
-
 };
 
 export default nextConfig;

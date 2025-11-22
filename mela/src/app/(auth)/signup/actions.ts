@@ -1,10 +1,15 @@
-// Bismillahirahmanirahim
+// Elhamdulillahirrabbulalemin
+// Esselatu vesselamu ala seyyidina Muhammedin ve ala alihi ve sahbihi ecmain
+// Subhanallah, Elhamdulillah, Allahu Ekber
+// La ilahe illallah 
+// Allahu Ekber, Allahu Ekber, Allahu Ekber, La ilahe illallah
+// Bila Allah Azze ve Celle me ji sunneta Resulullah Muhammed (s.a.v) neqetine, amin rabbal alemin 
+// Xeyni Allah tu Xweda tune
 
 "use server";
 
 import { lucia } from "@/auth";
 import prisma from "@/lib/prisma";
-import streamServerClient from "@/lib/stream";
 import { signUpSchema, SignUpValues } from "@/lib/validation";
 import { hash } from "@node-rs/argon2";
 import { generateIdFromEntropySize } from "lucia";
@@ -38,7 +43,7 @@ export async function signUp(
 
     if (existingUsername) {
       return {
-        error: "Kerema xwe re naveki din bijberin",
+        error: "Username already taken",
       };
     }
 
@@ -53,11 +58,11 @@ export async function signUp(
 
     if (existingEmail) {
       return {
-        error: "Kerema xwe re emaile ki din bijberin",
+        error: "Email already taken",
       };
     }
 
-    await prisma.$transaction(async (tx) => {
+    await prisma.$transaction(async (tx: { user: { create: (arg0: { data: { id: string; username: string; displayName: string; email: string; passwordHash: string; }; }) => any; }; }) => {
       await tx.user.create({
         data: {
           id: userId,
@@ -67,11 +72,7 @@ export async function signUp(
           passwordHash,
         },
       });
-      await streamServerClient.upsertUser({
-        id: userId,
-        username,
-        name: username,
-      });
+     
     });
 
     const session = await lucia.createSession(userId, {});
@@ -87,7 +88,7 @@ export async function signUp(
     if (isRedirectError(error)) throw error;
     console.error(error);
     return {
-      error: "Pirsgirek derket , kerema xwe re disa biceribinin .",
+      error: "Something went wrong. Please try again.",
     };
   }
 }

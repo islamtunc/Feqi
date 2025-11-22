@@ -45,7 +45,7 @@ export default function PostEditor() {
         italic: false,
       }),
       Placeholder.configure({
-        placeholder: "Selam aleykum hevalê/a hêja ,fermo...",
+        placeholder: "Selam aleykum,fermo...",
       }),
     ],
   });
@@ -116,7 +116,7 @@ export default function PostEditor() {
           disabled={!input.trim() || isUploading}
           className="min-w-20"
         >
-          Parvebike
+          Parve bikin
         </LoadingButton>
       </div>
     </div>

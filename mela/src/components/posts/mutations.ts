@@ -1,7 +1,3 @@
-// Bismillahirahmanirahim
-
-
-
 import { PostsPage } from "@/lib/types";
 import {
   InfiniteData,

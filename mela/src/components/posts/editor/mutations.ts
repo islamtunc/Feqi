@@ -1,7 +1,3 @@
-// Bismillahirrahmanirrahim 
-
-
-
 import { useSession } from "@/app/(main)/SessionProvider";
 import { useToast } from "@/components/ui/use-toast";
 import { PostsPage } from "@/lib/types";
@@ -64,14 +60,14 @@ export function useSubmitPostMutation() {
       });
 
       toast({
-        description: "Hate parvekirin.",
+        description: "Post created",
       });
     },
     onError(error) {
       console.error(error);
       toast({
         variant: "destructive",
-        description: "Nebû, dîsa biceribînin.",
+        description: "Failed to post. Please try again.",
       });
     },
   });

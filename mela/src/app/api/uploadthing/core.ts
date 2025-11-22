@@ -1,10 +1,10 @@
-// Bismillahirrahmanirrahim 
-
-
-
+// Bismillahirahmanirahim
+// Elhamdulillahirabbulalemin
+// Esselatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain
+// Suphanallah, Elhamdulillah, Allahu Ekber
+// Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 import { validateRequest } from "@/auth";
 import prisma from "@/lib/prisma";
-import streamServerClient from "@/lib/stream";
 import { createUploadthing, FileRouter } from "uploadthing/next";
 import { UploadThingError, UTApi } from "uploadthing/server";
 
@@ -44,12 +44,7 @@ export const fileRouter = {
             avatarUrl: newAvatarUrl,
           },
         }),
-        streamServerClient.partialUpdateUser({
-          id: metadata.user.id,
-          set: {
-            image: newAvatarUrl,
-          },
-        }),
+   
       ]);
 
       return { avatarUrl: newAvatarUrl };
@@ -66,18 +61,32 @@ export const fileRouter = {
       return {};
     })
     .onUploadComplete(async ({ file }) => {
+      const url = file.url.replace(
+        "/f/",
+        `/a/${process.env.NEXT_PUBLIC_UPLOADTHING_APP_ID}/`,
+      );
+      const type = file.type.startsWith("image") ? "IMAGE" : "VIDEO";
       const media = await prisma.media.create({
         data: {
-          url: file.url.replace(
-            "/f/",
-            `/a/${process.env.NEXT_PUBLIC_UPLOADTHING_APP_ID}/`,
-          ),
-          type: file.type.startsWith("image") ? "IMAGE" : "VIDEO",
+          url,
+          type,
         },
       });
 
-      return { mediaId: media.id };
+      // DÖNEN DEĞERİ GÜNCELLE
+      return { 
+        mediaId: media.id,
+        url,
+        type,
+      };
     }),
 } satisfies FileRouter;
 
 export type AppFileRouter = typeof fileRouter;
+
+// The following JSX code was removed because it is not valid in this context:
+// {file.type === "IMAGE" ? (
+//   <img src={file.url} alt="Uploaded" />
+// ) : (
+//   <a href={file.url}>Download Video</a>
+// )}

@@ -9,39 +9,40 @@
 import React from "react";
 
 const Footer = () => (
-  <footer className="bg-green-700 text-white pt-4">
+  <footer className="bg-dark text-white pt-4">
     <div className="container text-center text-md-left">
       <div className="row">
         {/* About Section */}
         <div className="col-md-4 mt-md-0 mt-3">
-          <h5 className="text-uppercase font-weight-bold">Der barê me</h5>
+          <h5 className="text-uppercase font-weight-bold">About Us</h5>
           <p>
-            Em hewl didin ku xizmeta herî baş û çavkaniyên nûjen bidin bikarhênerên me. Bi me re bimînin da ku nûve û agahiyên dawî bistînin.
+            We are committed to providing the best services and resources for
+            our users. Stay connected with us for updates and news.
           </p>
         </div>
 
         {/* Links Section */}
         <div className="col-md-4 mb-md-0 mb-3">
-          <h5 className="text-uppercase font-weight-bold">Girêdanên Zû</h5>
+          <h5 className="text-uppercase font-weight-bold">Quick Links</h5>
           <ul className="list-unstyled">
             <li>
-              <a href="/malper" className="text-white">
-                Serûpel
+              <a href="#!" className="text-white">
+                Home
               </a>
             </li>
             <li>
-              <a href="/malper/derbarê" className="text-white">
-                Der barê me
+              <a href="#!" className="text-white">
+                About
               </a>
             </li>
             <li>
-              <a href="/malper/xizmet" className="text-white">
-                Xizmet
+              <a href="#!" className="text-white">
+                Services
               </a>
             </li>
             <li>
               <a href="/login" className="text-white">
-                Rêveberî
+                Administration
               </a>
             </li>
           </ul>
@@ -49,7 +50,7 @@ const Footer = () => (
 
         {/* Social Media Section */}
         <div className="col-md-4 mb-md-0 mb-3">
-          <h5 className="text-uppercase font-weight-bold">Me bişopînin</h5>
+          <h5 className="text-uppercase font-weight-bold">Follow Us</h5>
           <ul className="list-unstyled d-flex justify-content-center">
             <li className="mx-2">
               <a href="https://facebook.com" className="text-white">
@@ -77,7 +78,7 @@ const Footer = () => (
     </div>
 
     <div className="text-center py-3">
-      © {new Date().getFullYear()} Maf: {" "}
+      © {new Date().getFullYear()} Copyright:{" "}
       <a href="https://yekazad.com" className="text-white">
         Yekazad
       </a>

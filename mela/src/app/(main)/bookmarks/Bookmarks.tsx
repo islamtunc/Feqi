@@ -1,4 +1,4 @@
-// Bismillahirahmanirahim
+// Bismillahirrahmanirrahim
 
 "use client";
 
@@ -40,7 +40,7 @@ export default function Bookmarks() {
   if (status === "success" && !posts.length && !hasNextPage) {
     return (
       <p className="text-center text-muted-foreground">
-        We hê tişte qeyd nekirîye.
+        You don&apos;t have any bookmarks yet.
       </p>
     );
   }
@@ -48,7 +48,7 @@ export default function Bookmarks() {
   if (status === "error") {
     return (
       <p className="text-center text-destructive">
-        Pirsgirek derket,paşe dîsa biceribînin.
+        An error occurred while loading bookmarks.
       </p>
     );
   }

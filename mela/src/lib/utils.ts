@@ -1,8 +1,6 @@
-//Bismillahirahmanirahim
-
-
-
-
+// Bismillahirahmanirahim
+// Elhamdulillahirabbulalemin
+// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain.
 import { type ClassValue, clsx } from "clsx";
 import { formatDate, formatDistanceToNowStrict } from "date-fns";
 import { twMerge } from "tailwind-merge";
@@ -36,4 +34,12 @@ export function slugify(input: string): string {
     .toLowerCase()
     .replace(/ /g, "-")
     .replace(/[^a-z0-9-]/g, "");
+}
+
+// New function to convert a string to an array
+export function stringToArray(input: string, delimiter: string = ","): string[] {
+  return input
+    .split(delimiter) // Split the string by the specified delimiter
+    .map((item) => item.trim()) // Trim whitespace from each item
+    .filter((item) => item.length > 0); // Remove empty items
 }

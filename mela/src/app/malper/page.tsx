@@ -7,119 +7,71 @@
 // Subhanallah, Elhamdulillah, Allahu Ekber
 // Estağfirullah El-Azim
 // La ilahe illallah, Muhammedur Resulullah
-"use client";
-// Bismillahirrahmanirrahim 
-// Elhamdulillahirrabbulalemin
+import React from 'react'
 
-import React, { useState, useRef } from 'react'
-
-function ChatMessage({ message, isUser }: { message: string; isUser?: boolean }) {
+function page() {
   return (
-    <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} my-2`}>
-      <div className={`rounded-lg px-4 py-2 max-w-[70%] ${isUser ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-900'}`}>
-        {message}
-      </div>
-    </div>
-  );
-}
+    <>
+   
+      <main className="flex-grow container mx-auto py-8">
+        {/* Dashboard Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Card 1: Build Your Website */}
+          <div className="bg-white shadow-lg rounded-lg p-6">
+            <img
+              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
+              alt="Build Your Website"
+              className="w-full h-32 object-cover rounded-t-lg mb-4"
+            />
+            <h3 className="text-xl font-bold mb-2">Build Your Website</h3>
+            <p className="text-gray-600">Build your website with our easy-to-use templates.</p>
+            <a href="/malper/mmavahi/mmmweb" className="text-blue-500 hover:underline mt-4 block">
+              View Templates and Start Building
+            </a>
+          </div>
 
-async function uploadAudioAndGetTranscript(file: File) {
-  const formData = new FormData();
-  formData.append("file", file);
-  const response = await fetch("http://localhost:8000/asr/", {
-    method: "POST",
-    body: formData,
-  });
-  if (!response.ok) {
-    throw new Error("Ses yüklenemedi!");
-  }
-  const data = await response.json();
-  return data.transcript;
-}
-
-export default function Page() {
-  const [messages, setMessages] = useState([
-    { text: "Silav û rêz! Ez dikarim alîkarî bidim te. Pirsa xwe binivîse...", isUser: false },
-  ]);
-  const [input, setInput] = useState("");
-  const [loading, setLoading] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleSend = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-    setMessages([...messages, { text: input, isUser: true }]);
-    setInput("");
-    setLoading(true);
-    // Burada API'den cevap simüle ediliyor. Gerçek entegrasyon için backend'e istek atılabilir.
-    setTimeout(() => {
-      setMessages((msgs) => [...msgs, { text: "(Bersiva asistanê dê li vir were nîşandan)", isUser: false }]);
-      setLoading(false);
-    }, 800);
-  };
-
-  const handleAudioUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setMessages([...messages, { text: "(Ses dosyası gönderildi)", isUser: true }]);
-      setLoading(true);
-      try {
-        const transcript = await uploadAudioAndGetTranscript(e.target.files[0]);
-        setMessages((msgs) => [...msgs, { text: transcript, isUser: false }]);
-      } catch (err) {
-        setMessages((msgs) => [...msgs, { text: "Xeta: Ses dosyası yüklenemedi!", isUser: false }]);
-      }
-      setLoading(false);
-      if (fileInputRef.current) fileInputRef.current.value = "";
-    }
-  };
-
-  return (
-    <main className="flex w-full min-w-0 gap-5">
-      <div className="w-full min-w-0 flex flex-col h-[80vh] bg-white rounded-xl shadow p-6">
-        <h1 className="text-2xl font-bold mb-4 text-green-700">Feqî – Asîstana Zekayê Sînî</h1>
-        <div className="flex-1 overflow-y-auto mb-4">
-          {messages.map((msg, idx) => (
-            <ChatMessage key={idx} message={msg.text} isUser={msg.isUser} />
-          ))}
-          {loading && <div className="text-gray-400 text-sm">...</div>}
+          {/* Card 2: Mobile Apps */}
+          <div className="bg-white shadow-lg rounded-lg p-6">
+            <img
+              src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80"
+              alt="Mobile Apps"
+              className="w-full h-32 object-cover rounded-t-lg mb-4"
+            />
+            <h3 className="text-xl font-bold mb-2">Have Your Mobile App </h3>
+            <p className="text-gray-600">See how easy it is to build mobile apps with our platform.</p>
+            <a href="/malper/mmavahi/mmmobile" className="text-blue-500 hover:underline mt-4 block">
+              Take a Look at Our Mobile App Solutions
+            </a>
+          </div>
+      
+          {/* Card 3: AI Solutions */}
+          <div className="bg-white shadow-lg rounded-lg p-6">
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+              alt="AI Solutions"
+              className="w-full h-32 object-cover rounded-t-lg mb-4"
+            />
+            <h3 className="text-xl font-bold mb-2">Get ai solutions</h3>
+            <p className="text-gray-600"> Get AI solutions tailored to your needs.</p>
+            <a href="/malper/mmavahi/mmai" className="text-blue-500 hover:underline mt-4 block">
+              Explore Our AI Solutions
+            </a>
+          </div>
         </div>
-        <form onSubmit={handleSend} className="flex gap-2 mb-2">
-          <input
-            className="flex-1 border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
-            type="text"
-            placeholder="Pirsa xwe binivîse..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            autoFocus
-            disabled={loading}
-          />
-          <button
-            type="submit"
-            className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
-            disabled={loading}
-          >
-            Şandin
-          </button>
-        </form>
-        <div className="flex items-center gap-2">
-          <input
-            type="file"
-            accept="audio/*"
-            ref={fileInputRef}
-            onChange={handleAudioUpload}
-            className="hidden"
-            id="audio-upload"
-            disabled={loading}
-          />
-          <label htmlFor="audio-upload" className="bg-green-100 text-green-700 px-3 py-2 rounded-lg cursor-pointer hover:bg-green-200 transition border border-green-300">
-            + Ses Dosyası Yükle
-          </label>
+      
+        {/* Recent Updates Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-bold mb-4">Recent Updates</h2>
+          <ul className="list-disc pl-5 text-gray-700">
+            <li>E commerce app is being prepared to install play store.</li>
+            <li>New features added to the website builder.</li>
+            <li>Mobile app development course launched.</li>
+            <li>The special Kurdish  AI asisstan Feqi is <a href='https:feqi.vercel.app'>here</a>.</li>
+          </ul>
         </div>
-      </div>
-      <aside className="hidden md:block w-80 min-w-[18rem] bg-gray-50 rounded-xl shadow p-6">
-        <h2 className="text-lg font-semibold mb-2 text-green-700">Der barê Feqî</h2>
-        <p className="text-gray-600 text-sm">Feqî asîstana zekayê sînî ya bi zimanê Kurdî ye. Pirsa xwe binivîse û bersivê bistînin! Hûn dikarin sesê xwe jî bişînin.</p>
-      </aside>
-    </main>
-  );
+      </main>
+    </>
+  )
 }
+
+export default page

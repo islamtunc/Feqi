@@ -1,67 +1,93 @@
-// Bismillahirahmanirahim
-// ELHAMDULILLAHI RABBIL ALAMIN
-// Esselatu vesselamu ala Resulillah 
-// Suphanallah wa bihamdi, subhanallahil azim
-// Allah u Ekber La ilahe illallah
-"use client";
-import { useState } from "react";
+// Bismillahirrahmanirahim
+// Elhamdulillahirabbulalemin
+// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain
+// La havle ve la kuvvete illa billahil aliyyil azim
+// Allah u Ekber
+// La ilahe illallah Muhammedur Resulullah
+// Subhanallah, Elhamdulillah, Allahu Ekber, La ilahe illallah
+// Estağfirulllah El-Azim
+"use client"
+import React from "react";
+import { Alert, Container, Row, Col, Card, Button } from "react-bootstrap";
 
-function ChatMessage({ message, isUser }: { message: string; isUser?: boolean }) {
+function AdminPage() {
   return (
-    <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} my-2`}>
-      <div className={`rounded-lg px-4 py-2 max-w-[70%] ${isUser ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-900'}`}>
-        {message}
-      </div>
-    </div>
+    <Container fluid style={{ background: "#f8f9fa", minHeight: "100vh", padding: "20px" }}>
+     
+
+      <Row>
+        <Col md={4} className="mb-3">
+          <Card>
+            <Card.Body>
+              <Card.Title>Products Page</Card.Title>
+              <Card.Text>Manage or view the sports nutrition page.</Card.Text>
+              <Button variant="primary" href="/mmavahi">
+                Go
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={4} className="mb-3">
+          <Card>
+            <Card.Body>
+              <Card.Title>Courses Page</Card.Title>
+              <Card.Text>Manage or view the courses page.</Card.Text>
+              <Button variant="primary" href="/mmkinc">
+                Go
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={4} className="mb-3">
+          <Card>
+            <Card.Body>
+              <Card.Title>Services</Card.Title>
+              <Card.Text>Manage or view the services page.</Card.Text>
+              <Button variant="primary" href="/mmkargeh">
+                Go
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col md={4} className="mb-3">
+          <Card>
+            <Card.Body>
+              <Card.Title>References</Card.Title>
+              <Card.Text>Manage or view the references page.</Card.Text>
+              <Button variant="primary" href="/mmwesayit">
+                Go
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={4} className="mb-3">
+          <Card>
+            <Card.Body>
+              <Card.Title>For Developers</Card.Title>
+              <Card.Text>Manage or view the developer resources page.</Card.Text>
+              <Button variant="primary" href="/mmkedkar">
+                Go
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={4} className="mb-3">
+          <Card>
+            <Card.Body>
+              <Card.Title>Site Management</Card.Title>
+              <Card.Text>Manage or view the site.</Card.Text>
+              <Button variant="primary" href="/malper">
+                Go
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
-export default function Home() {
-  const [messages, setMessages] = useState([
-    { text: "Selam aleykum! Size nasıl yardımcı olabilirim?", isUser: false },
-  ]);
-  const [input, setInput] = useState("");
-
-  const handleSend = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-    setMessages([...messages, { text: input, isUser: true }]);
-    setInput("");
-    // Burada asistan cevabı simüle ediliyor. Gerçek API entegrasyonu için burası güncellenmeli.
-    setTimeout(() => {
-      setMessages((msgs) => [...msgs, { text: "(Asistan cevabı buraya gelecek)", isUser: false }]);
-    }, 800);
-  };
-
-  return (
-    <main className="flex w-full min-w-0 gap-5">
-      <div className="w-full min-w-0 flex flex-col h-[80vh] bg-white rounded-xl shadow p-6">
-        <div className="flex-1 overflow-y-auto mb-4">
-          {messages.map((msg, idx) => (
-            <ChatMessage key={idx} message={msg.text} isUser={msg.isUser} />
-          ))}
-        </div>
-        <form onSubmit={handleSend} className="flex gap-2">
-          <input
-            className="flex-1 border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            type="text"
-            placeholder="Mesajınızı yazın..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            autoFocus
-          />
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
-          >
-            Gönder
-          </button>
-        </form>
-      </div>
-      <aside className="hidden md:block w-80 min-w-[18rem] bg-gray-50 rounded-xl shadow p-6">
-        <h2 className="text-lg font-semibold mb-2">Asistan Hakkında</h2>
-        <p className="text-gray-600 text-sm">Bu asistan, sorularınızı yanıtlamak ve size yardımcı olmak için tasarlanmıştır. Sağdaki paneli özelleştirebilirsiniz.</p>
-      </aside>
-    </main>
-  );
-}
+export default AdminPage;

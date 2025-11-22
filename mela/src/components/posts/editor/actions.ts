@@ -1,5 +1,3 @@
-// Bismillahirrahmanirrahim 
-
 "use server";
 
 import { validateRequest } from "@/auth";
