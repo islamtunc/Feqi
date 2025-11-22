@@ -30,11 +30,11 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Yekazad Software Center",
-    default: " Yekazad Software Center",
+    template: "%s | Rêya Feqî",
+    default: " Rêya Feqî - Ber bi ronahîya dînê îslamê...",
   },
   description: " Yazılım ve teknoloji çözümleri sunan Yekazad Software Center, web uygulamaları, mobil uygulamalar ve yapay zeka çözümleri ile işinizi ileri taşıyor.",
-  keywords: ["Yazılım", "İslam tunç", "Ağrı","web sitesi","uygulama","yapay zeka ",Android","iPhone","telefoncu","bilgisayarcı"],
+  keywords: ["Yazılım", "İslam tunç", "Ağrı","web sitesi","uygulama","yapay zeka ","Android","iPhone","telefoncu","bilgisayarcı"],
 };
 
 export default function RootLayout({
@@ -64,9 +64,13 @@ export default function RootLayout({
 }
 
 
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillahirabbilalemin
 
+//La ilahe illAllah Muhammden abduhu ve resuluhu
 
-
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillahirabbilalemin
 
 
 
