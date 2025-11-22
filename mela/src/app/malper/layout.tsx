@@ -30,7 +30,7 @@ export default async function Layout({
 
       {/* WhatsApp Button - Right Bottom */}
       <a
-        href="https://wa.me/905549765692"
+        href="https://wa.me/+905513417039"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -57,7 +57,7 @@ export default async function Layout({
 
       {/* Phone Button - Left Bottom */}
       <a
-        href="tel:+905549765692"
+        href="tel:+905513417039"
         style={{
           position: "fixed",
           left: 24,

@@ -18,7 +18,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
     
       {children}
       <Card style={{ marginTop: "20px", width: "100%", maxWidth: "700px", textAlign: "center", padding: "19px" }}>
-        <Card.Title>Other Articles</Card.Title>
+        <Card.Title>Nivîsên Din</Card.Title>
         <Card.Body>
           <ForYouFeed />
         </Card.Body>
@@ -26,3 +26,12 @@ export default function layout({ children }: { children: React.ReactNode }) {
     </div>
   )
 }
+// Suphanallah Subhanallah Subhanallahi Azim ve Bihamdihi
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillahirabbulalemin//Subhanallah Subhanallah Subhanallahi Azim ve Bihamdihi
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillahirabbilalemin
+// La ilahe illAllah Muhammeden abduhu ve resuluhu
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillahirabbilalemin
