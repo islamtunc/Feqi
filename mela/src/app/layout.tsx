@@ -4,7 +4,7 @@
 // Allahumme salli ala seyyidina Muhammedin ve ala alihi ve sahbihi ecmain
 // Allah u Ekber, Allahu Ekber, Allahu Ekber
 // La ilahe illallah, Allahu Ekber, Allahu Ekber, ve lillahi'l-hamd
-
+// Subhanallah, Elhamdulillah, Allahu Ekber
 
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
