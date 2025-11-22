@@ -1,72 +1,60 @@
 // Bismillahirahmanirahim
 // Elhamdulillahirrabbulalemin
 // Esselatu vesselamu ala seyyidina Muhammedin ve ala alihi ve sahbihi ecmain
-// Elhamdulillahirabbulalemin
-// Ve salatu ve selamu ala resulina Muhammedin ve alihi ve sahbihi ecmain
 // Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 // Subhanallah, Elhamdulillah, Allahu Ekber
-// Estağfirullah El-Azim
-// La ilahe illallah, Muhammedur Resulullah
+
 import React from 'react'
 
 function page() {
   return (
     <>
-   
       <main className="flex-grow container mx-auto py-8">
-        {/* Dashboard Grid */}
+        
+        {/* Beşa Perwerdehîya Îslamî */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Card 1: Build Your Website */}
+          
+          {/* Karta 1: Kelam */}
           <div className="bg-white shadow-lg rounded-lg p-6">
-            <img
-              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
-              alt="Build Your Website"
-              className="w-full h-32 object-cover rounded-t-lg mb-4"
-            />
-            <h3 className="text-xl font-bold mb-2">Build Your Website</h3>
-            <p className="text-gray-600">Build your website with our easy-to-use templates.</p>
-            <a href="/malper/mmavahi/mmmweb" className="text-blue-500 hover:underline mt-4 block">
-              View Templates and Start Building
+            <h3 className="text-xl font-bold mb-2">Kelam</h3>
+            <p className="text-gray-600">
+              Kelam zanîngeha îman û aqîdeyê Îslamî ye. Li vir hûn dikarin bingeha aqîdeyê, tawhîd û îmanê hîn bibin.
+            </p>
+            <a href="/perwerdeh/kelam" className="text-blue-500 hover:underline mt-4 block">
+              Zêdetir Bibînin
             </a>
           </div>
 
-          {/* Card 2: Mobile Apps */}
+          {/* Karta 2: Fıkıh */}
           <div className="bg-white shadow-lg rounded-lg p-6">
-            <img
-              src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80"
-              alt="Mobile Apps"
-              className="w-full h-32 object-cover rounded-t-lg mb-4"
-            />
-            <h3 className="text-xl font-bold mb-2">Have Your Mobile App </h3>
-            <p className="text-gray-600">See how easy it is to build mobile apps with our platform.</p>
-            <a href="/malper/mmavahi/mmmobile" className="text-blue-500 hover:underline mt-4 block">
-              Take a Look at Our Mobile App Solutions
+            <h3 className="text-xl font-bold mb-2">Fıkıh</h3>
+            <p className="text-gray-600">
+              Fıkıh ramanên Îslamî yên li ser ibadet, muamelat û ahlakiye. Hûn dikarin qanûnên şerîat hîn bibin.
+            </p>
+            <a href="/perwerdeh/fikih" className="text-blue-500 hover:underline mt-4 block">
+              Zêdetir Bibînin
             </a>
           </div>
-      
-          {/* Card 3: AI Solutions */}
+
+          {/* Karta 3: Tarîxê Îslamî */}
           <div className="bg-white shadow-lg rounded-lg p-6">
-            <img
-              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-              alt="AI Solutions"
-              className="w-full h-32 object-cover rounded-t-lg mb-4"
-            />
-            <h3 className="text-xl font-bold mb-2">Get ai solutions</h3>
-            <p className="text-gray-600"> Get AI solutions tailored to your needs.</p>
-            <a href="/malper/mmavahi/mmai" className="text-blue-500 hover:underline mt-4 block">
-              Explore Our AI Solutions
+            <h3 className="text-xl font-bold mb-2">Tarîxê Îslamî</h3>
+            <p className="text-gray-600">
+              Tarîxê Îslamî hûn re dide zanînê derbarê peygamberan, sahabeyan û derbasbûna Îslamê di dîroka xwe de.
+            </p>
+            <a href="/perwerdeh/tarix" className="text-blue-500 hover:underline mt-4 block">
+              Zêdetir Bibînin
             </a>
           </div>
         </div>
       
-        {/* Recent Updates Section */}
+        {/* Beşa Nûvekirinên Perwerdehî */}
         <div className="mt-8">
-          <h2 className="text-2xl font-bold mb-4">Recent Updates</h2>
+          <h2 className="text-2xl font-bold mb-4">Nûvekirinên Perwerdehî</h2>
           <ul className="list-disc pl-5 text-gray-700">
-            <li>E commerce app is being prepared to install play store.</li>
-            <li>New features added to the website builder.</li>
-            <li>Mobile app development course launched.</li>
-            <li>The special Kurdish  AI asisstan Feqi is <a href='https:feqi.vercel.app'>here</a>.</li>
+            <li>Maddelerên nû li ser aqîde û tawhîd hatine zêdekirin.</li>
+            <li>Fıkıh – Rêbera ibadetên sala nû.</li>
+            <li>Tarîx – Peygamberan û sahabeyan.</li>
           </ul>
         </div>
       </main>
@@ -75,3 +63,5 @@ function page() {
 }
 
 export default page
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillahirabbilalemin
