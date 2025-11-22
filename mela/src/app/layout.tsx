@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     template: "%s | Rêya Feqî",
     default: " Rêya Feqî - Ber bi ronahîya dînê îslamê...",
   },
-  description: " Yazılım ve teknoloji çözümleri sunan Yekazad Software Center, web uygulamaları, mobil uygulamalar ve yapay zeka çözümleri ile işinizi ileri taşıyor.",
-  keywords: ["Yazılım", "İslam tunç", "Ağrı","web sitesi","uygulama","yapay zeka ","Android","iPhone","telefoncu","bilgisayarcı"],
+  description: "Rêya Feqî malpereke perwerdehiyê îslamî ye ku armanca wê belavkirina zanîna rast û derbarê dîna Îslamê ye.",
+  keywords: ["islam dini", "İslamiyet", "FIKIH","KELAM","tasavvuf","tarikat","anlam","fetva","diyanet","alim","müftü","molla","imam","hoca","müslüman","müslümanlar","islamiyet","tarih","peygamber","sahabe","hadis","kuran","kuranı kerim","allah","allah cc","allah cc","muhammed sav","muhammed aleyhisselam","din eğitimi","dini bilgiler","islam tarihi","islam fıkhı","islam kelamı","islam tasavvufu"],
 };
 
 export default function RootLayout({
