@@ -17,7 +17,6 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
-  // close when clicking outside
   useEffect(() => {
     if (!menuOpen) return;
     function handleClick(e: MouseEvent) {
@@ -29,7 +28,6 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, [menuOpen]);
 
-  // close on route change via Link clicks
   const handleLinkClick = () => setMenuOpen(false);
 
   return (
@@ -38,14 +36,12 @@ export default function Navbar() {
         ref={navRef}
         className="mx-auto flex items-center justify-between max-w-7xl px-4 py-3"
       >
-        {/* Logo */}
         <div className="flex items-center gap-3">
           <Link href="/" className="text-2xl font-bold text-primary">
             Yekazad SC
           </Link>
         </div>
 
-        {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-6">
           <Link href="/mmdashboard" className="text-sm font-medium text-secondary hover:text-primary">
             Dashboard
@@ -83,12 +79,10 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* User button */}
         <div className="hidden sm:flex sm:items-center sm:ms-auto">
           <UserButton />
         </div>
 
-        {/* Mobile menu button */}
         <button
           className="lg:hidden p-2 rounded text-green-500"
           onClick={() => setMenuOpen((v) => !v)}
@@ -99,18 +93,19 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu + backdrop */}
+      {/* Mobile menu — no semi-opaque backdrop, responsive and scrollable */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-[64px] z-30 transform transition-transform duration-250 ${
+        className={`lg:hidden fixed inset-x-0 top-[64px] z-30 transform transition-transform duration-200 ${
           menuOpen ? "translate-y-0" : "-translate-y-full pointer-events-none"
         }`}
         aria-hidden={!menuOpen}
       >
+        {/* No opaque overlay here (bg-transparent) so menu appears without backdrop opacity */}
         <div
-          className="absolute inset-0 bg-black/40"
+          className="absolute inset-0 bg-transparent"
           onClick={() => setMenuOpen(false)}
         />
-        <nav className="relative bg-card p-4 shadow-lg">
+        <nav className="relative bg-card p-4 shadow-lg max-h-[calc(100vh-64px)] overflow-auto">
           <div className="flex flex-col gap-2">
             <Link href="/mmdashboard" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>
               Dashboard
