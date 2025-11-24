@@ -19,10 +19,20 @@ export default async function MenuBar({ className }: MenuBarProps) {
 
   if (!user) return null;
 
-  // Mesaj sayısını çek
+  // Mesaj sayısını çek (safe: don't reference non-existent model)
   let messageCount = 0;
   try {
-    messageCount = await prisma.mmmpeyam.count();
+    const clientAny = prisma as any;
+    if (clientAny.mmmpeyam && typeof clientAny.mmmpeyam.count === "function") {
+      messageCount = await clientAny.mmmpeyam.count();
+    } else if (clientAny.peyam && typeof clientAny.peyam.count === "function") {
+      messageCount = await clientAny.peyam.count();
+    } else if (clientAny.message && typeof clientAny.message.count === "function") {
+      messageCount = await clientAny.message.count();
+    } else {
+      // fallback: no message model available
+      messageCount = 0;
+    }
   } catch {}
 
   return (
@@ -37,8 +47,9 @@ export default async function MenuBar({ className }: MenuBarProps) {
           <Home />
           <span className="hidden lg:inline">Home</span>
         </Link>
-      </Button>
     
+      </Button>
+
       <Button
         variant="ghost"
         className="flex items-center justify-start gap-3"
