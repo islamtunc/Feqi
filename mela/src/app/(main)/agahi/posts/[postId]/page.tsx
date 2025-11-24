@@ -1,6 +1,17 @@
 // Bismillahirrahmanirrahim
-
-
+// Elhamdulillahi rabbil 'alamin
+// ALLAHUMMA SALLI 'ALA MUHAMMADIN WA AALI MUHAMMAD
+// Ya Allah, bless Muhammad and the family of Muhammad
+// Rabbi zidni ilma
+// My Lord, increase me in knowledge
+// SuphanAllah
+// Glory be to Allah
+// Alhamdulillah
+// All praise is due to Allah
+// La ilaha illallah
+// There is no god but Allah
+// Allahu Akbar
+// Allah is the Greatest
 
 import { validateRequest } from "@/auth";
 import Linkify from "@/components/Linkify";
@@ -20,7 +31,7 @@ interface PageProps {
 }
 
 const getPost = cache(async (postId: string, loggedInUserId: string) => {
-  const post = await prisma.mmavahi.findUnique({
+  const post = await prisma.agahi.findUnique({
     where: {
       id: postId,
     },
