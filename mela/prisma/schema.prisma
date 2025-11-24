@@ -35,7 +35,8 @@ model User {
   bio                   String?
   sessions              Session[]
   posts                 Post[]
-  hedis                 Hedis[]        // renamed relation
+  hedis                 Hedis[]
+  agahi                 Agahi[]        // <-- add this line
   bookmarks             Bookmark[]
 
   createdAt   DateTime      @default(now())
