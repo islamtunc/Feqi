@@ -19,10 +19,10 @@ function AdminPage() {
         <Col md={4} className="mb-3">
           <Card>
             <Card.Body>
-              <Card.Title>Products Page</Card.Title>
-              <Card.Text>Manage or view the sports nutrition page.</Card.Text>
-              <Button variant="primary" href="/mmavahi">
-                Go
+              <Card.Title>Qur'an -a Pîroz</Card.Title>
+              <Card.Text> </Card.Text>
+              <Button variant="primary" href="/agahi">
+                Derbasî edîtorê be
               </Button>
             </Card.Body>
           </Card>
@@ -30,10 +30,10 @@ function AdminPage() {
         <Col md={4} className="mb-3">
           <Card>
             <Card.Body>
-              <Card.Title>Courses Page</Card.Title>
-              <Card.Text>Manage or view the courses page.</Card.Text>
-              <Button variant="primary" href="/mmkinc">
-                Go
+              <Card.Title>Hedîs</Card.Title>
+              <Card.Text>Hedîsên Hz Mihemed sav.</Card.Text>
+              <Button variant="primary" href="/hedis">
+                Here
               </Button>
             </Card.Body>
           </Card>
@@ -41,9 +41,9 @@ function AdminPage() {
         <Col md={4} className="mb-3">
           <Card>
             <Card.Body>
-              <Card.Title>Services</Card.Title>
+              <Card.Title>Fiqih</Card.Title>
               <Card.Text>Manage or view the services page.</Card.Text>
-              <Button variant="primary" href="/mmkargeh">
+              <Button variant="primary" href="/fiqih">
                 Go
               </Button>
             </Card.Body>
@@ -55,9 +55,9 @@ function AdminPage() {
         <Col md={4} className="mb-3">
           <Card>
             <Card.Body>
-              <Card.Title>References</Card.Title>
+              <Card.Title>Kelam</Card.Title>
               <Card.Text>Manage or view the references page.</Card.Text>
-              <Button variant="primary" href="/mmwesayit">
+              <Button variant="primary" href="/kelam">
                 Go
               </Button>
             </Card.Body>
@@ -66,9 +66,16 @@ function AdminPage() {
         <Col md={4} className="mb-3">
           <Card>
             <Card.Body>
-              <Card.Title>For Developers</Card.Title>
+              <Card.Title>Dîrok</Card.Title>
               <Card.Text>Manage or view the developer resources page.</Card.Text>
-              <Button variant="primary" href="/mmkedkar">
+              <Button variant="primary" href="/dirok">
+                Go
+              </Button>
+            </Card.Body>
+              <Card.Body>
+              <Card.Title>Dîrok</Card.Title>
+              <Card.Text>Manage or view the developer resources page.</Card.Text>
+              <Button variant="primary" href="/dirok/yekem">
                 Go
               </Button>
             </Card.Body>
