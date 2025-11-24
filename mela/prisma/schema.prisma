@@ -17,6 +17,13 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
+// Add this enum
+enum MediaType {
+  IMAGE
+  VIDEO
+  OTHER
+}
+
 model User {
   id                    String         @id
   username              String         @unique
@@ -28,16 +35,16 @@ model User {
   bio                   String?
   sessions              Session[]
   posts                 Post[]
-  mmavahi               Mmavahi[]
+  hedis                 Hedis[]        // renamed relation
   bookmarks             Bookmark[]
 
   createdAt   DateTime      @default(now())
-  Mmhewcedari Mmhewcedari[]
-  Mmkinc      Mmkinc[]
-  Mmkedkar    Mmkedkar[]
-  Mmwesayit   Mmwesayit[]
-  Mmkargeh    Mmkargeh[]
-  Mmhuner     Mmhuner[]
+  Yekem       Yekem[]        // renamed relation (was Mmhewcedari)
+  Dirok       Dirok[]
+  Tefsir      Tefsir[]
+  Meal        Meal[]
+  Kelam       Kelam[]
+  Fiqih       Fiqih[]
   @@map("users")
 }
 
@@ -48,6 +55,21 @@ model Session {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("sessions")
+}
+
+
+model Agahi {
+  id          String  @id @default(cuid())
+  content     String[]
+  userId      String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attachments Media[]
+
+  bookmarks Bookmark[]
+
+  createdAt           DateTime       @default(now())
+
+  @@map("agahi")
 }
 
 model Post {
@@ -63,104 +85,6 @@ model Post {
   @@map("posts")
 }
 
-model Mmavahi {
-  id          String  @id @default(cuid())
-  content     String[]
-  userId      String
-  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  attachments Media[]
-
-  bookmarks Bookmark[]
-
-  createdAt           DateTime       @default(now())
-
-  @@map("mmavahi")
-}
-
-model Mmhuner {
-  id          String  @id @default(cuid())
-  content     String[]
-  userId      String
-  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  attachments Media[]
-
-  bookmarks Bookmark[]
-
-  createdAt           DateTime       @default(now())
-
-  @@map("mmhuner")
-}
-
-model Mmhewcedari {
-  id          String  @id @default(cuid())
-  content     String[]
-  userId      String
-  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  attachments Media[]
-
-  bookmarks Bookmark[]
-
-  createdAt           DateTime       @default(now())
-
-  @@map("mmhewcedari")
-}
-
-model Mmkinc {
-  id          String  @id @default(cuid())
-  content     String[]
-  userId      String
-  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  attachments Media[]
-
-  bookmarks Bookmark[]
-
-  createdAt           DateTime       @default(now())
-
-  @@map("mmkinc")
-}
-
-model Mmkedkar {
-  id          String  @id @default(cuid())
-  content     String[]
-  userId      String
-  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  attachments Media[]
-
-  bookmarks Bookmark[]
-
-  createdAt           DateTime       @default(now())
-
-  @@map("mmkedkar")
-}
-
-model Mmwesayit {
-  id          String  @id @default(cuid())
-  content     String[]
-  userId      String
-  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  attachments Media[]
-
-  bookmarks Bookmark[]
-
-  createdAt           DateTime       @default(now())
-
-  @@map("mmwesayit")
-}
-
-model Mmkargeh {
-  id          String  @id @default(cuid())
-  content     String[]
-  userId      String
-  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  attachments Media[]
-
-  bookmarks Bookmark[]
-
-  createdAt           DateTime       @default(now())
-
-  @@map("mmkargeh")
-}
-
 model Media {
   id     String    @id @default(cuid())
   postId String?
@@ -169,27 +93,24 @@ model Media {
   url    String
 
   createdAt     DateTime     @default(now())
-  Mmavahi       Mmavahi?     @relation(fields: [mmavahiId], references: [id])
-  mmavahiId     String?
-  Mmhewcedari   Mmhewcedari? @relation(fields: [mmhewcedariId], references: [id])
-  mmhewcedariId String?
-  Mmkinc        Mmkinc?      @relation(fields: [mmkincId], references: [id])
-  mmkincId      String?
-  Mmkedkar      Mmkedkar?    @relation(fields: [mmkedkarId], references: [id])
-  mmkedkarId    String?
-  Mmwesayit     Mmwesayit?   @relation(fields: [mmwesayitId], references: [id])
-  mmwesayitId   String?
-  Mmkargeh      Mmkargeh?    @relation(fields: [mmkargehId], references: [id])
-  mmkargehId    String?
-  Mmhuner       Mmhuner?     @relation(fields: [mmhunerId], references: [id])
-  mmhunerId     String?
+  Hedis         Hedis?       @relation(fields: [hedisId], references: [id])
+  hedisId       String?
+  Yekem         Yekem?       @relation(fields: [yekemId], references: [id])
+  yekemId       String?
+  Dirok         Dirok?       @relation(fields: [dirokId], references: [id])
+  dirokId       String?
+  Tefsir        Tefsir?      @relation(fields: [tefsirId], references: [id])
+  tefsirId      String?
+  Meal          Meal?        @relation(fields: [mealId], references: [id])
+  mealId        String?
+  Kelam         Kelam?       @relation(fields: [kelamId], references: [id])
+  kelamId       String?
+  Fiqih         Fiqih?       @relation(fields: [fiqihId], references: [id])
+  fiqihId       String?
+  Agahi         Agahi?       @relation(fields: [agahiId], references: [id])
+  agahiId       String?
 
   @@map("post_media")
-}
-
-enum MediaType {
-  IMAGE
-  VIDEO
 }
 
 model Bookmark {
@@ -200,26 +121,107 @@ model Bookmark {
   post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
 
   createdAt     DateTime     @default(now())
-  Mmavahi       Mmavahi?     @relation(fields: [mmavahiId], references: [id])
-  mmavahiId     String?
-  Mmhewcedari   Mmhewcedari? @relation(fields: [mmhewcedariId], references: [id])
-  mmhewcedariId String?
-  Mmkinc        Mmkinc?      @relation(fields: [mmkincId], references: [id])
-  mmkincId      String?
-  Mmkedkar      Mmkedkar?    @relation(fields: [mmkedkarId], references: [id])
-  mmkedkarId    String?
-  Mmwesayit     Mmwesayit?   @relation(fields: [mmwesayitId], references: [id])
-  mmwesayitId   String?
-  Mmkargeh      Mmkargeh?    @relation(fields: [mmkargehId], references: [id])
-  mmkargehId    String?
-  Mmhuner       Mmhuner?     @relation(fields: [mmhunerId], references: [id])
-  mmhunerId     String?
+  Hedis         Hedis?       @relation(fields: [hedisId], references: [id])
+  hedisId       String?
+  Yekem         Yekem?       @relation(fields: [yekemId], references: [id])
+  yekemId       String?
+  Dirok         Dirok?       @relation(fields: [dirokId], references: [id])
+  dirokId       String?
+  Tefsir        Tefsir?      @relation(fields: [tefsirId], references: [id])
+  tefsirId      String?
+  Meal          Meal?        @relation(fields: [mealId], references: [id])
+  mealId        String?
+  Kelam         Kelam?       @relation(fields: [kelamId], references: [id])
+  kelamId       String?
+  Fiqih         Fiqih?       @relation(fields: [fiqihId], references: [id])
+  fiqihId       String?
+  Agahi         Agahi?       @relation(fields: [agahiId], references: [id])
+  agahiId       String?
 }
 
-model Mmmpeyam {
-  id        String   @id @default(cuid())
-  name      String
-  email     String
-  message   String
-  createdAt DateTime @default(now())
+// New renamed models (mapped to existing table names to preserve DB):
+model Fiqih {
+  id          String  @id @default(cuid())
+  content     String[]
+  userId      String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attachments Media[]
+  bookmarks   Bookmark[]
+  createdAt   DateTime @default(now())
+
+  @@map("mmhuner")
+}
+
+model Kelam {
+  id          String  @id @default(cuid())
+  content     String[]
+  userId      String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attachments Media[]
+  bookmarks   Bookmark[]
+  createdAt   DateTime @default(now())
+
+  @@map("mmkargeh")
+}
+
+model Meal {
+  id          String  @id @default(cuid())
+  content     String[]
+  userId      String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attachments Media[]
+  bookmarks   Bookmark[]
+  createdAt   DateTime @default(now())
+
+  @@map("mmwesayit")
+}
+
+model Tefsir {
+  id          String  @id @default(cuid())
+  content     String[]
+  userId      String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attachments Media[]
+  bookmarks   Bookmark[]
+  createdAt   DateTime @default(now())
+
+  @@map("mmkedkar")
+}
+
+model Dirok {
+  id          String  @id @default(cuid())
+  content     String[]
+  userId      String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attachments Media[]
+  bookmarks   Bookmark[]
+  createdAt   DateTime @default(now())
+
+  @@map("mmkinc")
+}
+
+// ensure Hedis model exists
+model Hedis {
+  id          String  @id @default(cuid())
+  content     String[]
+  userId      String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attachments Media[]
+  bookmarks   Bookmark[]
+  createdAt   DateTime @default(now())
+
+  @@map("mmavahi") // keep existing table name if needed; change if you want new table
+}
+
+// Yekem model (mapped to existing mmhewcedari table)
+model Yekem {
+  id          String  @id @default(cuid())
+  content     String[]
+  userId      String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attachments Media[]
+  bookmarks   Bookmark[]
+  createdAt   DateTime @default(now())
+
+  @@map("mmhewcedari")
 }
