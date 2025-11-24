@@ -43,15 +43,10 @@ function page() {
                   <Card.Title style={{ fontSize: "1.1rem" }}>Zanista Îslamî,</Card.Title>
                   <Card.Text style={{ fontSize: "1rem" }}>
                     <br />
-                 
-                    <br />
-                    <br />
-                    <strong>
-                    <br />
                     <br />
                     <strong>Sonuç</strong>
                     <br />
-                     </Card.Text>
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </Col>
@@ -80,13 +75,3 @@ function page() {
 }
 
 export default page;
-
-// Suphanallah Subhanallah Subhanallahi Azim ve Bihamdihi
-// Elhamdulillah Elhamdulillah Elhamdulillah
-// Elhamdulillahirabbulalemin//Subhanallah Subhanallah Subhanallahi Azim ve Bihamdihi
-// Elhamdulillah Elhamdulillah Elhamdulillah
-// Elhamdulillahirabbilalemin
-// La ilahe illAllah Muhammeden abduhu ve resuluhu
-// Elhamdulillah Elhamdulillah Elhamdulillah
-// Elhamdulillah Elhamdulillah Elhamdulillah
-// Elhamdulillahirabbilalemin
