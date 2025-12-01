@@ -61,7 +61,7 @@ function page() {
                   height: "auto",
                   marginBottom: "10px",
                 }}
-                alt="FIQIH"
+                alt=""
                 fluid
               />
             </Col>
@@ -75,3 +75,5 @@ function page() {
 }
 
 export default page;
+//ELHAMDULILLAH ELHAMDULILLAH ELHAMDULILLAH
+//ELHAMDULILLAHIRABBILALEMIN
