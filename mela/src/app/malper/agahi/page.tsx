@@ -40,7 +40,7 @@ function page() {
             <Col xs={12} md={6} className="mb-3 mb-md-0">
               <Card style={{ textAlign: "center", height: "100%" }}>
                 <Card.Body>
-                  <Card.Title style={{ fontSize: "1.1rem" }}>Zanista Îslamî,</Card.Title>
+                  <Card.Title style={{ fontSize: "1.1rem" }}>Kelam a ALLAH (SWT)</Card.Title>
                   <Card.Text style={{ fontSize: "1rem" }}>
                     <br />
                     <br />

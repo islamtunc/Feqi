@@ -9,6 +9,7 @@
 import React from "react";
 import { Card, Row, Col, Alert } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
+import ForYouFeed from "./ForYouFeed";
 
 function page() {
   return (
@@ -33,39 +34,18 @@ function page() {
         }}
       >
         <Card.Body>
-          <Card.Title style={{ fontSize: "1.5rem" }}>Sporcu Beslenmesi</Card.Title>
+          <Card.Title style={{ fontSize: "1.5rem" }}>D</Card.Title>
           <Row className="g-4">
             {/* Sol Kolon */}
             <Col xs={12} md={6} className="mb-3 mb-md-0">
               <Card style={{ textAlign: "center", height: "100%" }}>
                 <Card.Body>
-                  <Card.Title style={{ fontSize: "1.1rem" }}>Sporcularda beslenmenin önemi</Card.Title>
+                  <Card.Title style={{ fontSize: "1.1rem" }}>Zanista Îslamî,</Card.Title>
                   <Card.Text style={{ fontSize: "1rem" }}>
-                    <br />
-                    Sporcularda beslenme, performansın artırılması, toparlanma
-                    sürecinin hızlandırılması ve genel sağlığın korunması
-                    açısından kritik bir rol oynamaktadır. Son dönem
-                    araştırmalar, beslenmenin sadece enerji alımı değil, aynı
-                    zamanda antrenman adaptasyonu, bağışıklık sistemi desteği ve
-                    zihinsel dayanıklılık üzerinde de etkili olduğunu
-                    göstermektedir.
-                    <br />
-                    <br />
-                    <strong>Makro ve Mikro Besinlerin Önemi</strong>
-                    <br />
-                    Sporcuların enerji ve protein ihtiyaçları, sedanter
-                    bireylere göre daha fazladır. Bu nedenle karbonhidrat,
-                    protein ve yağ gibi makro besin ögelerinin dengeli alımı
-                    önemlidir. Ayrıca, vitamin ve mineral gibi mikro besin
-                    ögeleri de performans ve toparlanma süreçlerinde kritik rol
-                    oynar.
                     <br />
                     <br />
                     <strong>Sonuç</strong>
                     <br />
-                    Sporcularda beslenme, sadece fiziksel performansı değil,
-                    aynı zamanda genel sağlığı, zihinsel dayanıklılığı ve uzun
-                    vadeli başarıyı etkileyen temel bir faktördür.
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -81,7 +61,7 @@ function page() {
                   height: "auto",
                   marginBottom: "10px",
                 }}
-                alt="ROJDA MUSA"
+                alt="hedis"
                 fluid
               />
             </Col>
@@ -95,3 +75,5 @@ function page() {
 }
 
 export default page;
+//ELHAMDULILLAH ELHAMDULILLAH ELHAMDULILLAH
+//ELHAMDULILLAHIRABBILALEMIN

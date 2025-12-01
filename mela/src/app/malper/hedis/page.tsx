@@ -61,7 +61,7 @@ function page() {
                   height: "auto",
                   marginBottom: "10px",
                 }}
-                alt=""
+                alt="hedis"
                 fluid
               />
             </Col>
