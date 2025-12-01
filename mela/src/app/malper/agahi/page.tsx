@@ -34,7 +34,7 @@ function page() {
         }}
       >
         <Card.Body>
-          <Card.Title style={{ fontSize: "1.5rem" }}>FIQIH</Card.Title>
+          <Card.Title style={{ fontSize: "1.5rem" }}>QURAN</Card.Title>
           <Row className="g-4">
             {/* Sol Kolon */}
             <Col xs={12} md={6} className="mb-3 mb-md-0">
@@ -44,7 +44,6 @@ function page() {
                   <Card.Text style={{ fontSize: "1rem" }}>
                     <br />
                     <br />
-                    <strong>Sonuç</strong>
                     <br />
                   </Card.Text>
                 </Card.Body>
@@ -53,8 +52,8 @@ function page() {
             {/* Sağ Kolon */}
             <Col xs={12} md={6} className="d-flex align-items-center">
               <Image
-                src="https://iasbh.tmgrup.com.tr/a9e335/0/0/0/0/0/0?u=https://isbh.tmgrup.com.tr/sb/album/2021/12/11/tum-beslenmeniz-degisiyor-iste-saat-1600dan-sonra-asla-tuketmemeniz-gereken-o-besin-1639200626070.jpg&mw=752&mh=700"
-                style={{
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHK6Cg-mqzTlHMBRQWFplSGIdIjahV66PlNA&s"
+              style={{
                   border: "5px solid white",
                   borderRadius: "10px",
                   width: "100%",
