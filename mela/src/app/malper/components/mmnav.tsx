@@ -24,7 +24,7 @@ function Mmmnavbar() {
 
             <NavDropdown title="Zanistên Îslamî" id="basic-nav-dropdown">
               <NavDropdown.Item href="/malper/kelam">Kelam</NavDropdown.Item>
-              <NavDropdown.Item href="malper/fiqih">Fıkıh</NavDropdown.Item>
+              <NavDropdown.Item href="/malper/fiqih">Fıkıh</NavDropdown.Item>
               <NavDropdown.Item href="/malper/aqide">Aqîde</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/malper/dirok">Dîroka Îslamî</NavDropdown.Item>
