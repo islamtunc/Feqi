@@ -9,6 +9,7 @@
 import React from "react";
 import { Card, Row, Col, Alert } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
+import ForYouFeed from "./ForYouFeed";
 
 function page() {
   return (
@@ -33,23 +34,19 @@ function page() {
         }}
       >
         <Card.Body>
-          <Card.Title style={{ fontSize: "1.5rem" }}>Sporcu Beslenmesi</Card.Title>
+          <Card.Title style={{ fontSize: "1.5rem" }}>fikih</Card.Title>
           <Row className="g-4">
             {/* Sol Kolon */}
             <Col xs={12} md={6} className="mb-3 mb-md-0">
               <Card style={{ textAlign: "center", height: "100%" }}>
                 <Card.Body>
-                  <Card.Title style={{ fontSize: "1.1rem" }}>Sporcularda beslenmenin önemi</Card.Title>
+                  <Card.Title style={{ fontSize: "1.1rem" }}>Zanista Îslamî,</Card.Title>
                   <Card.Text style={{ fontSize: "1rem" }}>
                     <br />
                     <br />
+                    <strong>Sonuç</strong>
                     <br />
-                    <strong></strong>
-                    <br />
-                    <br />
-                    <br />
-                    <strong></strong>
-                    <br /> </Card.Text>
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </Col>
@@ -64,7 +61,7 @@ function page() {
                   height: "auto",
                   marginBottom: "10px",
                 }}
-                alt="ROJDA MUSA"
+                alt="hedis"
                 fluid
               />
             </Col>
@@ -78,3 +75,5 @@ function page() {
 }
 
 export default page;
+//ELHAMDULILLAH ELHAMDULILLAH ELHAMDULILLAH
+//ELHAMDULILLAHIRABBILALEMIN

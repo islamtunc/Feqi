@@ -34,7 +34,7 @@ function page() {
         }}
       >
         <Card.Body>
-          <Card.Title style={{ fontSize: "1.5rem" }}>D</Card.Title>
+          <Card.Title style={{ fontSize: "1.5rem" }}>DİROK</Card.Title>
           <Row className="g-4">
             {/* Sol Kolon */}
             <Col xs={12} md={6} className="mb-3 mb-md-0">
@@ -61,7 +61,7 @@ function page() {
                   height: "auto",
                   marginBottom: "10px",
                 }}
-                alt="hedis"
+                alt=""
                 fluid
               />
             </Col>
