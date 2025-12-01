@@ -3,7 +3,7 @@
 // Essalatu vesselamu ala Resulina Muhammedin ve ala alihi ve sahbihi ecmain
 // Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 // Subhanallah, Elhamdulillah, Allahu Ekber
-import MmmPost from "@/components/mmkedkar/mmPost";
+import MmmPost from "@/components/kelam/mmPost";
 import prisma from "@/lib/prisma";
 import { getPostDataInclude, UserData } from "@/lib/types";
 import { notFound } from "next/navigation";

@@ -3,8 +3,8 @@
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
-import PostsLoadingSkeleton from "@/components/mmavahi/PostsLoadingSkeleton";
-import Post from "@/components/mmavahi/Post";
+import PostsLoadingSkeleton from "@/components/agahi/PostsLoadingSkeleton";
+import Post from "@/components/agahi/Post";
 import kyInstance from "@/lib/ky";
 import { PostsPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";

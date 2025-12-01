@@ -7,12 +7,12 @@
 // Allah U Ekber ve lillahi'l-hamd
 
 
-import PostEditor from "@/components/mmavahi/editor/PostEditor";
+import PostEditor from "@/components/agahi/editor/PostEditor";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import ForYouFeed from "./ForYouFeed";
 
-import SearchField from "@/components/mmavahi/SearchField";
+import SearchField from "@/components/agahi/SearchField";
 import { Alert } from "react-bootstrap";
 
 export default function Home() {

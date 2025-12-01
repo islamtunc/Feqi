@@ -1,5 +1,8 @@
 //Bismillahirahmanirahim 
-
+//Elhamdulillahi rabbil 'alamin
+//Essalatu vesselamu ala seyyidina Muhammedin 
+//Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
+//Subhanallah, Elhamdulillah, Allahu Ekber
 
 
 

@@ -4,8 +4,8 @@
 // Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 // Subhanallah, Elhamdulillah, Allahu Ekber
 import Linkify from "@/components/Linkify";
-import MmmPost from "@/components/mmavahi/mmPost";
-import Post from "@/components/mmavahi/mmPost";
+import MmmPost from "@/components/agahi/mmPost";
+import Post from "@/components/agahi/mmPost";
 import UserAvatar from "@/components/UserAvatar";
 import UserTooltip from "@/components/UserTooltip";
 import prisma from "@/lib/prisma";

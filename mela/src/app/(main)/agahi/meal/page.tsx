@@ -2,7 +2,7 @@
 
 
 
-import PostEditor from "@/components/mmavahi/editor/PostEditor";
+import PostEditor from "@/components/agahi/editor/PostEditor";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import ForYouFeed from "./ForYouFeed";
