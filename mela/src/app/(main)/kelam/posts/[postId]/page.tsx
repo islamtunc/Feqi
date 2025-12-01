@@ -1,4 +1,8 @@
 // Bismillahirrahmanirrahim
+// Elhamdulillahirabbulalemin
+// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain
+//Suphanallah, Elhamdulillah, Allahu Ekber
+// Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 
 
 
@@ -20,7 +24,7 @@ interface PageProps {
 }
 
 const getPost = cache(async (postId: string, loggedInUserId: string) => {
-  const post = await prisma.post.findUnique({
+  const post = await prisma.hedis.findUnique({
     where: {
       id: postId,
     },
@@ -106,7 +110,7 @@ async function UserInfoSidebar({ user }: UserInfoSidebarProps) {
           {user.bio}
         </div>
       </Linkify>
-    
+  
     </div>
   );
 }

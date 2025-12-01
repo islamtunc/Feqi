@@ -1,8 +1,8 @@
 // Bismillahirrahmanirrahim
-// Elhamdulillahirabbulalemin
-// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain
-//Suphanallah, Elhamdulillah, Allahu Ekber
+// Elhamdulillahi Rabbil Alamin
+// Essalatu vesselamu ala Resulina Muhammedin ve ala alihi ve sahbihi ecmain
 // Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
+// Subhanallah, Elhamdulillah, Allahu Ekber
 
 
 
@@ -24,7 +24,7 @@ interface PageProps {
 }
 
 const getPost = cache(async (postId: string, loggedInUserId: string) => {
-  const post = await prisma.post.findUnique({
+  const post = await prisma.xane.findUnique({
     where: {
       id: postId,
     },

@@ -1,10 +1,14 @@
 // Bismillahirrahmanirrahim
+// Elhamdulillahirabbulalemin
+// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain
+//Suphanallah, Elhamdulillah, Allahu Ekber
+// Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 
 
 
 import { validateRequest } from "@/auth";
 import Linkify from "@/components/Linkify";
-import Post from "@/components/mmavahi/Post";
+import Post from "@/components/posts/Post";
 import UserAvatar from "@/components/UserAvatar";
 import UserTooltip from "@/components/UserTooltip";
 import prisma from "@/lib/prisma";
@@ -20,7 +24,7 @@ interface PageProps {
 }
 
 const getPost = cache(async (postId: string, loggedInUserId: string) => {
-  const post = await prisma.mmavahi.findUnique({
+  const post = await prisma.hedis.findUnique({
     where: {
       id: postId,
     },
@@ -29,9 +33,6 @@ const getPost = cache(async (postId: string, loggedInUserId: string) => {
 
   if (!post) notFound();
 
-
-
-  
   return post;
 });
 
@@ -66,12 +67,6 @@ export default async function Page({ params: { postId } }: PageProps) {
     <main className="flex w-full min-w-0 gap-5">
       <div className="w-full min-w-0 space-y-5">
         <Post post={post} />
-       
-
-
-
-
-       
       </div>
       <div className="sticky top-[5.25rem] hidden h-fit w-80 flex-none lg:block">
         <Suspense fallback={<Loader2 className="mx-auto animate-spin" />}>
@@ -115,7 +110,7 @@ async function UserInfoSidebar({ user }: UserInfoSidebarProps) {
           {user.bio}
         </div>
       </Linkify>
-     
+  
     </div>
   );
 }
