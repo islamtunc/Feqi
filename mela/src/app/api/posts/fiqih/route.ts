@@ -1,8 +1,12 @@
 // Bismillahirahmanirahim
-// Elhamdullillahirabbulalemin
-//Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi, ecmain
+// Elhamdulillahiillahi rabbil alemin
+// Essalatu vesselamu ala seyyidina muhammadin
+// Subhanallahi ve bihamdihi
+// Subhanallahil azim
+// La ilahe illallah muhammadur resulullah
 
 
+import { validateRequest } from "@/auth";
 import prisma from "@/lib/prisma";
 import { getPostDataInclude, PostsPage } from "@/lib/types";
 import { NextRequest } from "next/server";
@@ -13,10 +17,14 @@ export async function GET(req: NextRequest) {
 
     const pageSize = 10;
 
-   
+    const { user } = await validateRequest();
 
-    const posts = await prisma.mmavahi.findMany({
-      include: getPostDataInclude(""),
+    if (!user) {
+      return Response.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    const posts = await prisma.fiqih.findMany({
+      include: getPostDataInclude(user.id),
       orderBy: { createdAt: "desc" },
       take: pageSize + 1,
       cursor: cursor ? { id: cursor } : undefined,

@@ -150,7 +150,7 @@ model Fiqih {
   bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
-  @@map("mmhuner")
+  @@map("fiqih")
 }
 
 model Kelam {
@@ -162,7 +162,7 @@ model Kelam {
   bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
-  @@map("mmkargeh")
+  @@map("kelam")
 }
 
 model Meal {
@@ -174,7 +174,7 @@ model Meal {
   bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
-  @@map("mmwesayit")
+  @@map("meal")
 }
 
 model Tefsir {
@@ -186,7 +186,7 @@ model Tefsir {
   bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
-  @@map("mmkedkar")
+  @@map("tefsir")
 }
 
 model Dirok {
@@ -198,7 +198,7 @@ model Dirok {
   bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
-  @@map("mmkinc")
+  @@map("dirok")
 }
 
 // ensure Hedis model exists
@@ -211,7 +211,7 @@ model Hedis {
   bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
-  @@map("mmavahi") // keep existing table name if needed; change if you want new table
+  @@map("hedis") // keep existing table name if needed; change if you want new table
 }
 
 // Yekem model (mapped to existing mmhewcedari table)
@@ -224,5 +224,5 @@ model Yekem {
   bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
-  @@map("mmhewcedari")
+  @@map("yekem")
 }

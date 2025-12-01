@@ -1,5 +1,9 @@
 // Bismillahirahmanirahim
-//Elhamdulillahirabbilalemin
+// Elhamdulillahiillahi rabbil alemin
+// Essalatu vesselamu ala seyyidina muhammadin
+// Subhanallahi ve bihamdihi
+// Subhanallahil azim
+// La ilahe illallah muhammadur resulullah
 
 
 import { validateRequest } from "@/auth";
@@ -19,7 +23,7 @@ export async function GET(req: NextRequest) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const posts = await prisma.mmkargeh.findMany({
+    const posts = await prisma.hedis.findMany({
       include: getPostDataInclude(user.id),
       orderBy: { createdAt: "desc" },
       take: pageSize + 1,
@@ -29,15 +33,7 @@ export async function GET(req: NextRequest) {
     const nextCursor = posts.length > pageSize ? posts[pageSize].id : null;
 
     const data: PostsPage = {
-      posts: posts.slice(0, pageSize).map((post: any) => ({
-        id: post.id,
-        content: Array.isArray(post.content) ? post.content : [post.content],
-        userId: post.userId,
-        createdAt: post.createdAt,
-        user: post.user,
-        attachments: post.attachments,
-        // add other fields as needed to match PostData
-      })),
+      posts: posts.slice(0, pageSize),
       nextCursor,
     };
 
