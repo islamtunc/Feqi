@@ -14,13 +14,23 @@ function page() {
         {/* Beşa Perwerdehîya Îslamî */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
-          {/* Karta 1: Kelam */}
+          {/* Karta 1: */}
           <div className="bg-white shadow-lg rounded-lg p-6">
-            <h3 className="text-xl font-bold mb-2">Kelam</h3>
+            <h3 className="text-xl font-bold mb-2">QURAN-İ KERİM</h3>
             <p className="text-gray-600">
-              Kelam zanîngeha îman û aqîdeyê Îslamî ye. Li vir hûn dikarin bingeha aqîdeyê, tawhîd û îmanê hîn bibin.
+              Quran-î Kerîm pirtûka pîroz a Îslamê ye Allah Azze Ve Celle ji me re şandiye. Li vir hûn dikarin  derbarê peygamberan, îman û rêberiyên jiyanê hîn bibin .
             </p>
-            <a href="/perwerdeh/kelam" className="text-blue-500 hover:underline mt-4 block">
+            <a href="/malper/agahi" className="text-blue-500 hover:underline mt-4 block">
+              Zêdetir Bibînin
+            </a>
+          </div>
+           {/* Karta 1: Kelam */}
+          <div className="bg-white shadow-lg rounded-lg p-6">
+            <h3 className="text-xl font-bold mb-2">Hedis</h3>
+            <p className="text-gray-600">
+              Hedis ramanên û gotinên peygamberê me Muhammed (s.a.v) ne. Li vir hûn dikarin zanînên derbarê sunneta peygamberê me hîn bibin.
+            </p>
+            <a href="/malper/hedis" className="text-blue-500 hover:underline mt-4 block">
               Zêdetir Bibînin
             </a>
           </div>
@@ -38,11 +48,21 @@ function page() {
 
           {/* Karta 3: Tarîxê Îslamî */}
           <div className="bg-white shadow-lg rounded-lg p-6">
-            <h3 className="text-xl font-bold mb-2">Tarîxê Îslamî</h3>
+            <h3 className="text-xl font-bold mb-2">Kelam</h3>
+            <p className="text-gray-600">
+              Kelam ilimê aqîdeyê ye ku di derbarê baweriyên eslê Îslamê de axivî. Li vir hûn dikarin derbarê tawhîd û îman hîn bibin.
+            </p>
+            <a href="/malper/kelam" className="text-blue-500 hover:underline mt-4 block">
+              Zêdetir Bibînin
+            </a>
+          </div>
+            {/* Karta 3: Tarîxê Îslamî */}
+          <div className="bg-white shadow-lg rounded-lg p-6">
+            <h3 className="text-xl font-bold mb-2">Dirok a Îslamî</h3>
             <p className="text-gray-600">
               Tarîxê Îslamî hûn re dide zanînê derbarê peygamberan, sahabeyan û derbasbûna Îslamê di dîroka xwe de.
             </p>
-            <a href="/perwerdeh/tarix" className="text-blue-500 hover:underline mt-4 block">
+            <a href="/malper/dirok" className="text-blue-500 hover:underline mt-4 block">
               Zêdetir Bibînin
             </a>
           </div>
