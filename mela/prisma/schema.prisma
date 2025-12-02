@@ -88,8 +88,8 @@ model Duyem {
 
 model Media {
   id     String    @id @default(cuid())
-  postId String?
-  post   Post?     @relation(fields: [postId], references: [id], onDelete: SetNull)
+  duyemId String?
+  duyem  Duyem?     @relation(fields: [duyemId], references: [id], onDelete: SetNull)
   type   MediaType
   url    String
 
@@ -118,8 +118,8 @@ model Bookmark {
   id     String @id @default(cuid())
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  postId String
-  duyem  Duyem   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  duyemId String
+  duyem  Duyem   @relation(fields: [duyemId], references: [id], onDelete: Cascade)
 
   createdAt     DateTime     @default(now())
   Hedis         Hedis?       @relation(fields: [hedisId], references: [id])
