@@ -1,7 +1,7 @@
 // Bismillahirrahmanirrahim
 // Elhamdulillahirabbulalemin
 // Es-selatu vesselamu ala resulina Muhammedin ve ala alihi ve sahbihi ecmain
-// Allah u Ekber, Allah u Ekber, Allah u Ekber, La ilahe illallah
+// Allah u Ekber, Allah u Ekber, Allah u Ekber, La ilahe illallah.
 // SuphanAllah, Elhamdulillah, Allahu Ekber
 // La ilahe illallah
 
@@ -24,7 +24,7 @@ interface PageProps {
 }
 
 const getPost = cache(async (postId: string, loggedInUserId: string) => {
-  const post = await prisma.yekem.findUnique({
+  const post = await prisma.duyem.findUnique({
     where: {
       id: postId,
     },
