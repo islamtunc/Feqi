@@ -1,6 +1,6 @@
 // Bismillahirrahmanirrahim
 // Elhamdulillahirabbulalemin
-// Es-selatu vesselamu ala resulina Muhammedin ve ala alihi ve sahbihi ecmain
+// Es-selatu vesselamu ala resulina Muhammedin 
 // La ilahe illallah
 // Subhanallah, Elhamdulillah, Allahu Ekber
 
@@ -21,7 +21,7 @@ export async function submitPost(input: {
 
   const { content, mediaIds } = createPostSchema.parse(input);
 
-  const newPost = await prisma.mmkinc.create({
+  const newPost = await prisma.dirok.create({
     data: {
       content, // Convert string[] to a single string
       userId: user.id,

@@ -16,7 +16,7 @@ export async function deletePost(id: string) {
 
   if (!user) throw new Error("Unauthorized");
 
-  const post = await prisma.post.findUnique({
+  const post = await prisma.dirok.findUnique({
     where: { id },
   });
 

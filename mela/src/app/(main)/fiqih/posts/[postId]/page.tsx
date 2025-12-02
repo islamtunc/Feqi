@@ -22,7 +22,7 @@ interface PageProps {
 }
 
 const getPost = cache(async (postId: string, loggedInUserId: string) => {
-  const post = await prisma..findUnique({
+  const post = await prisma.fiqih.findUnique({
     where: {
       id: postId,
     },
