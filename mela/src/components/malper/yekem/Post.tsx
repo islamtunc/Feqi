@@ -1,4 +1,10 @@
 // Bismillahirrahmanirrahim 
+// Bismillahirrahmanirrahim
+// Elhamdulillahirabbulalemin
+// Es-selatu vesselamu ala resulina Muhammedin 
+// Allah u Ekber, Allah u Ekber, Allah u Ekber, La ilahe illallah
+// SuphanAllah, Elhamdulillah, Allahu Ekber
+// La ilahe illallah.
 
 "use client";
 
@@ -8,9 +14,9 @@ import { cn, formatRelativeDate } from "@/lib/utils";
 import { Media } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
-import Linkify from "../Linkify";
-import UserAvatar from "../UserAvatar";
-import UserTooltip from "../UserTooltip";
+import Linkify from "../../Linkify";
+import UserAvatar from "../../UserAvatar";
+import UserTooltip from "../../UserTooltip";
 import PostMoreButton from "./PostMoreButton";
 
 interface PostProps {
@@ -40,7 +46,7 @@ export default function Post({ post }: PostProps) {
               </Link>
             </UserTooltip>
             <Link
-              href={`/malper/mmkinc/posts/${post.id}`}
+              href={`/malper/malper/yekem/posts/${post.id}`}
               className="block text-sm text-muted-foreground hover:underline"
               suppressHydrationWarning
             >
