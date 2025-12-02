@@ -1,15 +1,14 @@
 // Bismillahirrahmanirrahim 
-// Elhamdulillahirabbulalemin
-// Esselatu vesselamu ala rasulillah 
-// Allahumme salli ala seyyidina Muhammedin ve ala alihi ve sahbihi ecmain
-// Allah u Ekber, Allahu Ekber, Allahu Ekber
-// La ilahe illallah, Allahu Ekber, Allahu Ekber, ve lillahi'l-hamd
+// Elhamdulillahi Rabbil Alamin
+// Essalatu vesselamu ala Resulina Muhammedin 
+// Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 // Subhanallah, Elhamdulillah, Allahu Ekber
+
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
 import Post from "@/components/dirok/Post";
-import PostsLoadingSkeleton from "@/components/dirok/PostsLoadingSkeleton";
+import PostsLoadingSkeleton from "@/components/malper/yekem/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
 import { PostsPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
@@ -28,7 +27,7 @@ export default function ForYouFeed() {
     queryFn: ({ pageParam }) =>
       kyInstance
         .get(
-          "/api/posts/dirok",
+          "/api/posts/malper/yekem",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
         .json<PostsPage>(),

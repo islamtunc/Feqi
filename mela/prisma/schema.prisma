@@ -1,6 +1,6 @@
 // Bismillahirrahmanirahim
 // Elhamdullillahirabbulalemin
-// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi, ecmain
+// Es-selatu vesselamu ala rasulina Muhammedin 
 // Allah u Ekber, Allah u Ekber, Allah u Ekber, La ilahe illallah
 // La ilahe illallah
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
@@ -34,7 +34,7 @@ model User {
   avatarUrl             String?
   bio                   String?
   sessions              Session[]
-  posts                 Post[]
+  duyem                 Duyem[]
   hedis                 Hedis[]
   agahi                 Agahi[]        // <-- add this line
   bookmarks             Bookmark[]
@@ -73,7 +73,7 @@ model Agahi {
   @@map("agahi")
 }
 
-model Post {
+model Duyem {
   id                  String         @id @default(cuid())
   content             String[]
   userId              String
@@ -83,7 +83,7 @@ model Post {
 
   createdAt DateTime @default(now())
 
-  @@map("posts")
+  @@map("duyem")
 }
 
 model Media {
@@ -119,7 +119,7 @@ model Bookmark {
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   postId String
-  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  duyem  Duyem   @relation(fields: [postId], references: [id], onDelete: Cascade)
 
   createdAt     DateTime     @default(now())
   Hedis         Hedis?       @relation(fields: [hedisId], references: [id])
