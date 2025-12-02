@@ -1,9 +1,7 @@
 // Bismillahirrahmanirrahim
-// Elhamdulillahirabbulalemin
-// Es-selatu vesselamu ala rasulina Muhammedin 
-//Suphanallah, Elhamdulillah, Allahu Ekber
-// Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
-
+// Elhamdu lillahi rabbil alamin
+// Es-selatu ve's-selamu ala Resulillah
+// Allah u Ekber velllahilhamd
 
 
 import { validateRequest } from "@/auth";
@@ -24,7 +22,7 @@ interface PageProps {
 }
 
 const getPost = cache(async (postId: string, loggedInUserId: string) => {
-  const post = await prisma.tefsir.findUnique({
+  const post = await prisma.dua.findUnique({
     where: {
       id: postId,
     },
@@ -66,7 +64,6 @@ export default async function Page({ params: { postId } }: PageProps) {
   return (
     <main className="flex w-full min-w-0 gap-5">
       <div className="w-full min-w-0 space-y-5">
-        <Post post={post} />
       </div>
       <div className="sticky top-[5.25rem] hidden h-fit w-80 flex-none lg:block">
         <Suspense fallback={<Loader2 className="mx-auto animate-spin" />}>
@@ -110,7 +107,7 @@ async function UserInfoSidebar({ user }: UserInfoSidebarProps) {
           {user.bio}
         </div>
       </Linkify>
-  
+     
     </div>
   );
 }

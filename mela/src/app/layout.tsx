@@ -1,6 +1,6 @@
 // Bismillahirrahmanirrahim 
 // Elhamdulillahirabbulalemin
-// Esselatu vesselamu ala rasulillah ve ala alihi ve sahbihi ecmain
+// Esselatu vesselamu ala rasulillah 
 // Allahumme salli ala seyyidina Muhammedin ve ala alihi ve sahbihi ecmain
 // Allah u Ekber, Allahu Ekber, Allahu Ekber
 // La ilahe illallah, Allahu Ekber, Allahu Ekber, ve lillahi'l-hamd
@@ -67,7 +67,7 @@ export default function RootLayout({
 // Elhamdulillah Elhamdulillah Elhamdulillah
 // Elhamdulillahirabbilalemin
 
-//La ilahe illAllah Muhammden abduhu ve resuluhu
+//La ilahe illAllah Muhammeden abduhu ve resuluhu
 
 // Elhamdulillah Elhamdulillah Elhamdulillah
 // Elhamdulillahirabbilalemin

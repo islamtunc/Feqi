@@ -1,5 +1,11 @@
 // Bismillahirrahmanirrahim 
-
+// Bismillahirrahmanirrahim 
+// Elhamdulillahirabbulalemin
+// Esselatu vesselamu ala rasulillah 
+// Allahumme salli ala seyyidina Muhammedin ve ala alihi ve sahbihi ecmain
+// Allah u Ekber, Allahu Ekber, Allahu Ekber
+// La ilahe illallah, Allahu Ekber, Allahu Ekber, ve lillahi'l-hamd
+// Subhanallah, Elhamdulillah, Allahu Ekber
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
@@ -23,7 +29,7 @@ export default function ForYouFeed() {
     queryFn: ({ pageParam }) =>
       kyInstance
         .get(
-          "/api/posts/hedis",
+          "/api/posts/dua",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
         .json<PostsPage>(),
@@ -65,3 +71,19 @@ export default function ForYouFeed() {
     </InfiniteScrollContainer>
   );
 }
+
+
+
+
+
+
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillahirabbilalemin
+
+//La ilahe illAllah Muhammeden abduhu ve resuluhu
+
+// Elhamdulillah Elhamdulillah Elhamdulillah
+// Elhamdulillahirabbilalemin
+
+
+

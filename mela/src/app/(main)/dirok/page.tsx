@@ -7,12 +7,12 @@
 // Allah bizleri Peygamber Efendimiz'in (s.a.v) izinden giden, O'na layık bir ümmet eylesin.
 // SuphanAllah velhamdulillah, Allahu Ekber.
 // La ilahe illallah, Muhammedur Resulullah.
-import PostEditor from "@/components/kelam/editor/PostEditor";
+import PostEditor from "@/components/dirok/editor/PostEditor";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import ForYouFeed from "./ForYouFeed";
 
-import SearchField from "@/components/agahi/SearchField";
+import SearchField from "@/components/dirok/SearchField";
 import { Alert } from "react-bootstrap";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
     <main className="flex w-full min-w-0 gap-5 p-">
       <div className="w-full min-w-0 space-y-5">
 
-      <Alert variant="success"> Manage References Page </Alert>
+      <Alert variant="success">dirok</Alert>
         <Tabs defaultValue="mm">
           <TabsList>
             <TabsTrigger value="for-you">For You</TabsTrigger>

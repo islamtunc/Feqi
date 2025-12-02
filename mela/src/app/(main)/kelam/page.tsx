@@ -1,93 +1,53 @@
-// Bismillahirrahmanirahim
+// Bismillahirrahmanirrahim
+// Bismillahirrahmanirrahim 
 // Elhamdulillahirabbulalemin
-// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain
-// La havle ve la kuvvete illa billahil aliyyil azim
-// Allah u Ekber
-// La ilahe illallah Muhammedur Resulullah
-// Subhanallah, Elhamdulillah, Allahu Ekber, La ilahe illallah
-// Estağfirulllah El-Azim
-"use client"
-import React from "react";
-import { Alert, Container, Row, Col, Card, Button } from "react-bootstrap";
+// Esselatu vesselamu ala rasulillah 
+// Allahumme salli ala seyyidina Muhammedin ve ala alihi ve sahbihi ecmain
+// Allah u Ekber, Allahu Ekber, Allahu Ekber
+// La ilahe illallah, Allahu Ekber, Allahu Ekber, ve lillahi'l-hamd
+// Subhanallah, Elhamdulillah, Allahu Ekber
 
-function AdminPage() {
+
+import PostEditor from "@/components/fiqih/editor/PostEditor";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+import ForYouFeed from "./ForYouFeed";
+
+import SearchField from "@/components/agahi/SearchField";
+import { Alert } from "react-bootstrap";
+
+export default function Home() {
   return (
-    <Container fluid style={{ background: "#f8f9fa", minHeight: "100vh", padding: "20px" }}>
-     
+    <main className="flex w-full min-w-0 gap-5 p-">
+      <div className="w-full min-w-0 space-y-5">
 
-      <Row>
-        <Col md={4} className="mb-3">
-          <Card>
-            <Card.Body>
-              <Card.Title>General Settings</Card.Title>
-              <Card.Text>Manage or view the sports nutrition page.</Card.Text>
-              <Button variant="primary" href="/mmdashboard/mmedit">
-                Go
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4} className="mb-3">
-          <Card>
-            <Card.Body>
-              <Card.Title>Manage Database </Card.Title>
-              <Card.Text>Database Settings</Card.Text>
-              <Button variant="primary" href="/mmkinc">
-                Go
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4} className="mb-3">
-          <Card>
-            <Card.Body>
-              <Card.Title>Services</Card.Title>
-              <Card.Text>Manage or view the services page.</Card.Text>
-              <Button variant="primary" href="/mmkargeh">
-                Go
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+      <Alert variant="success"> Manage Services Page </Alert>
+        <Tabs defaultValue="mm">
+          <TabsList>
+            <TabsTrigger value="for-you">For You</TabsTrigger>
+            <TabsTrigger value="mm">New Post</TabsTrigger>
 
-      <Row>
-        <Col md={4} className="mb-3">
-          <Card>
-            <Card.Body>
-              <Card.Title>Editor</Card.Title>
-              <Card.Text>Add new pages or components.</Card.Text>
-              <Button variant="primary" href="/mmwesayit">
-                Go
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4} className="mb-3">
-          <Card>
-            <Card.Body>
-              <Card.Title>For Developers</Card.Title>
-              <Card.Text>Manage or view the developer resources page.</Card.Text>
-              <Button variant="primary" href="/mmkedkar">
-                Go
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4} className="mb-3">
-          <Card>
-            <Card.Body>
-              <Card.Title>Site Management</Card.Title>
-              <Card.Text>Manage or view the site.</Card.Text>
-              <Button variant="primary" href="/malper">
-                Go
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+          </TabsList>
+          <TabsContent value="for-you">
+            <ForYouFeed />
+          </TabsContent>
+          <TabsContent value="following">
+
+      <SearchField/>
+          </TabsContent>
+    
+
+
+
+
+
+        <TabsContent value="mm">
+
+  <PostEditor />
+
+    </TabsContent>
+    </Tabs>
+      </div>
+    </main>
   );
 }
-
-export default AdminPage;
