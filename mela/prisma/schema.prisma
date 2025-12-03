@@ -46,6 +46,8 @@ model User {
   Meal        Meal[]
   Kelam       Kelam[]
   Fiqih       Fiqih[]
+  xane        Xane[]
+  rojname     Rojname[]
   @@map("users")
 }
 
@@ -85,7 +87,65 @@ model Duyem {
 
   @@map("duyem")
 }
+model Xane {
+  id                  String         @id @default(cuid())
+  content             String[]
+  userId              String
+  user                User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attachments         Media[]
+  bookmarks           Bookmark[]
 
+  createdAt DateTime @default(now())
+
+  @@map("xane")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+model Rojname {
+  id                  String         @id @default(cuid())
+  content             String[]
+  userId              String
+  user                User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attachments         Media[]
+  bookmarks           Bookmark[]
+
+  createdAt DateTime @default(now())
+
+  @@map("rojname")
+}
 model Dua {
   id                  String         @id @default(cuid())
   content             String[]
@@ -103,6 +163,10 @@ model Media {
   id     String    @id @default(cuid())
   duyemId String?
   duyem  Duyem?     @relation(fields: [duyemId], references: [id], onDelete: SetNull)
+  xaneId String?
+  xane   Xane?     @relation(fields: [xaneId], references: [id], onDelete: SetNull)
+ rojname String?
+  rojname  ROjname?     @relation(fields: [rojnameId], references: [id], onDelete: SetNull)
 
   duaId String?
   dua  Dua?     @relation(fields: [duaId], references: [id], onDelete: SetNull)
@@ -135,6 +199,11 @@ model Bookmark {
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   duyemId String
+   xaneId String?
+  xane   Duyem?     @relation(fields: [xaneId], references: [id], onDelete: SetNull)
+  rojnameId String?
+  rojname  Rojname?     @relation(fields: [duyemId], references: [id], onDelete: SetNull)
+
   duyem  Duyem   @relation(fields: [duyemId], references: [id], onDelete: Cascade)
 duaId String?
   dua  Dua?     @relation(fields: [duaId], references: [id], onDelete: SetNull)
