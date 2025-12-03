@@ -166,7 +166,7 @@ model Media {
   xaneId String?
   xane   Xane?     @relation(fields: [xaneId], references: [id], onDelete: SetNull)
  rojname String?
-  rojname  ROjname?     @relation(fields: [rojnameId], references: [id], onDelete: SetNull)
+  rojname  Rojname?     @relation(fields: [rojnameId], references: [id], onDelete: SetNull)
 
   duaId String?
   dua  Dua?     @relation(fields: [duaId], references: [id], onDelete: SetNull)
