@@ -5,8 +5,8 @@
 // Subhanallah, Elhamdulillah, Allahu Ekber
 
 import React from 'react'
-import ForYouFeed from './yekem'
-import Duyem from './duyem'
+import ForYouFeed from './malper/yekem/ForYouFeed'
+import Duyem from './malper/duyem/ForYouFeed'
 
 function page() {
   return (
