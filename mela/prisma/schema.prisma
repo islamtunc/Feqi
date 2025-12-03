@@ -136,7 +136,8 @@ model Bookmark {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   duyemId String
   duyem  Duyem   @relation(fields: [duyemId], references: [id], onDelete: Cascade)
-
+duaId String?
+  dua  Dua?     @relation(fields: [duaId], references: [id], onDelete: SetNull)
   createdAt     DateTime     @default(now())
   Hedis         Hedis?       @relation(fields: [hedisId], references: [id])
   hedisId       String?
