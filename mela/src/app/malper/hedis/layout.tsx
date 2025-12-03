@@ -9,7 +9,7 @@
 "use client";
 
 import React from 'react'
-import ForYouFeed from './ForYouFeed'
+import ForYouFeed from './parvekirin'
 import { Card } from 'react-bootstrap';
 
 export default function layout({ children }: { children: React.ReactNode }) {

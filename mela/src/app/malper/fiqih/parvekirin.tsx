@@ -1,20 +1,20 @@
-// Bismillahirahmanirahim 
+// Bismillahirrahmanirrahim 
+// Elhamdulillahi Rabbil Alamin
+// Essalatu vesselamu ala Resulina Muhammedin ve ala alihi ve sahb
+// La ilahe illallah, Muhammedur Resulullah
+// SuphanAllah velhamdulillah, Allahu Ekber
 
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
-import Post from "@/components/agahi/Post";
+import Post from "@/components/fiqih/Post";
 import PostsLoadingSkeleton from "@/components/agahi/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
 import { PostsPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
-interface SearchResultsProps {
-  query: string;
-}
-
-export default function SearchResults({ query }: SearchResultsProps) {
+export default function Fiqih() {
   const {
     data,
     fetchNextPage,
@@ -23,19 +23,16 @@ export default function SearchResults({ query }: SearchResultsProps) {
     isFetchingNextPage,
     status,
   } = useInfiniteQuery({
-    queryKey: ["post-feed", "search", query],
+    queryKey: ["post-feed", "for-you"],
     queryFn: ({ pageParam }) =>
       kyInstance
-        .get("/api/search", {
-          searchParams: {
-            q: query,
-            ...(pageParam ? { cursor: pageParam } : {}),
-          },
-        })
+        .get(
+          "/api/posts/fiqih",
+          pageParam ? { searchParams: { cursor: pageParam } } : {},
+        )
         .json<PostsPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
-    gcTime: 0,
   });
 
   const posts = data?.pages.flatMap((page) => page.posts) || [];
@@ -47,7 +44,7 @@ export default function SearchResults({ query }: SearchResultsProps) {
   if (status === "success" && !posts.length && !hasNextPage) {
     return (
       <p className="text-center text-muted-foreground">
-        No posts found for this query.
+        Hê kesî tiştek parvenekirî ye
       </p>
     );
   }
@@ -55,7 +52,7 @@ export default function SearchResults({ query }: SearchResultsProps) {
   if (status === "error") {
     return (
       <p className="text-center text-destructive">
-        An error occurred while loading posts.
+        Pirsgirek derket 
       </p>
     );
   }
