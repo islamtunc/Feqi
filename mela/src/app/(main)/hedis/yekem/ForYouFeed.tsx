@@ -1,5 +1,9 @@
 // Bismillahirrahmanirrahim 
-
+// Elhamdu lillahi rabbil alamin
+// Es-selatu ve's-selamu ala Resulina Muhammedin
+// Allah u Ekber velllahilhamd
+// SuphanAllah, Elhamdulillah, Allahu Ekber
+// La ilahe illAllah 
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
@@ -23,7 +27,7 @@ export default function ForYouFeed() {
     queryFn: ({ pageParam }) =>
       kyInstance
         .get(
-          "/api/posts/mmkargeh",
+          "/api/posts/hedis/yekem",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
         .json<PostsPage>(),
