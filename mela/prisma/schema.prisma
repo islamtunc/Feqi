@@ -38,7 +38,7 @@ model User {
   hedis                 Hedis[]
   agahi                 Agahi[]        // <-- add this line
   bookmarks             Bookmark[]
-
+  dua                   Dua[]
   createdAt   DateTime      @default(now())
   Yekem       Yekem[]        // renamed relation (was Mmhewcedari)
   Dirok       Dirok[]
@@ -86,10 +86,26 @@ model Duyem {
   @@map("duyem")
 }
 
+model Dua {
+  id                  String         @id @default(cuid())
+  content             String[]
+  userId              String
+  user                User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attachments         Media[]
+  bookmarks           Bookmark[]
+
+  createdAt DateTime @default(now())
+
+  @@map("dua")
+}
+
 model Media {
   id     String    @id @default(cuid())
   duyemId String?
   duyem  Duyem?     @relation(fields: [duyemId], references: [id], onDelete: SetNull)
+
+  duaId String?
+  dua  Dua?     @relation(fields: [duaId], references: [id], onDelete: SetNull)
   type   MediaType
   url    String
 
