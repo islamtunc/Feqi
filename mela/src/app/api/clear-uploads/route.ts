@@ -1,6 +1,6 @@
 //Bismillahirrahmanirrahim 
 // Elhamdulillahirabbulalemin
-// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain
+// Es-selatu vesselamu ala rasulina Muhammedin 
 //Suphanallah, Elhamdulillah, Allahu Ekber
 // Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 
@@ -24,7 +24,7 @@ export async function GET(req: Request) {
 
     const unusedMedia = await prisma.media.findMany({
       where: {
-        postId: null,
+        agahiId: null,
         ...(process.env.NODE_ENV === "production"
           ? {
               createdAt: {
