@@ -37,7 +37,6 @@ model User {
   duyem                 Duyem[]
   hedis                 Hedis[]
   agahi                 Agahi[]        // <-- add this line
-  bookmarks             Bookmark[]
   dua                   Dua[]
   createdAt   DateTime      @default(now())
   Yekem       Yekem[]        // renamed relation (was Mmhewcedari)
@@ -68,7 +67,6 @@ model Agahi {
   user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments Media[]
 
-  bookmarks Bookmark[]
 
   createdAt           DateTime       @default(now())
 
@@ -81,7 +79,6 @@ model Duyem {
   userId              String
   user                User           @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments         Media[]
-  bookmarks           Bookmark[]
 
   createdAt DateTime @default(now())
 
@@ -93,7 +90,6 @@ model Xane {
   userId              String
   user                User           @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments         Media[]
-  bookmarks           Bookmark[]
 
   createdAt DateTime @default(now())
 
