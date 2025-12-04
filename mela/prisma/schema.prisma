@@ -182,6 +182,8 @@ model Media {
   fiqihId       String?
   Agahi         Agahi?       @relation(fields: [agahiId], references: [id])
   agahiId       String?
+  rojnameId String?
+  rojname   Rojname?   @relation(fields: [rojnameId], references: [id], onDelete: SetNull)
 
   @@map("post_media")
 }
