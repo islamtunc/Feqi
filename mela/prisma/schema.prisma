@@ -140,7 +140,6 @@ model Rojname {
   userId              String
   user                User           @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments         Media[]
-  bookmarks           Bookmark[]
 
   createdAt DateTime @default(now())
 
@@ -152,7 +151,6 @@ model Dua {
   userId              String
   user                User           @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments         Media[]
-  bookmarks           Bookmark[]
 
   createdAt DateTime @default(now())
 
@@ -192,37 +190,6 @@ model Media {
   @@map("post_media")
 }
 
-model Bookmark {
-  id     String @id @default(cuid())
-  userId String
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  duyemId String
-   xaneId String?
-  xane   Xane?     @relation(fields: [xaneId], references: [id], onDelete: SetNull)
-  rojnameId String?
-  rojname  Rojname?     @relation(fields: [duyemId], references: [id], onDelete: SetNull)
-
-  duyem  Duyem   @relation(fields: [duyemId], references: [id], onDelete: Cascade)
-duaId String?
-  dua  Dua?     @relation(fields: [duaId], references: [id], onDelete: SetNull)
-  createdAt     DateTime     @default(now())
-  Hedis         Hedis?       @relation(fields: [hedisId], references: [id])
-  hedisId       String?
-  Yekem         Yekem?       @relation(fields: [yekemId], references: [id])
-  yekemId       String?
-  Dirok         Dirok?       @relation(fields: [dirokId], references: [id])
-  dirokId       String?
-  Tefsir        Tefsir?      @relation(fields: [tefsirId], references: [id])
-  tefsirId      String?
-  Meal          Meal?        @relation(fields: [mealId], references: [id])
-  mealId        String?
-  Kelam         Kelam?       @relation(fields: [kelamId], references: [id])
-  kelamId       String?
-  Fiqih         Fiqih?       @relation(fields: [fiqihId], references: [id])
-  fiqihId       String?
-  Agahi         Agahi?       @relation(fields: [agahiId], references: [id])
-  agahiId       String?
-}
 
 // New renamed models (mapped to existing table names to preserve DB):
 model Fiqih {
@@ -231,7 +198,6 @@ model Fiqih {
   userId      String
   user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments Media[]
-  bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
   @@map("fiqih")
@@ -243,7 +209,6 @@ model Kelam {
   userId      String
   user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments Media[]
-  bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
   @@map("kelam")
@@ -255,7 +220,6 @@ model Meal {
   userId      String
   user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments Media[]
-  bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
   @@map("meal")
@@ -267,7 +231,6 @@ model Tefsir {
   userId      String
   user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments Media[]
-  bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
   @@map("tefsir")
@@ -279,7 +242,6 @@ model Dirok {
   userId      String
   user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments Media[]
-  bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
   @@map("dirok")
@@ -292,7 +254,6 @@ model Hedis {
   userId      String
   user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments Media[]
-  bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
   @@map("hedis") // keep existing table name if needed; change if you want new table
@@ -305,7 +266,6 @@ model Yekem {
   userId      String
   user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments Media[]
-  bookmarks   Bookmark[]
   createdAt   DateTime @default(now())
 
   @@map("yekem")
