@@ -5,8 +5,6 @@
 // Subhanallah, Elhamdulillah, Allahu Ekber
 
 import React from 'react'
-import ForYouFeed from './malper/yekem/ForYouFeed'
-import Duyem from './malper/duyem/ForYouFeed'
 import ParvekirinaAgahi from './agahi/parvekirin'
 import ParvekirinaMeal from './agahi/meal/parvekirin'
 import ParvekirinaTefsir from './agahi/tefsir/parvekirin'
