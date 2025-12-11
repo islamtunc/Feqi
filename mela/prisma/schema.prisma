@@ -79,16 +79,13 @@ model Duyem {
   @@map("duyem")
 }
 model Mmmpeyam {
-  id                  String         @id @default(cuid())
-  content             String[]
-  userId              String
-  user                User           @relation(fields: [userId], references: [id], onDelete: Cascade)
-  attachments         Media[]
+  id      Int    @id @default(autoincrement())
+  name    String
+  email   String
+  message String
+    createdAt DateTime @default(now())
 
-  createdAt DateTime @default(now())
-
-  @@map("mmmpeyam)
-}
+  @@map("mmmpeyam")}
 model Xane {
   id                  String         @id @default(cuid())
   content             String[]
