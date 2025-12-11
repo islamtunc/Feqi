@@ -85,7 +85,9 @@ model Mmmpeyam {
   message String
     createdAt DateTime @default(now())
 
-  @@map("mmmpeyam")}
+  @@map("mmmpeyam")
+  }
+
 model Xane {
   id                  String         @id @default(cuid())
   content             String[]
