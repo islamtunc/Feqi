@@ -17,13 +17,6 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-// Add this enum
-enum MediaType {
-  IMAGE
-  VIDEO
-  OTHER
-}
-
 model User {
   id                    String         @id
   username              String         @unique
@@ -41,6 +34,7 @@ model User {
   createdAt   DateTime      @default(now())
   Yekem       Yekem[]        // renamed relation (was Mmhewcedari)
   Dirok       Dirok[]
+  Mmmpeyam    Mmmpeyam[]
   Tefsir      Tefsir[]
   Meal        Meal[]
   Kelam       Kelam[]
@@ -84,6 +78,17 @@ model Duyem {
 
   @@map("duyem")
 }
+model Mmmpeyam {
+  id                  String         @id @default(cuid())
+  content             String[]
+  userId              String
+  user                User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attachments         Media[]
+
+  createdAt DateTime @default(now())
+
+  @@map("mmmpeyam)
+}
 model Xane {
   id                  String         @id @default(cuid())
   content             String[]
@@ -96,6 +101,43 @@ model Xane {
   @@map("xane")
 }
 
+
+// ---------------------------
+// MEDIA
+// ---------------------------
+model Media {
+  id        String      @id @default(cuid())
+  type      MediaType
+  url       String
+  createdAt DateTime    @default(now())
+
+  agahiId       String?
+  Agahi         Agahi? @relation(fields: [agahiId], references: [id])
+
+  mealId       String?
+  Meal          MealId? @relation(fields: [mealId], references: [id])
+  tefsirId     String?
+  Tefsir       Tefsir? @relation(fields: [tefsirId], references: [id])
+
+  hedisId   String?
+  Hedis     Hedis? @relation(fields: [hedisId], references: [id])
+
+  fiqihId      String?
+  Fiqih        Fiqih? @relation(fields: [fiqihId], references: [id])
+
+  kelamId     String?
+  Kelam       Kelam? @relation(fields: [kelamId], references: [id])
+
+  dirokId    String?
+  Dirok      Dirok? @relation(fields: [dirokId], references: [id])
+
+  @@map("post_media")
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+}
 
 
 
