@@ -10,7 +10,6 @@ import Mmmnavbar from "./components/mmnav";
 
 import 'bootstrap/dist/css/bootstrap.css'
 import Footer from "./components/mmbingeh";
-import AssistantRoot from "./assistant";
 import ContactForm from "./components/mmfrm";
 
 
@@ -26,7 +25,7 @@ export default async function Layout({
       <Mmmnavbar />
 
       {children}
-      <AssistantRoot />
+     
 
       {/* WhatsApp Button - Right Bottom */}
       <a
