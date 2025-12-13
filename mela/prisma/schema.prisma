@@ -79,14 +79,18 @@ model Duyem {
   @@map("duyem")
 }
 model Mmmpeyam {
-  id      Int    @id @default(autoincrement())
-  name    String
-  email   String
-  message String
-    createdAt DateTime @default(now())
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+
+  // optional relation to User (keeps existing User.Mmmpeyam[] valid)
+  userId String? 
+  user   User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
 
   @@map("mmmpeyam")
-  }
+}
 
 model Xane {
   id                  String         @id @default(cuid())
