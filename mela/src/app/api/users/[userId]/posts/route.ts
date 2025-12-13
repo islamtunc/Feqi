@@ -1,4 +1,10 @@
 // Bismillahirahmanirahim 
+// Elhamdulillahirabbulalemin
+// Esselatu vesselamu ala rasulillah 
+// Allahumme salli ala seyyidina Muhammedin 
+// Allah u Ekber, Allahu Ekber, Allahu Ekber
+// La ilahe illallah, Allahu Ekber, Allahu Ekber, ve lillahi'l-hamd
+// Subhanallah, Elhamdulillah, Allahu Ekber
 
 
 
@@ -23,7 +29,7 @@ export async function GET(
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const posts = await prisma.post.findMany({
+    const posts = await prisma.xane.findMany({
       where: { userId },
       include: getPostDataInclude(user.id),
       orderBy: { createdAt: "desc" },
