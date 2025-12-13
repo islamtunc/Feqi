@@ -105,30 +105,47 @@ model Xane {
 // MEDIA
 // ---------------------------
 model Media {
-  id        String      @id @default(cuid())
-  type      MediaType
-  url       String
-  createdAt DateTime    @default(now())
+  id         String    @id @default(cuid())
+  type       MediaType
+  url        String
+  createdAt  DateTime  @default(now())
 
-  agahiId       String?
-  Agahi         Agahi? @relation(fields: [agahiId], references: [id])
+  // relations to content tables
+  agahiId    String?
+  Agahi      Agahi?    @relation(fields: [agahiId], references: [id])
 
-  mealId       String?
-  Meal          MealId? @relation(fields: [mealId], references: [id])
-  tefsirId     String?
-  Tefsir       Tefsir? @relation(fields: [tefsirId], references: [id])
+  duyemId    String?
+  Duyem      Duyem?    @relation(fields: [duyemId], references: [id], onDelete: SetNull)
 
-  hedisId   String?
-  Hedis     Hedis? @relation(fields: [hedisId], references: [id])
+  xaneId     String?
+  Xane       Xane?     @relation(fields: [xaneId], references: [id], onDelete: SetNull)
 
-  fiqihId      String?
-  Fiqih        Fiqih? @relation(fields: [fiqihId], references: [id])
+  duaId      String?
+  Dua        Dua?      @relation(fields: [duaId], references: [id], onDelete: SetNull)
 
-  kelamId     String?
-  Kelam       Kelam? @relation(fields: [kelamId], references: [id])
+  mealId     String?
+  Meal       Meal?     @relation(fields: [mealId], references: [id])
+
+  tefsirId   String?
+  Tefsir     Tefsir?   @relation(fields: [tefsirId], references: [id])
+
+  hedisId    String?
+  Hedis      Hedis?    @relation(fields: [hedisId], references: [id])
+
+  fiqihId    String?
+  Fiqih      Fiqih?    @relation(fields: [fiqihId], references: [id])
+
+  kelamId    String?
+  Kelam      Kelam?    @relation(fields: [kelamId], references: [id])
 
   dirokId    String?
-  Dirok      Dirok? @relation(fields: [dirokId], references: [id])
+  Dirok      Dirok?    @relation(fields: [dirokId], references: [id])
+
+  yekemId    String?
+  Yekem      Yekem?    @relation(fields: [yekemId], references: [id])
+
+  rojnameId  String?
+  Rojname    Rojname?  @relation(fields: [rojnameId], references: [id], onDelete: SetNull)
 
   @@map("post_media")
 }
