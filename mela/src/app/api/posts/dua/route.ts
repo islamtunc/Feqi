@@ -1,5 +1,9 @@
 // Bismillahirahmanirahim
-
+// Bismillahirahmanirahim
+// Elhamdullillahirabbulalemin
+//Es-selatu vesselamu ala rasulina Muhammedin 
+//SuphanAllah wa bihamdihi, suphanAllahil-azim
+//la ilahe illAllah
 
 
 import { validateRequest } from "@/auth";
@@ -19,7 +23,7 @@ export async function GET(req: NextRequest) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const posts = await prisma.mmwesayit.findMany({
+    const posts = await prisma.dua.findMany({
       include: getPostDataInclude(user.id),
       orderBy: { createdAt: "desc" },
       take: pageSize + 1,

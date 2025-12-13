@@ -1,5 +1,8 @@
 // Bismillahirahmanirahim
-
+// Elhamdullillahirabbulalemin
+//Es-selatu vesselamu ala rasulina Muhammedin 
+//SuphanAllah wa bihamdihi, suphanAllahil-azim
+//la ilaha illallahu wahdahu la sharika lahu, lahul-mulku wa lahul-hamdu yuhyi wa yumitu wa huwa ala kulli shayin qadir
 
 
 import { validateRequest } from "@/auth";
@@ -19,7 +22,7 @@ export async function GET(req: NextRequest) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const posts = await prisma.mmwesayit.findMany({
+    const posts = await prisma.tefsir.findMany({
       include: getPostDataInclude(user.id),
       orderBy: { createdAt: "desc" },
       take: pageSize + 1,
