@@ -211,40 +211,8 @@ model Dua {
   @@map("dua")
 }
 
-model Media {
-  id     String    @id @default(cuid())
-  duyemId String?
-  duyem  Duyem?     @relation(fields: [duyemId], references: [id], onDelete: SetNull)
-  xaneId String?
-  xane   Xane?     @relation(fields: [xaneId], references: [id], onDelete: SetNull)
-
-  duaId String?
-  dua  Dua?     @relation(fields: [duaId], references: [id], onDelete: SetNull)
-  type   MediaType
-  url    String
-
-  createdAt     DateTime     @default(now())
-  Hedis         Hedis?       @relation(fields: [hedisId], references: [id])
-  hedisId       String?
-  Yekem         Yekem?       @relation(fields: [yekemId], references: [id])
-  yekemId       String?
-  Dirok         Dirok?       @relation(fields: [dirokId], references: [id])
-  dirokId       String?
-  Tefsir        Tefsir?      @relation(fields: [tefsirId], references: [id])
-  tefsirId      String?
-  Meal          Meal?        @relation(fields: [mealId], references: [id])
-  mealId        String?
-  Kelam         Kelam?       @relation(fields: [kelamId], references: [id])
-  kelamId       String?
-  Fiqih         Fiqih?       @relation(fields: [fiqihId], references: [id])
-  fiqihId       String?
-  Agahi         Agahi?       @relation(fields: [agahiId], references: [id])
-  agahiId       String?
-  rojnameId String?
-  rojname   Rojname?   @relation(fields: [rojnameId], references: [id], onDelete: SetNull)
-
-  @@map("post_media")
-}
+// Removed duplicate Media model that caused "model 'Media' already exists" error.
+// The consolidated Media model is the one earlier in this file (with @@map("post_media"))
 
 
 // New renamed models (mapped to existing table names to preserve DB):
