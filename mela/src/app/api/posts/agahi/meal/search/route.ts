@@ -1,7 +1,6 @@
 // Bismillahirrahmanirahim
 // Elhamdullillahirabbulalemin
-//Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi, ecmain
-
+//Es-selatu vesselamu ala rasulina Muhammedin 
 import { validateRequest } from "@/auth";
 import prisma from "@/lib/prisma";
 import { getPostDataInclude, PostsPage } from "@/lib/types";
@@ -22,7 +21,7 @@ export async function GET(req: NextRequest) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const posts = await prisma.mmavahi.findMany({
+    const posts = await prisma.meal.findMany({
       where: {
         OR: [
           {

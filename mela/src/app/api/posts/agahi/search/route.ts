@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const posts = await prisma.mmavahi.findMany({
+    const posts = await prisma.agahi.findMany({
       where: {
         OR: [
           {
