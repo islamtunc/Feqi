@@ -9,7 +9,7 @@
 
 import { validateRequest } from "@/auth";
 import prisma from "@/lib/prisma";
-import { getPostDataInclude } from "@/lib/types";
+import { getDirokInclude } from "@/lib/types";
 
 export async function deletePost(id: string) {
   const { user } = await validateRequest();
@@ -26,7 +26,7 @@ export async function deletePost(id: string) {
 
   const deletedPost = await prisma.dirok.delete({
     where: { id },
-    include: getPostDataInclude(user.id),
+    include: getDirokInclude(user.id),
   });
 
   return deletedPost;

@@ -1,16 +1,16 @@
 // Bismillahirrahmanirrahim 
 // Elhamdulillahi Rabbil Alamin
-// Essalatu vesselamu ala Resulina Muhammedin ve ala alihi ve sahbihi ecmain
+// Essalatu vesselamu ala Resulina Muhammedin 
 // Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 // Subhanallah, Elhamdulillah, Allahu Ekber
 
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
-import Post from "@/components/dirok/Post";
+import Post from "@/components/agahi/meal/Post";
 import PostsLoadingSkeleton from "@/components/agahi/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
-import { PostsPage } from "@/lib/types";
+import { MealPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
@@ -30,7 +30,7 @@ export default function ParvekirinaMeal() {
           "/api/posts/agahi/meal",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
-        .json<PostsPage>(),
+        .json<MealPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });

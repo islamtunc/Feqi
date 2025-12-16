@@ -2,7 +2,8 @@
 // Elhamdu lillahi rabbil alamin
 // Es-selatu ve's-selamu ala Resulillah
 // Allah u Ekber velllahilhamd
-
+// Subhanallah ve bihamdihi, Subhanallahil azim
+// La ilahe illallahu vahdehu la şerike leh, lehul mülkü ve lehul hamdü yuhyi ve yumitü ve hüve ala külli şey'in kadir
 
 import { validateRequest } from "@/auth";
 import Linkify from "@/components/Linkify";

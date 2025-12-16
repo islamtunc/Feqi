@@ -8,7 +8,7 @@
 
 import { useSession } from "@/app/(main)/SessionProvider";
 import { useToast } from "@/components/ui/use-toast";
-import { PostsPage } from "@/lib/types";
+import { AgahiPage } from "@/lib/types";
 import {
   InfiniteData,
   QueryFilters,
@@ -40,7 +40,7 @@ export function useSubmitPostMutation() {
 
       await queryClient.cancelQueries(queryFilter);
 
-      queryClient.setQueriesData<InfiniteData<PostsPage, string | null>>(
+      queryClient.setQueriesData<InfiniteData<AgahiPage, string | null>>(
         queryFilter,
         (oldData) => {
           const firstPage = oldData?.pages[0];

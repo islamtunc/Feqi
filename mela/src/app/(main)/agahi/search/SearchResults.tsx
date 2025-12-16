@@ -6,7 +6,7 @@ import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
 import Post from "@/components/agahi/Post";
 import PostsLoadingSkeleton from "@/components/agahi/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
-import { PostsPage } from "@/lib/types";
+import { AgahiPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
@@ -26,13 +26,13 @@ export default function SearchResults({ query }: SearchResultsProps) {
     queryKey: ["post-feed", "search", query],
     queryFn: ({ pageParam }) =>
       kyInstance
-        .get("/api/posts/mmavahi/search", {
+        .get("/api/parvekirin/agahi/search", {
           searchParams: {
             q: query,
             ...(pageParam ? { cursor: pageParam } : {}),
           },
         })
-        .json<PostsPage>(),
+        .json<AgahiPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
     gcTime: 0,

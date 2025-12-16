@@ -9,7 +9,7 @@
 
 import { validateRequest } from "@/auth";
 import prisma from "@/lib/prisma";
-import { getPostDataInclude } from "@/lib/types";
+import { getAgahiInclude } from "@/lib/types";
 
 export async function deletePost(id: string) {
   const { user } = await validateRequest();
@@ -26,7 +26,7 @@ export async function deletePost(id: string) {
 
   const deletedPost = await prisma.agahi.delete({
     where: { id },
-    include: getPostDataInclude(user.id),
+    include: getAgahiInclude(user.id),
   });
 
   return deletedPost;

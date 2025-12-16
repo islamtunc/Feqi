@@ -1,5 +1,8 @@
 // Bismillahirrahmanirrahim 
-
+// Elhamdulillahirabbulalemin
+// Es-selatu vesselamu ala rasulina Muhammedin 
+// Allah u Ekber, Allah u Ekber, Allah u Ekber, La ilahe illallah
+// SuphanAllah, Elhamdulillah, Allahu Ekber
 "use client";
 
 import { useSession } from "@/app/(main)/SessionProvider";

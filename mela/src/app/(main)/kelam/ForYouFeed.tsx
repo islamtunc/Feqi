@@ -1,6 +1,6 @@
 // Bismillahirrahmanirrahim 
 // Elhamdulillahi Rabbil Alamin
-// Essalatu vesselamu ala Resulina Muhammedin ve ala alihi ve sahbihi ecmain
+// Essalatu vesselamu ala Resulina Muhammedin 
 // Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 // Subhanallah, Elhamdulillah, Allahu Ekber
 
@@ -11,7 +11,7 @@ import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
 import Post from "@/components/dirok/Post";
 import PostsLoadingSkeleton from "@/components/agahi/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
-import { PostsPage } from "@/lib/types";
+import { KelamPage } from "@/lib/types";
 import { useInfiniteQuery, useMutation } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 import { Button } from "react-bootstrap";
@@ -35,7 +35,7 @@ export default function ForYouFeed() {
           "/api/posts/kelam",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
-        .json<PostsPage>(),
+        .json<KelamPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });

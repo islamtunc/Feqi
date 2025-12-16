@@ -7,10 +7,10 @@
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
-import Post from "@/components/rojname/Post";
-import PostsLoadingSkeleton from "@/components/rojname/PostsLoadingSkeleton";
+import Post from "@/components/agahi/tefsir/Post";
+import PostsLoadingSkeleton from "@/components/agahi/tefsir/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
-import { PostsPage } from "@/lib/types";
+import { TefsirPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
@@ -30,7 +30,7 @@ export default function ForYouFeed() {
           "/api/posts/agahi/tefsir",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
-        .json<PostsPage>(),
+        .json<TefsirPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });

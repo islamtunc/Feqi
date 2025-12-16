@@ -1,4 +1,10 @@
-import { PostData } from "@/lib/types";
+// Bismillahirrahmanirrahim 
+// Elhamdulillahirabbulalemin
+// Es-selatu vesselamu ala rasulina Muhammedin 
+// Allah u Ekber, Allah u Ekber, Allah u Ekber, La ilahe illallah
+// SuphanAllah, Elhamdulillah, Allahu Ekber
+"use client";
+import { AgahiData } from "@/lib/types";
 import { MoreHorizontal, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../ui/button";
@@ -11,7 +17,7 @@ import {
 import DeletePostDialog from "./DeletePostDialog";
 
 interface PostMoreButtonProps {
-  post: PostData;
+  post: AgahiData;
   className?: string;
 }
 

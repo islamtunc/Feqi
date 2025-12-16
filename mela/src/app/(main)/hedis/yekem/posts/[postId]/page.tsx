@@ -2,6 +2,8 @@
 // Elhamdu lillahi rabbil alamin
 // Es-selatu ve's-selamu ala Resulillah
 // Allah u Ekber velllahilhamd
+// Suphanallah, Elhamdulillah, Allahu Ekber
+// Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 
 
 import { validateRequest } from "@/auth";
@@ -10,7 +12,7 @@ import Post from "@/components/rojname/Post";
 import UserAvatar from "@/components/UserAvatar";
 import UserTooltip from "@/components/UserTooltip";
 import prisma from "@/lib/prisma";
-import { getPostDataInclude, UserData } from "@/lib/types";
+import { getYekemInclude, UserData } from "@/lib/types";
 import { Loader2 } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -26,7 +28,7 @@ const getPost = cache(async (postId: string, loggedInUserId: string) => {
     where: {
       id: postId,
     },
-    include: getPostDataInclude(loggedInUserId),
+    include: getYekemInclude(loggedInUserId),
   });
 
   if (!post) notFound();

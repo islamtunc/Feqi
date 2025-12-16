@@ -1,12 +1,16 @@
 // Bismillahirrahmanirrahim 
-
+// Elhamdu lillahirabbulalemin
+// Es-selatu ve's-selamu ala Resulina Muhammedin
+// Allah u Ekber velllahilhamd
+// SuphanAllah, Elhamdulillah, Allahu Ekber
+// La ilahe illAllah
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
 import Post from "@/components/fiqih/Post";
 import PostsLoadingSkeleton from "@/components/rojname/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
-import { PostsPage } from "@/lib/types";
+import { DuyemPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
@@ -26,7 +30,7 @@ export default function ForYouFeed() {
           "/api/posts/hedis",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
-        .json<PostsPage>(),
+        .json<DuyemPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });

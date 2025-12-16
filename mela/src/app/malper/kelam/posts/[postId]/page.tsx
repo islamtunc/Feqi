@@ -5,7 +5,7 @@
 // Subhanallah, Elhamdulillah, Allahu Ekber
 import MmmPost from "@/components/kelam/mmPost";
 import prisma from "@/lib/prisma";
-import { getPostDataInclude, UserData } from "@/lib/types";
+import { getKelamInclude, UserData } from "@/lib/types";
 import { notFound } from "next/navigation";
 import { cache, Suspense } from "react";
 
@@ -18,7 +18,7 @@ const getPost = cache(async (postId: string) => {
     where: {
       id: postId,
     },
-    include: getPostDataInclude(""), // Kullanıcı doğrulama kaldırıldı
+    include: getKelamInclude(""), // Kullanıcı doğrulama kaldırıldı
   });
 
   if (!post) notFound();

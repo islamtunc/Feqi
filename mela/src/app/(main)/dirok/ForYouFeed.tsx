@@ -1,7 +1,7 @@
 // Bismillahirrahmanirrahim 
 // Elhamdulillahirabbulalemin
 // Esselatu vesselamu ala rasulillah 
-// Allahumme salli ala seyyidina Muhammedin ve ala alihi ve sahbihi ecmain
+// Allahumme salli ala seyyidina Muhammedin
 // Allah u Ekber, Allahu Ekber, Allahu Ekber
 // La ilahe illallah, Allahu Ekber, Allahu Ekber, ve lillahi'l-hamd
 // Subhanallah, Elhamdulillah, Allahu Ekber
@@ -11,7 +11,7 @@ import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
 import Post from "@/components/dirok/Post";
 import PostsLoadingSkeleton from "@/components/dirok/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
-import { PostsPage } from "@/lib/types";
+import { DirokPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
@@ -31,7 +31,7 @@ export default function ForYouFeed() {
           "/api/posts/dirok",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
-        .json<PostsPage>(),
+        .json<DirokPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });
