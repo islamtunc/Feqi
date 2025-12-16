@@ -1,6 +1,6 @@
 // Bismillahirrahmanirrahim
 // Elhamdulillahirabbulalemin
-// Es-selatu vesselamu ala resulina Muhammedin ve ala alihi ve sahbihi ecmain
+// Es-selatu vesselamu ala resulina Muhammedin 
 // La ilahe illallah
 // Subhanallah, Elhamdulillah, Allahu Ekber
 
@@ -20,7 +20,7 @@ export async function submitPost(input: {
 
   const { content, mediaIds } = createPostSchema.parse(input);
 
-  const newPost = await prisma.mmavahi.create({
+  const newPost = await prisma.agahi.create({
     data: {
       content, // DİZİ OLARAK GÖNDER
       userId: user.id,
