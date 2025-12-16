@@ -1,6 +1,6 @@
 // Bismillahirrahmanirrahim 
 // Elhamdulillahirabbulalemin
-// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain
+// Es-selatu vesselamu ala rasulina Muhammedin 
 // Allah u Ekber, Allah u Ekber, Allah u Ekber, La ilahe illallah
 // SuphanAllah, Elhamdulillah, Allahu Ekber
 
@@ -13,8 +13,8 @@ import { Media } from "@prisma/client";
 import { MessageSquare } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Linkify from "../Linkify";
-import UserAvatar from "../UserAvatar";
+import Linkify from "../../Linkify";
+import UserAvatar from "../../UserAvatar";
 
 
 interface PostProps {
