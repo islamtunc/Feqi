@@ -1,3 +1,8 @@
+// Bismillahirrahmanirrahim 
+// Elhamdu lillahi rabbil alamin
+// Esselatu vesselamu ala rasulillah
+// La ilahe illallah
+// Subhanallah, Elhamdulillah, Allahu Ekber
 
 
 
@@ -10,7 +15,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { usePathname, useRouter } from "next/navigation";
-import { useToast } from "../ui/use-toast";
+import { useToast } from "../../ui/use-toast";
 import { deletePost } from "./actions";
 
 export function useDeletePostMutation() {
