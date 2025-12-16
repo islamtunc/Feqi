@@ -1,6 +1,12 @@
+// Bismillahirrahmanirrahim 
+// Elhamdu lillahi rabbil alamin
+// Esselatu vesselamu ala rasulillah
+// La ilahe illallah
+// Subhanallah, Elhamdulillah, Allahu Ekber
+
 import { PostData } from "@/lib/types";
-import LoadingButton from "../LoadingButton";
-import { Button } from "../ui/button";
+import LoadingButton from "../../LoadingButton";
+import { Button } from "../../ui/button";
 import {
   Dialog,
   DialogContent,
@@ -8,7 +14,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "../ui/dialog";
+} from "../../ui/dialog";
 import { useDeletePostMutation } from "./mutations";
 
 interface DeletePostDialogProps {

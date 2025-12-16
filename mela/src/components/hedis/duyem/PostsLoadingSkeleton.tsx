@@ -1,4 +1,10 @@
-import { Skeleton } from "../ui/skeleton";
+// Bismillahirrahmanirrahim 
+// Elhamdu lillahi rabbil alamin
+// Esselatu vesselamu ala rasulillah
+// La ilahe illallah
+// Subhanallah, Elhamdulillah, Allahu Ekber
+
+import { Skeleton } from "../../ui/skeleton";
 
 export default function PostsLoadingSkeleton() {
   return (

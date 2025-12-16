@@ -1,13 +1,19 @@
+// Bismillahirrahmanirrahim 
+// Elhamdu lillahi rabbil alamin
+// Esselatu vesselamu ala rasulillah
+// La ilahe illallah
+// Subhanallah, Elhamdulillah, Allahu Ekber
+
 import { PostData } from "@/lib/types";
 import { MoreHorizontal, Trash2 } from "lucide-react";
 import { useState } from "react";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+} from "../../ui/dropdown-menu";
 import DeletePostDialog from "./DeletePostDialog";
 
 interface PostMoreButtonProps {
