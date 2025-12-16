@@ -1,4 +1,8 @@
 // Bismillahirrahmanirrahim 
+// Elhamdu lillahi rabbil alamin
+// Esselatu vesselamu ala rasulillah
+// La ilahe illallah
+// Subhanallah, Elhamdulillah, Allahu Ekber
 
 
 

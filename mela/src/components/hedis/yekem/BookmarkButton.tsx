@@ -1,4 +1,8 @@
 // Bismillahirrahmanirrahim 
+// Elhamdu lillahi rabbil alamin
+// Esselatu vesselamu ala rasulillah
+// La ilahe illallah
+// Subhanallah, Elhamdulillah, Allahu Ekber
 
 
 
@@ -12,7 +16,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { Bookmark } from "lucide-react";
-import { useToast } from "../ui/use-toast";
+import { useToast } from "../../ui/use-toast";
 
 interface BookmarkButtonProps {
   postId: string;
