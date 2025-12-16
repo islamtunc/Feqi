@@ -1,3 +1,9 @@
+// Bismillahirrahmanirahim
+// Elhamdu lillahi rabbil alamin
+// Esselatu vesselamu ala rasulina Muhammedin
+// La ilahe illallah
+// Subhanallah, Elhamdulillah, Allahu Ekber
+
 "use server";
 
 import { validateRequest } from "@/auth";
@@ -9,7 +15,7 @@ export async function deletePost(id: string) {
 
   if (!user) throw new Error("Unauthorized");
 
-  const post = await prisma.post.findUnique({
+  const post = await prisma.dua.findUnique({
     where: { id },
   });
 
@@ -17,7 +23,7 @@ export async function deletePost(id: string) {
 
   if (post.userId !== user.id) throw new Error("Unauthorized");
 
-  const deletedPost = await prisma.post.delete({
+  const deletedPost = await prisma.dua.delete({
     where: { id },
     include: getPostDataInclude(user.id),
   });

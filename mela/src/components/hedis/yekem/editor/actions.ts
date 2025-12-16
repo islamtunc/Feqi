@@ -21,7 +21,7 @@ export async function submitPost(input: {
 
   const { content, mediaIds } = createPostSchema.parse(input);
 
-  const newPost = await prisma.dirok.create({
+  const newPost = await prisma.yekem.create({
     data: {
       content, // Convert string[] to a single string
       userId: user.id,
