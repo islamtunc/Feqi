@@ -4,7 +4,7 @@
 // La ilahe illallah
 // Subhanallah, Elhamdulillah, Allahu Ekber
 
-import { PostData } from "@/lib/types";
+import { HedisData } from "@/lib/types";
 import { MoreHorizontal, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../ui/button";
@@ -17,7 +17,7 @@ import {
 import DeletePostDialog from "./DeletePostDialog";
 
 interface PostMoreButtonProps {
-  post: PostData;
+  post: HedisData;
   className?: string;
 }
 

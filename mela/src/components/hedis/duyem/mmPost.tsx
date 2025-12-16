@@ -7,7 +7,7 @@
 
 "use client";
 
-import { PostData } from "@/lib/types";
+import { DuyemData } from "@/lib/types";
 import { cn, formatRelativeDate } from "@/lib/utils";
 import { Media } from "@prisma/client";
 import { MessageSquare } from "lucide-react";
@@ -18,7 +18,7 @@ import UserAvatar from "../../UserAvatar";
 
 
 interface PostProps {
-  post: PostData;
+  post: DuyemData;
 }
 
 export default function MmmPost({ post }: PostProps) {

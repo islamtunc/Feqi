@@ -1,10 +1,12 @@
 // Bismillahirrahmanirrahim 
 // Elhamdulillahirabbulalemin
 // es-salatu ve es-selamu alâ Resûlillah
+// La ilahe illallah
+// Subhanallah, Elhamdulillah, Allahu Ekber
 "use client";
 
 import { useSession } from "@/app/(main)/SessionProvider";
-import { PostData } from "@/lib/types";
+import { FiqihData } from "@/lib/types";
 import { cn, formatRelativeDate } from "@/lib/utils";
 import { Media } from "@prisma/client";
 import Image from "next/image";
@@ -15,7 +17,7 @@ import UserTooltip from "../UserTooltip";
 import PostMoreButton from "./PostMoreButton";
 
 interface PostProps {
-  post: PostData;
+  post: FiqihData;
 }
 
 export default function Post({ post }: PostProps) {

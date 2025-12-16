@@ -1,4 +1,10 @@
-import { PostData } from "@/lib/types";
+// Bismillahirrahmanirrahim 
+// Elhamdulillahirabbulalemin
+// Es-selatu vesselamu ala rasulina Muhammedin 
+// Allah u Ekber, Allah u Ekber, Allah u Ekber, La ilahe illallah
+// SuphanAllah, Elhamdulillah, Allahu Ekber
+"use client";
+import { HedisData } from "@/lib/types";
 import LoadingButton from "../LoadingButton";
 import { Button } from "../ui/button";
 import {
@@ -12,7 +18,7 @@ import {
 import { useDeletePostMutation } from "./mutations";
 
 interface DeletePostDialogProps {
-  post: PostData;
+  post: HedisData;
   open: boolean;
   onClose: () => void;
 }

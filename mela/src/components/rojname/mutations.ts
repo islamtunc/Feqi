@@ -1,4 +1,9 @@
-import { PostsPage } from "@/lib/types";
+// Bismillahirrahmanirrahim
+// Elhamdulillahirabbulalemin
+// Es-selatu vesselamu ala rasulina Muhammedin
+// Allah u Ekber, Allah u Ekber, Allah u Ekber, La ilahe illallah
+// SuphanAllah, Elhamdulillah, Allahu Ekber
+import { RojnamePage } from "@/lib/types";
 import {
   InfiniteData,
   QueryFilters,
@@ -24,7 +29,7 @@ export function useDeletePostMutation() {
 
       await queryClient.cancelQueries(queryFilter);
 
-      queryClient.setQueriesData<InfiniteData<PostsPage, string | null>>(
+      queryClient.setQueriesData<InfiniteData<RojnamePage, string | null>>(
         queryFilter,
         (oldData) => {
           if (!oldData) return;

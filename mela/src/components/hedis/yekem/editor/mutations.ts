@@ -8,7 +8,7 @@
 
 import { useSession } from "@/app/(main)/SessionProvider";
 import { useToast } from "@/components/ui/use-toast";
-import { PostsPage } from "@/lib/types";
+import { YekemPage } from "@/lib/types";
 import {
   InfiniteData,
   QueryFilters,
