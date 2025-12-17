@@ -40,7 +40,7 @@ export default function ForYouFeed() {
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });
 
-  const posts = data?.pages.flatMap((page) => page.posts) || [];
+  const posts = data?.pages.flatMap((page) => (page.items ?? page.posts ?? [])) || [];
 
   const deleteMutation = useMutation({
     mutationFn: async (postId: string) => {
