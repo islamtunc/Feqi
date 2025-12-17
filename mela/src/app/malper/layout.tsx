@@ -1,7 +1,7 @@
 // Bismillahirahmanirahim 
 // Elhamdulillahirabbulalemin
 // Esselatu vesselamu ala rasulillah 
-// Allahumme salli ala seyyidina Muhammedin ve ala alihi ve sahbihi ecmain
+// Allahumme salli ala seyyidina Muhammedin 
 // Allah u Ekber, Allahu Ekber, Allahu Ekber
 // La ilahe illallah, Allahu Ekber, Allahu Ekber, ve lillahi'l-hamd
 import React from "react";
@@ -21,63 +21,12 @@ export default async function Layout({
 }) {
   return (
     <div>
-      <Alert variant="warning">Supports Palastina and Rojava!</Alert>
+      <Alert variant="succes"> اَشْهَدُ اَنْ لاَ اِلٰهَ اِلاَّ اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ</Alert>
       <Mmmnavbar />
 
       {children}
      
 
-      {/* WhatsApp Button - Right Bottom */}
-      <a
-        href="https://wa.me/+905513417039"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          position: "fixed",
-          right: 24,
-          bottom: 24,
-          zIndex: 1000,
-          background: "#25D366",
-          color: "#fff",
-          borderRadius: "50%",
-          width: 56,
-          height: 56,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          boxShadow: "0 2px 8px rgba(37,211,102,0.18)",
-          fontSize: 28,
-          textDecoration: "none",
-        }}
-        title="WhatsApp"
-      >
-        <span role="img" aria-label="WhatsApp">🟢</span>
-      </a>
-
-      {/* Phone Button - Left Bottom */}
-      <a
-        href="tel:+905513417039"
-        style={{
-          position: "fixed",
-          left: 24,
-          bottom: 24,
-          zIndex: 1000,
-          background: "#28a745",
-          color: "#fff",
-          borderRadius: "50%",
-          width: 56,
-          height: 56,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          boxShadow: "0 2px 8px rgba(40,167,69,0.18)",
-          fontSize: 28,
-          textDecoration: "none",
-        }}
-        title="Call us"
-      >
-        <span role="img" aria-label="Phone">📞</span>
-      </a>
 
       <ContactForm />
       <Footer />
