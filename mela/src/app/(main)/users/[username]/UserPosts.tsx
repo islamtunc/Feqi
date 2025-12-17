@@ -1,12 +1,15 @@
 // Bismillahirahmanirahim 
-
+// Elhamdulillahirabbulalemin
+// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain
+//Suphanallah, Elhamdulillah, Allahu Ekber
+// Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
 import PostsLoadingSkeleton from "@/components/agahi/PostsLoadingSkeleton";
 import Post from "@/components/agahi/Post";
 import kyInstance from "@/lib/ky";
-import { PostsPage } from "@/lib/types";
+import { AgahiPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
@@ -30,12 +33,16 @@ export default function UserPosts({ userId }: UserPostsProps) {
           `/api/users/${userId}/posts`,
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
-        .json<PostsPage>(),
+        .json<AgahiPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });
 
-  const posts = data?.pages.flatMap((page) => page.posts) || [];
+  const posts = data?.pages.flatMap((page) => {
+    if ("items" in page && Array.isArray((page as any).items)) return (page as any).items;
+    if ("posts" in page && Array.isArray((page as any).posts)) return (page as any).posts;
+    return [];
+  }) || [];
 
   if (status === "pending") {
     return <PostsLoadingSkeleton />;
