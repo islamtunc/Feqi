@@ -28,7 +28,7 @@ export default function ForYouFeed() {
     queryFn: ({ pageParam }) =>
       kyInstance
         .get(
-          "/api/posts/dirok",
+          "/api/parvekirin/dirok",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
         .json<DirokPage>(),

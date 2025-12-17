@@ -29,7 +29,7 @@ export default function ForYouFeed() {
     queryFn: ({ pageParam }) =>
       kyInstance
         .get(
-          "/api/posts/fiqih",
+          "/api/parvekirin/fiqih",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
         .json<FiqihPage>(),

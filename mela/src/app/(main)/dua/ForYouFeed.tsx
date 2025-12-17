@@ -29,7 +29,7 @@ export default function ForYouFeed() {
     queryFn: ({ pageParam }) =>
       kyInstance
         .get(
-          "/api/posts/dua",
+          "/api/parvekirin/dua",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
         .json<DuaPage>(),
