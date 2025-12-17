@@ -32,10 +32,10 @@ export async function GET(req: NextRequest) {
 
     const nextCursor = posts.length > pageSize ? posts[pageSize].id : null;
 
-    const data: DuyemPage = {
-      posts: posts.slice(0, pageSize).map(post => ({
+   const data = {
+      posts: posts.slice(0, pageSize).map((post: { content: any; }) => ({
         ...post,
-        content: Array.isArray(post.content) ? post.content : [post.content],
+        content: Array.isArray(post.content) ? post.content : [post.content]
       })),
       nextCursor,
     };
