@@ -1,6 +1,6 @@
 // Bismillahirrahmanirrahim 
 // Elhamdulillahirabbulalemin
-// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain
+// Es-selatu vesselamu ala rasulina Muhammedin 
 //Suphanallah, Elhamdulillah, Allahu Ekber
 // Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 
@@ -117,9 +117,7 @@ async function UserProfile({ user, loggedInUserId }: UserProfileProps) {
 
         {user.id === loggedInUserId ? (
           <EditProfileButton user={user} />
-        ) : (
-
-  <Button >Mesaj Yaz</Button>)}
+        ) : <a></a>}
       </div>
       {user.bio && (
         <>

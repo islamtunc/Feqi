@@ -11,7 +11,7 @@
 
 import { validateRequest } from "@/auth";
 import prisma from "@/lib/prisma";
-import { getPostDataInclude, PostsPage } from "@/lib/types";
+import { getAgahiInclude, AgahiPage } from "@/lib/types";
 import { NextRequest } from "next/server";
 
 export async function GET(
@@ -29,9 +29,9 @@ export async function GET(
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const posts = await prisma.xane.findMany({
+    const posts = await prisma.agahi.findMany({
       where: { userId },
-      include: getPostDataInclude(user.id),
+      include: getAgahiInclude(user.id),
       orderBy: { createdAt: "desc" },
       take: pageSize + 1,
       cursor: cursor ? { id: cursor } : undefined,
@@ -39,7 +39,7 @@ export async function GET(
 
     const nextCursor = posts.length > pageSize ? posts[pageSize].id : null;
 
-    const data: PostsPage = {
+    const data: AgahiPage = {
       posts: posts.slice(0, pageSize),
       nextCursor,
     };
