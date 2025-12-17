@@ -1,6 +1,6 @@
 // Bismillahirrahmanirrahim 
 // Elhamdulillahi Rabbil Alamin
-// Essalatu vesselamu ala Resulina Muhammedin ve ala alihi ve sahbihi ecmain
+// Essalatu vesselamu ala Resulina Muhammedin 
 // Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 // Subhanallah, Elhamdulillah, Allahu Ekber
 
@@ -10,7 +10,7 @@ import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
 import Post from "@/components/dirok/Post";
 import PostsLoadingSkeleton from "@/components/agahi/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
-import { PostsPage } from "@/lib/types";
+import { DuyemPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
@@ -30,12 +30,16 @@ export default function ForYouFeed() {
           "/api/posts/mmkinc",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
-        .json<PostsPage>(),
+        .json<DuyemPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });
 
-  const posts = data?.pages.flatMap((page) => page.posts) || [];
+  const posts = data?.pages.flatMap((page) => {
+    if ("items" in page && Array.isArray((page as any).items)) return (page as any).items;
+    if ("posts" in page && Array.isArray((page as any).posts)) return (page as any).posts;
+    return [];
+  }) || [];
 
   if (status === "pending") {
     return <PostsLoadingSkeleton />;

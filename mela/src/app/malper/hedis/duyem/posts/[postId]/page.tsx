@@ -12,7 +12,7 @@ import MmmPost from "@/components/dirok/mmPost";
 import UserAvatar from "@/components/UserAvatar";
 import UserTooltip from "@/components/UserTooltip";
 import prisma from "@/lib/prisma";
-import { getPostDataInclude, UserData } from "@/lib/types";
+import { getYekemInclude, UserData } from "@/lib/types";
 import { Loader2 } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -28,7 +28,7 @@ const getPost = cache(async (postId: string, loggedInUserId: string) => {
     where: {
       id: postId,
     },
-    include: getPostDataInclude(loggedInUserId),
+    include: getYekemInclude(loggedInUserId),
   });
 
   if (!post) notFound();
