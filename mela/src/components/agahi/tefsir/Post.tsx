@@ -3,18 +3,18 @@
 "use client";
 
 import { useSession } from "@/app/(main)/SessionProvider";
-import { PostData } from "@/lib/types";
+import { TefsirData } from "@/lib/types";
 import { cn, formatRelativeDate } from "@/lib/utils";
 import { Media } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
-import Linkify from "../Linkify";
-import UserAvatar from "../UserAvatar";
-import UserTooltip from "../UserTooltip";
+import Linkify from "../../Linkify";
+import UserAvatar from "../../UserAvatar";
+import UserTooltip from "../../UserTooltip";
 import PostMoreButton from "./PostMoreButton";
 
 interface PostProps {
-  post: PostData;
+  post: TefsirData;
 }
 
 export default function Post({ post }: PostProps) {
