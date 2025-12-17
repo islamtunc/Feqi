@@ -31,11 +31,13 @@ export async function GET(req: NextRequest) {
     });
 
     const nextCursor = posts.length > pageSize ? posts[pageSize].id : null;
-
-    const data: HedisPage = {
-      posts: posts.slice(0, pageSize),
+ const data = {
+      posts: posts.slice(0, pageSize).map((post: { content: any; }) => ({
+        ...post,
+        content: Array.isArray(post.content) ? post.content : [post.content]
+      })),
       nextCursor,
-    };
+    } as unknown as HedisPage;
 
     return Response.json(data);
   } catch (error) {

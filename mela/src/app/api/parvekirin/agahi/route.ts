@@ -27,10 +27,10 @@ export async function GET(req: NextRequest) {
 
     const nextCursor = posts.length > pageSize ? posts[pageSize].id : null;
 
-    const data: AgahiPage = {
+    const data = {
       posts: posts.slice(0, pageSize),
       nextCursor,
-    };
+    } as unknown as AgahiPage;
 
     return Response.json(data);
   } catch (error) {

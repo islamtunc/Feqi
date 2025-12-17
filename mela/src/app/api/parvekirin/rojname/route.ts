@@ -8,7 +8,7 @@
 
 import { validateRequest } from "@/auth";
 import prisma from "@/lib/prisma";
-import { getXaneInclude, XanePage } from "@/lib/types";
+import { getRojnameInclude, RojnamePage } from "@/lib/types";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
@@ -24,7 +24,7 @@ export async function GET(req: NextRequest) {
     }
 
     const posts = await prisma.xane.findMany({
-      include: getXaneInclude(user.id),
+      include: getRojnameInclude(user.id),
       orderBy: { createdAt: "desc" },
       take: pageSize + 1,
       cursor: cursor ? { id: cursor } : undefined,
@@ -38,7 +38,7 @@ export async function GET(req: NextRequest) {
          content: Array.isArray(post.content) ? post.content : [post.content]
        })),
        nextCursor,
-     } as unknown as XanePage;
+     } as unknown as RojnamePage;
  
 
     return Response.json(data);

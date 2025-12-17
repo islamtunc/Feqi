@@ -31,18 +31,13 @@ export async function GET(req: NextRequest) {
 
     const nextCursor = posts.length > pageSize ? posts[pageSize].id : null;
 
-    const data: DuaPage = {
-      posts: posts.slice(0, pageSize).map((post: any) => ({
-        id: post.id,
-        content: Array.isArray(post.content) ? post.content : [post.content],
-        userId: post.userId,
-        createdAt: post.createdAt,
-        user: post.user,
-        attachments: post.attachments,
-        // add other fields as needed to match PostData
-      })),
-      nextCursor,
-    };
+   const data = {
+        posts: posts.slice(0, pageSize).map((post: { content: any; }) => ({
+          ...post,
+          content: Array.isArray(post.content) ? post.content : [post.content]
+        })),
+        nextCursor,
+      } as unknown as DuaPage;
 
     return Response.json(data);
   } catch (error) {
