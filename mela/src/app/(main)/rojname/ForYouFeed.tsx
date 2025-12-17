@@ -40,8 +40,11 @@ export default function ForYouFeed() {
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });
 
-  const posts = data?.pages.flatMap((page) => page.posts) || [];
-
+ const posts = data?.pages.flatMap((page) => {
+    if ("items" in page && Array.isArray((page as any).items)) return (page as any).items;
+    if ("posts" in page && Array.isArray((page as any).posts)) return (page as any).posts;
+    return [];
+  }) || [];
   const deleteMutation = useMutation({
     mutationFn: async (postId: string) => {
       await kyInstance.delete(`/api/posts/mmavahi/${postId}`);
