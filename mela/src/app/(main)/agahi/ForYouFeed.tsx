@@ -40,15 +40,19 @@ export default function ForYouFeed() {
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });
 
-  const posts = data?.pages.flatMap((page) => (page.items ?? page.posts ?? [])) || [];
+  const posts = data?.pages.flatMap((page) => {
+    if ("items" in page && Array.isArray((page as any).items)) return (page as any).items;
+    if ("posts" in page && Array.isArray((page as any).posts)) return (page as any).posts;
+    return [];
+  }) || [];
 
   const deleteMutation = useMutation({
     mutationFn: async (postId: string) => {
-      await kyInstance.delete(`/api/posts/mmavahi/${postId}`);
+      await kyInstance.delete(`/api/parvekirin/agahi/${postId}`);
     },
     onSuccess: () => {
       toast({
-        description: "Gönderi silindi",
+        description: "Parvekirin hat jêbirin",
         variant: "default",
       });
       // Sayfayı yenile veya veriyi tekrar çek
@@ -56,7 +60,7 @@ export default function ForYouFeed() {
     },
     onError: () => {
       toast({
-        description: "Silme işlemi başarısız",
+        description: "Parvekirin nehat jêbirin",
         variant: "destructive",
       });
     },
