@@ -4,6 +4,7 @@
 // Subhanallahi ve bihamdihi
 // Subhanallahil azim
 // La ilahe illallah muhammadur resulullah
+
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
@@ -35,8 +36,12 @@ export default function ForYouFeed() {
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });
 
-  const posts = data?.pages.flatMap((page) => page.posts) || [];
-
+  const posts = data?.pages.flatMap((page) => {
+    if ("items" in page && Array.isArray((page as any).items)) return (page as any).items;
+    if ("posts" in page && Array.isArray((page as any).posts)) return (page as any).posts;
+    return [];
+  }) || [];
+  
   if (status === "pending") {
     return <PostsLoadingSkeleton />;
   }
