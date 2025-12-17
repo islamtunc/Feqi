@@ -56,7 +56,7 @@ export function useUpdateProfileMutation() {
             pageParams: oldData.pageParams,
             pages: oldData.pages.map((page) => ({
               nextCursor: page.nextCursor,
-              posts: page.posts.map((post) => {
+              items: page.items.map((post) => {
                 if (post.user.id === updatedUser.id) {
                   return {
                     ...post,
