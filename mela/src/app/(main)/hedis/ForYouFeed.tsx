@@ -3,7 +3,7 @@
 // Essalatu vesselamu ala seyyidina muhammadin
 // Subhanallahi ve bihamdihi
 // Subhanallahil azim
-// La ilahe illallah muhammadur resulullah
+// La ilahe illallah muhammaden abduhu ve resuluhu
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
