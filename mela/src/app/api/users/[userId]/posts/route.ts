@@ -38,11 +38,14 @@ export async function GET(
     });
 
     const nextCursor = posts.length > pageSize ? posts[pageSize].id : null;
-
-    const data: AgahiPage = {
-      posts: posts.slice(0, pageSize),
-      nextCursor,
-    };
+const data = {
+       posts: posts.slice(0, pageSize).map((post: { content: any; }) => ({
+         ...post,
+         content: Array.isArray(post.content) ? post.content : [post.content]
+       })),
+       nextCursor,
+     } as unknown as AgahiPage;
+ 
 
     return Response.json(data);
   } catch (error) {
