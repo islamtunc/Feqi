@@ -9,7 +9,7 @@
 
 import { validateRequest } from "@/auth";
 import prisma from "@/lib/prisma";
-import { getKelamInclude } from "@/lib/types";
+import { getKelamDataInclude } from "@/lib/types";
 
 export async function deletePost(id: string) {
   const { user } = await validateRequest();
@@ -26,7 +26,7 @@ export async function deletePost(id: string) {
 
   const deletedPost = await prisma.kelam.delete({
     where: { id },
-    include: getKelamInclude(user.id),
+    include: getKelamDataInclude(user.id),
   });
 
   return deletedPost;
