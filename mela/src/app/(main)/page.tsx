@@ -1,6 +1,6 @@
 // Bismillahirrahmanirahim
 // Elhamdulillahirabbulalemin
-// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain
+// Es-selatu vesselamu ala rasulina Muhammedin 
 // La havle ve la kuvvete illa billahil aliyyil azim
 // Allah u Ekber
 // La ilahe illallah Muhammedur Resulullah
@@ -42,9 +42,9 @@ function AdminPage() {
           <Card>
             <Card.Body>
               <Card.Title>Fiqih</Card.Title>
-              <Card.Text>Manage or view the services page.</Card.Text>
+              <Card.Text>.</Card.Text>
               <Button variant="primary" href="/fiqih">
-                Go
+                Here
               </Button>
             </Card.Body>
           </Card>
@@ -56,9 +56,9 @@ function AdminPage() {
           <Card>
             <Card.Body>
               <Card.Title>Kelam</Card.Title>
-              <Card.Text>Manage or view the references page.</Card.Text>
+              <Card.Text>.</Card.Text>
               <Button variant="primary" href="/kelam">
-                Go
+                Here
               </Button>
             </Card.Body>
           </Card>
@@ -66,17 +66,17 @@ function AdminPage() {
         <Col md={4} className="mb-3">
           <Card>
             <Card.Body>
-              <Card.Title>Dîrok</Card.Title>
-              <Card.Text>Manage or view the developer resources page.</Card.Text>
-              <Button variant="primary" href="/dirok">
-                Go
+              <Card.Title>Rojname</Card.Title>
+              <Card.Text>.</Card.Text>
+              <Button variant="primary" href="/rojname">
+                Here
               </Button>
             </Card.Body>
               <Card.Body>
-              <Card.Title>Dîrok</Card.Title>
+              <Card.Title>Pirtukxane</Card.Title>
               <Card.Text>Manage or view the developer resources page.</Card.Text>
-              <Button variant="primary" href="/dirok/yekem">
-                Go
+              <Button variant="primary" href="/xane">
+                Here
               </Button>
             </Card.Body>
           </Card>
@@ -84,10 +84,10 @@ function AdminPage() {
         <Col md={4} className="mb-3">
           <Card>
             <Card.Body>
-              <Card.Title>Site Management</Card.Title>
-              <Card.Text>Manage or view the site.</Card.Text>
+              <Card.Title>Site </Card.Title>
+              <Card.Text>.</Card.Text>
               <Button variant="primary" href="/malper">
-                Go
+                Here
               </Button>
             </Card.Body>
           </Card>
