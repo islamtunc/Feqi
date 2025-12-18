@@ -56,7 +56,7 @@ export function useUpdateProfileMutation() {
             pageParams: oldData.pageParams,
             pages: oldData.pages.map((page) => ({
               ...page,
-              posts: page.posts.map((post) => {
+              posts: page.posts.map((post: { user: { id: string; avatarUrl: any; }; }) => {
                 if (post.user.id === updatedUser.id) {
                   return {
                     ...post,
