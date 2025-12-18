@@ -34,6 +34,7 @@ export type AgahiData = Prisma.AgahiGetPayload<{
 }>;
 
 export interface AgahiPage {
+  posts: any;
   items: AgahiData[];
   nextCursor: string | null;
 }
