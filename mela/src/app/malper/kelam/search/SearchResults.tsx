@@ -3,10 +3,10 @@
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
-import Post from "@/components/agahi/Post";
+import Post from "@/components/xane/Post";
 import PostsLoadingSkeleton from "@/components/agahi/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
-import { DuyemPage } from "@/lib/types";
+import { KelamPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
@@ -26,13 +26,13 @@ export default function SearchResults({ query }: SearchResultsProps) {
     queryKey: ["post-feed", "search", query],
     queryFn: ({ pageParam }) =>
       kyInstance
-        .get("/api/search", {
+        .get("/api/parvekirin/xane/search", {
           searchParams: {
             q: query,
             ...(pageParam ? { cursor: pageParam } : {}),
           },
         })
-        .json<DuyemPage>(),
+        .json<KelamPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
     gcTime: 0,

@@ -32,14 +32,17 @@ export default function SearchResults({ query }: SearchResultsProps) {
             ...(pageParam ? { cursor: pageParam } : {}),
           },
         })
-        .json<PostsPage>(),
+        .json<TefsirPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
     gcTime: 0,
   });
 
-  const posts = data?.pages.flatMap((page) => page.posts) || [];
-
+const posts = data?.pages.flatMap((page) => {
+    if ("items" in page && Array.isArray((page as any).items)) return (page as any).items;
+    if ("posts" in page && Array.isArray((page as any).posts)) return (page as any).posts;
+    return [];
+  }) || [];
   if (status === "pending") {
     return <PostsLoadingSkeleton />;
   }
