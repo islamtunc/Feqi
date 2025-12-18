@@ -32,7 +32,7 @@ export default function SearchResults({ query }: SearchResultsProps) {
             ...(pageParam ? { cursor: pageParam } : {}),
           },
         })
-        .json<PostsPage>(),
+        .json<YekemPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
     gcTime: 0,
