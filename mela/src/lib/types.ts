@@ -87,6 +87,7 @@ export function getKelamDataInclude(loggedInUserId: string) {
 // Generic content type used for lists/pages returned by your APIs.
 // Each content model (Agahi, Duyem, Dirok, ...) will conform to this shape at runtime.
 export type KelamData = {
+  id(id: any, arg1: { onSuccess: () => void; }): void;
   user: UserData;
   attachments: Array<any>;
   // other fields (id, content, createdAt, ...) exist but vary per model
