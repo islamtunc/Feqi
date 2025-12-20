@@ -6,7 +6,7 @@
 "use client";
 
 import { useSession } from "@/app/(main)/SessionProvider";
-import { PostData } from "@/lib/types";
+import { DuaData } from "@/lib/types";
 import { cn, formatRelativeDate } from "@/lib/utils";
 import { Media } from "@prisma/client";
 import Image from "next/image";
@@ -17,7 +17,7 @@ import UserTooltip from "../UserTooltip";
 import PostMoreButton from "./PostMoreButton";
 
 interface PostProps {
-  post: PostData;
+  post: DuaData;
 }
 
 export default function Post({ post }: PostProps) {
