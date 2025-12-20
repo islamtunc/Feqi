@@ -18,7 +18,7 @@ import UserAvatar from "../UserAvatar";
 
 
 interface PostProps {
-  post: PostData;
+  post: FiqihData;
 }
 
 export default function MmmPost({ post }: PostProps) {
