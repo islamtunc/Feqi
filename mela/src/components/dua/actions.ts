@@ -1,7 +1,7 @@
 // Bismillahirrahmanirahim
 // Elhamdu lillahi rabbil alamin
 // Esselatu vesselamu ala rasulina Muhammedin
-// La ilahe illallah
+// La ilahe illallah,Muhammeden abduhu ve resuluhu
 // Subhanallah, Elhamdulillah, Allahu Ekber
 
 "use server";
