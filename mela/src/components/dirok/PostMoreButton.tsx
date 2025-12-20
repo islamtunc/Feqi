@@ -1,4 +1,9 @@
-import { PostData } from "@/lib/types";
+//Bismillahirahmanirrahim
+//Elhamdulillahirabbulalemin
+//Subhanallah walhamdulillah wala ilaha illallah wallahu akbar
+// Allahumma salli ala sayyidina Muhammad wa ala alihi wa sahbihi ajma'in
+//LA İLAHE İLLALLAH
+import { DirokData } from "@/lib/types";
 import { MoreHorizontal, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../ui/button";
@@ -11,7 +16,7 @@ import {
 import DeletePostDialog from "./DeletePostDialog";
 
 interface PostMoreButtonProps {
-  post: PostData;
+  post: DirokData;
   className?: string;
 }
 
