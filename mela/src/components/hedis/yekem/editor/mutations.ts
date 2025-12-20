@@ -1,6 +1,6 @@
 // Bismillahirrahmanirrahim
 // Elhamdulillahi Rabbil Alamin
-// Ve salatu ve selamu ala Resulina Muhammedin ve ala alihi ve sah
+// Ve salatu ve selamu ala Resulina Muhammedin 
 // La ilahe illallah, Muhammedur Resulullah
 // SuphanAllah velhamdulillah, Allahu Ekber
 // Allah ümmetimizi korusun, birlik ve beraberliğimizi daim eylesin.
@@ -9,7 +9,7 @@
 // SuphanAllah, Elhamdulillah, Allahu Ekber
 import { useSession } from "@/app/(main)/SessionProvider";
 import { useToast } from "@/components/ui/use-toast";
-import { RojnamePage } from "@/lib/types";
+import { YekemPage } from "@/lib/types";
 import {
   InfiniteData,
   QueryFilters,
@@ -41,23 +41,25 @@ export function useSubmitPostMutation() {
 
       await queryClient.cancelQueries(queryFilter);
 
-      queryClient.setQueriesData<InfiniteData<DiyariPage, string | null>>(
+      queryClient.setQueriesData<InfiniteData<YekemPage, string | null>>(
         queryFilter,
         (oldData) => {
           const firstPage = oldData?.pages[0];
 
           if (firstPage) {
+            const existingItems = (firstPage as any).items ?? (firstPage as any).posts ?? [];
+            const newFirstPage = {
+              ...firstPage,
+              items: [newPost, ...existingItems],
+            };
+
             return {
               pageParams: oldData.pageParams,
-              pages: [
-                {
-                  posts: [newPost, ...firstPage.posts],
-                  nextCursor: firstPage.nextCursor,
-                },
-                ...oldData.pages.slice(1),
-              ],
+              pages: [newFirstPage, ...oldData.pages.slice(1)],
             };
           }
+
+          return oldData;
         },
       );
 

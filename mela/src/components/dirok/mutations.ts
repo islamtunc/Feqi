@@ -1,8 +1,12 @@
+// Bismillahirrahmanirrahim
+// Elhamdulillahirabbulalemin
+// Es-selatu vesselamu ala rasulina Muhammedin
+// Allah u Ekber, Allah u Ekber, Allah u Ekber, La ilahe illallah
+// SuphanAllah, Elhamdulillah, Allahu Ekber
 
 
 
-
-import { PostsPage } from "@/lib/types";
+import { DirokPage } from "@/lib/types";
 import {
   InfiniteData,
   QueryFilters,
@@ -28,17 +32,30 @@ export function useDeletePostMutation() {
 
       await queryClient.cancelQueries(queryFilter);
 
-      queryClient.setQueriesData<InfiniteData<PostsPage, string | null>>(
+      queryClient.setQueriesData<InfiniteData<DirokPage, string | null>>(
         queryFilter,
         (oldData) => {
-          if (!oldData) return;
+          if (!oldData) return oldData;
 
           return {
             pageParams: oldData.pageParams,
-            pages: oldData.pages.map((page) => ({
-              nextCursor: page.nextCursor,
-              posts: page.posts.filter((p) => p.id !== deletedPost.id),
-            })),
+            pages: oldData.pages.map((page) => {
+              if ((page as any).items && Array.isArray((page as any).items)) {
+                return {
+                  ...page,
+                  items: (page as any).items.filter((p: any) => p.id !== deletedPost.id),
+                };
+              }
+
+              if ((page as any).posts && Array.isArray((page as any).posts)) {
+                return {
+                  ...page,
+                  posts: (page as any).posts.filter((p: any) => p.id !== deletedPost.id),
+                };
+              }
+
+              return page;
+            }),
           };
         },
       );
