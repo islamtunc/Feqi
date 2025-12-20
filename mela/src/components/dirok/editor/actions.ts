@@ -29,7 +29,7 @@ export async function submitPost(input: {
         connect: mediaIds.map((id) => ({ id })),
       },
     },
-    include: getPostDataInclude(user.id),
+    include: getDirokInclude(user.id),
   });
 
   return newPost;
