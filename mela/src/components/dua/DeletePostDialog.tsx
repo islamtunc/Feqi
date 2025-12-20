@@ -18,7 +18,7 @@ import {
 import { useDeletePostMutation } from "./mutations";
 
 interface DeletePostDialogProps {
-  post: PostData;
+  post: DuaData;
   open: boolean;
   onClose: () => void;
 }
