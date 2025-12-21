@@ -2,7 +2,7 @@
 // Elhamdullillahirabbulalemin
 //Es-selatu vesselamu ala rasulina Muhammedin 
 // Subhanallahi ve bihamdihi
-// Subhanallahil azim
+// SubhanAllahul Azim ve bihamdihi
 // La ilahe illallah muhammadur resulullah
 
 import { validateRequest } from "@/auth";
