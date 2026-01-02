@@ -17,7 +17,7 @@ import UserTooltip from "../UserTooltip";
 import PostMoreButton from "./PostMoreButton";
 
 interface PostProps {
-  post: PostData;
+  post: RojnameData;
 }
 
 export default function Post({ post }: PostProps) {
