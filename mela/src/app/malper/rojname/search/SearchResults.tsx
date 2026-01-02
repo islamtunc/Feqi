@@ -1,5 +1,8 @@
 // Bismillahirahmanirahim 
-
+// Elhamdulillahi rabbil alemin
+// Essalatu vesselamu ala resulina Muhammedin 
+// Süphanallah, Elhamdulillah, Allahu Ekber
+// La ilahe illallah
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
