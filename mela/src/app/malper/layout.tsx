@@ -21,7 +21,9 @@ export default async function Layout({
 }) {
   return (
     <div>
-      <Alert variant="succes"> اَشْهَدُ اَنْ لاَ اِلٰهَ اِلاَّ اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ</Alert>
+      <Alert variant="success" style={{ width: "100%", textAlign: "center" }}>
+        اَشْهَدُ اَنْ لاَ اِلٰهَ اِلاَّ اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ
+      </Alert>
       <Mmmnavbar />
 
       {children}
