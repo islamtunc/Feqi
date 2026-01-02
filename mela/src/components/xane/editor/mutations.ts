@@ -50,13 +50,15 @@ export function useSubmitPostMutation() {
               pageParams: oldData.pageParams,
               pages: [
                 {
-                  posts: [newPost, ...firstPage.posts],
+                  items: [newPost, ...firstPage.items],
                   nextCursor: firstPage.nextCursor,
                 },
                 ...oldData.pages.slice(1),
               ],
-            };
+            } as InfiniteData<XanePage, string | null>;
           }
+
+          return oldData;
         },
       );
 
