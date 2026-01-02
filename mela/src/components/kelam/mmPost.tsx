@@ -33,8 +33,8 @@ export default function MmmPost({ post }: PostProps) {
       </div>
       <Linkify>
         <div className="space-y-3">
-          {Array.isArray(post.content)
-            ? post.content.map((line: string, i: number) => {
+          {Array.isArray((post as any).content)
+            ? (post as any).content.map((line: string, i: number) => {
                 if (i === 0)
                   return (
                     <h2 key={i} className="text-xl font-bold mb-1">
@@ -54,7 +54,7 @@ export default function MmmPost({ post }: PostProps) {
                 );
               })
             : (
-              <p className="text-base whitespace-pre-line">{post.content}</p>
+              <p className="text-base whitespace-pre-line">{(post as any).content}</p>
             )}
         </div>
       </Linkify>
