@@ -23,7 +23,7 @@ export async function GET(req: NextRequest) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const posts = await prisma.xane.findMany({
+    const posts = await prisma.rojname.findMany({
       include: getRojnameInclude(user.id),
       orderBy: { createdAt: "desc" },
       take: pageSize + 1,
