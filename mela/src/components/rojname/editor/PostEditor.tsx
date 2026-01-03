@@ -62,7 +62,7 @@ export default function PostEditor() {
   function onSubmit() {
     mutation.mutate(
       {
-        content: input,
+        content: Array.isArray(input) ? input : [input],
         mediaIds: attachments.map((a) => a.mediaId).filter(Boolean) as string[],
       },
       {
