@@ -27,7 +27,7 @@ export default function ParvekirinaMeal() {
     queryFn: ({ pageParam }) =>
       kyInstance
         .get(
-          "/api/posts/agahi/meal",
+          "/api/parvekirin/agahi/meal",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
         .json<MealPage>(),

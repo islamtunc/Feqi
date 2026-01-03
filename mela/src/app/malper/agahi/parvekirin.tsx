@@ -26,7 +26,7 @@ export default function ParvekirinaAgahi() {
     queryFn: ({ pageParam }) =>
       kyInstance
         .get(
-          "/api/posts/agahi",
+          "/api/parvekrin/agahi",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
         .json<AgahiPage>(),
