@@ -16,33 +16,8 @@ export default function Home() {
       <div className="w-full min-w-0 space-y-5">
 
 
-       <Alert>About Us</Alert>
-        <Tabs defaultValue="mm">
-          <TabsList>
-            <TabsTrigger value="for-you">Promotion </TabsTrigger>
-            <TabsTrigger value="following">Blog</TabsTrigger>
-            <TabsTrigger value="mm">E commerce</TabsTrigger>
-
-            <TabsTrigger value="mm">Social Media</TabsTrigger>
-
-          </TabsList>
-          <TabsContent value="for-you">
-
-           
-          </TabsContent>
-          <TabsContent value="following">
-
-          </TabsContent>
-    
-
-
-
-
-
-        <TabsContent value="mm">
-
-    </TabsContent>
-    </Tabs>
+       <Alert>Rojname</Alert>
+       
       </div>
     </main>
   );

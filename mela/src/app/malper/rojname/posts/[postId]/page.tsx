@@ -3,7 +3,7 @@
 // Essalatu vesselamu ala Resulina Muhammedin
 // Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 // Subhanallah, Elhamdulillah, Allahu Ekber
-import MmmPost from "@/components/xane/mmPost";
+import MmmPost from "@/components/rojname/mmPost";
 import prisma from "@/lib/prisma";
 import { getRojnameInclude, UserData } from "@/lib/types";
 import { notFound } from "next/navigation";

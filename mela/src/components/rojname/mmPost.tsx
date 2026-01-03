@@ -3,71 +3,74 @@
 // Es-selatu vesselamu ala rasulina Muhammedin 
 // Allah u Ekber, Allah u Ekber, Allah u Ekber, La ilahe illallah
 // SuphanAllah, Elhamdulillah, Allahu Ekber
+
+
 "use client";
 
-import { useSession } from "@/app/(main)/SessionProvider";
 import { RojnameData } from "@/lib/types";
 import { cn, formatRelativeDate } from "@/lib/utils";
 import { Media } from "@prisma/client";
+import { MessageSquare } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Linkify from "../Linkify";
 import UserAvatar from "../UserAvatar";
-import UserTooltip from "../UserTooltip";
-import PostMoreButton from "./PostMoreButton";
+
 
 interface PostProps {
   post: RojnameData;
 }
 
-export default function Post({ post }: PostProps) {
-  const { user } = useSession();
-
+export default function MmmPost({ post }: PostProps) {
 
   return (
-    <article className="group/post space-y-3 rounded-2xl bg-card p-5 shadow-sm">
+    <article className="group/post space-y-3 rounded-2xl bg-card p-5 shadow-sm text-black">
       <div className="flex justify-between gap-3">
         <div className="flex flex-wrap gap-3">
-          <UserTooltip user={post.user}>
-            <Link href={`/users/${post.user.username}`}>
-              <UserAvatar avatarUrl={post.user.avatarUrl} />
-            </Link>
-          </UserTooltip>
           <div>
-            <UserTooltip user={post.user}>
-              <Link
-                href={`/users/${post.user.username}`}
-                className="block font-medium hover:underline"
-              >
-                {post.user.displayName}
-              </Link>
-            </UserTooltip>
-            <Link
-              href={`/malper/rojname/posts/${post.id}`}
-              className="block text-sm text-muted-foreground hover:underline"
-              suppressHydrationWarning
-            >
-              {formatRelativeDate(post.createdAt)}
-            </Link>
           </div>
         </div>
-        {post.user.id === user.id && (
-          <PostMoreButton
-            post={post}
-            className="opacity-0 transition-opacity group-hover/post:opacity-100"
-          />
-        )}
       </div>
       <Linkify>
-        <div className="whitespace-pre-line break-words">{post.content}</div>
+        <div className="space-y-3">
+          {Array.isArray((post as any).content)
+            ? (post as any).content.map((line: string, i: number) => {
+                if (i === 0)
+                  return (
+                    <h2 key={i} className="text-xl font-bold mb-1">
+                      {line}
+                    </h2>
+                  );
+                if (i === 1)
+                  return (
+                    <div key={i} className="text-green-700 font-semibold mb-2">
+                      {line}
+                    </div>
+                  );
+                return (
+                  <p key={i} className="text-base whitespace-pre-line">
+                    {line}
+                  </p>
+                );
+              })
+            : (
+              <p className="text-base whitespace-pre-line">{(post as any).content}</p>
+            )}
+        </div>
       </Linkify>
       {!!post.attachments.length && (
         <MediaPreviews attachments={post.attachments} />
       )}
       <hr className="text-muted-foreground" />
       <div className="flex justify-between gap-5">
-     
-      
+        <div className="flex items-center gap-5">
+          <Link
+            href={`/malper/rojname/posts/${post.id}`}
+            className="block text-sm text-muted-foreground hover:underline"
+            suppressHydrationWarning
+          >
+          </Link>
+        </div>
       </div>
     </article>
   );
@@ -123,5 +126,6 @@ function MediaPreview({ media }: MediaPreviewProps) {
 
   return <p className="text-destructive">Ev medya nabe</p>;
 }
+
 
 
