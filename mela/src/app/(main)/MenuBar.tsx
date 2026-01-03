@@ -1,6 +1,6 @@
 // Bismillahirrahmanirrahim 
 // Elhamdulillahirabbulalemin
-// Esselatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi ecmain
+// Esselatu vesselamu ala rasulina Muhammedin 
 // Suphanallah, Elhamdulillah, Allahu Ekber
 // Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illallah
 
@@ -40,12 +40,12 @@ export default async function MenuBar({ className }: MenuBarProps) {
       <Button
         variant="ghost"
         className="flex items-center justify-start gap-3"
-        title="Home"
+        title="Malpera Serekî"
         asChild
       >
         <Link href="/">
           <Home />
-          <span className="hidden lg:inline">Home</span>
+          <span className="hidden lg:inline">Malpera Serekî</span>
         </Link>
     
       </Button>
@@ -53,24 +53,24 @@ export default async function MenuBar({ className }: MenuBarProps) {
       <Button
         variant="ghost"
         className="flex items-center justify-start gap-3"
-        title="Bookmarks"
+        title="Ecibandî"
         asChild
       >
         <Link href="/bookmarks">
           <Bookmark />
-          <span className="hidden lg:inline">Bookmarks</span>
+          <span className="hidden lg:inline">Ecibandî</span>
         </Link>
       </Button>
 
       <Button
         variant="ghost"
         className="flex items-center justify-start gap-3"
-        title="messages"
+        title="Peyam"
         asChild
       >
-        <Link href="/mmmpeyam" className="relative flex items-center gap-3">
+        <Link href="/peyam" className="relative flex items-center gap-3">
           <Mail />
-          <span className="hidden lg:inline">Messages</span>
+          <span className="hidden lg:inline">Peyam</span>
           {messageCount > 0 && (
             <span
               style={{
