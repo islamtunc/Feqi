@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Faqih</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0d1f12;
+      color: #e8f0e8;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .kutu {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #d4af37;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #2c5236;
+      background: #1a2e1e;
+      color: #e8f0e8;
+      font-size: .95rem;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 400px;
+      font-family: monospace;
+      line-height: 1.5;
+      margin-top: 12px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #d4af37;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 8px;
+      background: #d4af37;
+      color: #0d1f12;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button.ikincil {
+      background: #2c5236;
+      color: #e8f0e8;
+    }
+
+    #durum {
+      margin-top: 10px;
+      font-size: .85rem;
+      min-height: 1.2em;
+    }
+
+    .ok {
+      color: #7fce7f;
+    }
+
+    .hata {
+      color: #e07a7a;
+    }
+
+    a {
+      color: #6f9b6f;
+      font-size: .85rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="kutu">
+    <h1>﷽ Yönetim Paneli</h1>
+    <a href="/">← asistana dön</a>
+
+    <div id="giris">
+      <p style="margin:16px 0 8px; color:#9fbf9f;">Admin şifresi:</p>
+      <input id="sifre" type="password" placeholder="şifre">
+      <button onclick="oku()">Giriş</button>
+    </div>
+
+    <div id="panel" style="display:none">
+      <p style="margin:16px 0 0; color:#9fbf9f;">Sistem talimatı (kural seti):</p>
+      <textarea id="prompt"></textarea>
+      <button onclick="kaydet()">Kaydet</button>
+      <button class="ikincil" onclick="oku()">Yenile</button>
+      <div id="durum"></div>
+    </div>
+  </div>
+
+  <script>
+    const durum = document.getElementById('durum');
+    let SIFRE = sessionStorage.getItem('faqih_sifre') || '';
+
+    function goster(ok) {
+      if (ok) {
+        document.getElementById('giris').style.display = 'none';
+        document.getElementById('panel').style.display = 'block';
+      } else {
+        document.getElementById('giris').style.display = 'block';
+        document.getElementById('panel').style.display = 'none';
+      }
+    }
+
+    async function oku() {
+      const sifre = document.getElementById('sifre').value || SIFRE;
+      if (!sifre) return;
+      const r = await fetch('/api/admin/oku', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sifre })
+      });
+      const d = await r.json();
+      if (r.ok) {
+        SIFRE = sifre; sessionStorage.setItem('faqih_sifre', sifre);
+        document.getElementById('prompt').value = d.prompt;
+        goster(true);
+        durum.textContent = 'Yüklendi.'; durum.className = 'ok';
+      } else {
+        goster(false);
+        durum.textContent = d.error || 'şifre yanlış'; durum.className = 'hata';
+      }
+    }
+
+    async function kaydet() {
+      const r = await fetch('/api/admin/kaydet', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sifre: SIFRE, prompt: document.getElementById('prompt').value })
+      });
+      const d = await r.json();
+      durum.textContent = r.ok ? '✓ Kaydedildi — kurallar güncellendi.' : (d.error || 'hata');
+      durum.className = r.ok ? 'ok' : 'hata';
+    }
+
+    document.getElementById('sifre').addEventListener('keydown', e => { if (e.key === 'Enter') oku(); });
+    if (SIFRE) { document.getElementById('sifre').value = SIFRE; oku(); }
+  </script>
+</body>
+
+</html>

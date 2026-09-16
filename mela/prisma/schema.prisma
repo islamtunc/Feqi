@@ -298,3 +298,12 @@ model Yekem {
 
   @@map("yekem")
 }
+
+// Faqih — İslam Asistanı ayarları (system prompt burada saklanır, Vercel uyumlu)
+model FeqiAyar {
+  id       String   @id @default(cuid())
+  anahtar  String   @unique // "system_prompt" gibi
+  deger    String
+  guncelTarih DateTime @updatedAt
+  @@map("feqi_ayar")
+}

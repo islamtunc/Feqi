@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faqih — İslam Asistanı</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Segoe UI', Tahoma, sans-serif; background:#0d1f12; color:#e8f0e8; min-height:100vh; display:flex; flex-direction:column; }
+  header { background:#123524; padding:14px 20px; text-align:center; border-bottom:2px solid #1f6e43; }
+  header h1 { font-size:1.3rem; color:#d4af37; }
+  header p { font-size:.8rem; color:#9fbf9f; margin-top:4px; }
+  #sohbet { flex:1; overflow-y:auto; padding:20px; max-width:900px; width:100%; margin:0 auto; }
+  .mesaj { margin-bottom:16px; display:flex; }
+  .mesaj.siz { justify-content:flex-end; }
+  .mesaj .balon { max-width:80%; padding:12px 16px; border-radius:14px; white-space:pre-wrap; line-height:1.6; font-size:.95rem; }
+  .siz .balon { background:#1f6e43; border-bottom-right-radius:4px; }
+  .asistan .balon { background:#1a2e1e; border:1px solid #2c5236; border-bottom-left-radius:4px; }
+  .asistan .balon em { color:#d4af37; font-style:normal; }
+  .yukleniyor { color:#9fbf9f; font-style:italic; }
+  form { display:flex; gap:8px; padding:14px 20px; background:#123524; border-top:2px solid #1f6e43; }
+  form input { flex:1; padding:12px 16px; border-radius:24px; border:1px solid #2c5236; background:#0d1f12; color:#e8f0e8; font-size:1rem; outline:none; }
+  form input:focus { border-color:#d4af37; }
+  form button { padding:12px 24px; border-radius:24px; border:none; background:#d4af37; color:#0d1f12; font-weight:bold; cursor:pointer; font-size:1rem; }
+  form button:disabled { opacity:.5; cursor:wait; }
+  .kaynak { font-size:.75rem; color:#6f9b6f; margin-top:8px; text-align:center; padding-bottom:8px; }
+  a.admin-link { color:#6f9b6f; font-size:.75rem; }
+</style>
+</head>
+<body>
+<header>
+ <h1>﷽ Faqih — İslam Asistanı</h1>
+ <p>Yalnızca Kuran'ı Kerim ve Kuran ile mana olarak çelişmeyen sahih hadislere göre cevap verir.</p>
+</header>
+
+<div id="sohbet"></div>
+
+<form id="form">
+ <input id="girdi" type="text" placeholder="Sorunuzu yazın..." autocomplete="off" autofocus>
+ <button id="gonder">Gönder</button>
+</form>
+<div class="kaynak">
+  Üyeliksiz ve herkese açıktır · <a class="admin-link" href="admin.html">yönetim</a>
+</div>
+
+<script>
+const sohbet = document.getElementById('sohbet');
+const form = document.getElementById('form');
+const girdi = document.getElementById('girdi');
+const gonder = document.getElementById('gonder');
+let gecmis = [];
+
+function mesajEkle(rol, metin) {
+  const div = document.createElement('div');
+  div.className = 'mesaj ' + (rol === 'siz' ? 'siz' : 'asistan');
+  const balon = document.createElement('div');
+  balon.className = 'balon';
+  balon.textContent = metin;
+  div.appendChild(balon);
+  sohbet.appendChild(div);
+  sohbet.scrollTop = sohbet.scrollHeight;
+  return balon;
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const soru = girdi.value.trim();
+  if (!soru) return;
+  girdi.value = '';
+  gonder.disabled = true;
+  mesajEkle('siz', soru);
+  const yukleniyor = mesajEkle('asistan', 'Düşünüyorum...');
+  yukleniyor.classList.add('yukleniyor');
+
+  try {
+    const r = await fetch('/api/sor', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ soru, gecmis })
+    });
+    const d = await r.json();
+    yukleniyor.classList.remove('yukleniyor');
+    yukleniyor.textContent = d.cevap || ('Hata: ' + (d.error || 'bilinmeyen'));
+    if (d.cevap) {
+      gecmis.push({role:'user', content:soru}, {role:'assistant', content:d.cevap});
+      gecmis = gecmis.slice(-20);
+    }
+  } catch (err) {
+    yukleniyor.textContent = 'Sunucuya ulaşılamadı. Sunucu çalışıyor mu? (python3 server.py)';
+  }
+  gonder.disabled = false;
+  girdi.focus();
+});
+</script>
+</body>
+</html>

@@ -84,6 +84,19 @@ function AdminPage() {
         <Col md={4} className="mb-3">
           <Card>
             <Card.Body>
+              <Card.Title>Asistanê AI — Faqî (Admin)</Card.Title>
+              <Card.Text>
+                Îslam asistanê AI yê kuralên wî sererast bike.
+              </Card.Text>
+              <Button variant="warning" href="/feqijs">
+                Here
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={4} className="mb-3">
+          <Card>
+            <Card.Body>
               <Card.Title>Site </Card.Title>
               <Card.Text>.</Card.Text>
               <Button variant="primary" href="/malper">

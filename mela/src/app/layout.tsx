@@ -1,10 +1,10 @@
 // Bismillahirrahmanirrahim 
 // Elhamdulillahirabbulalemin
 // Esselatu vesselamu ala rasulillah 
-// Allahumme salli ala seyyidina Muhammedin ve ala alihi ve sahbihi ecmain
+// Allahumme salli ala seyyidina Muhammedin 
 // Allah u Ekber, Allahu Ekber, Allahu Ekber
-// La ilahe illallah, Allahu Ekber, Allahu Ekber, ve lillahi'l-hamd
-// Subhanallah, Elhamdulillah, Allahu Ekber
+// La ilahe illAllah, Allahu Ekber, Allahu Ekber, ve lillahi'l-hamd
+// SubhanAllah, Elhamdulillah, Allahu Ekber
 
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
